@@ -1,0 +1,109 @@
+\documentclass[12pt]{article}
+\usepackage[breaklinks=true]{hyperref}
+% \usepackage[html,png]{tex4ht}
+
+\newcommand{\cD}{{\mathcal D}}
+\newcommand{\cF}{{\mathcal F}}
+\newcommand{\todo}[1]{{\color{red}{TO DO: \sc #1}}}
+
+\title{What do Students Mean by 'Teaching Effectiveness'?}
+\author{Anne Boring, Kellie Ottoboni, Philip B.~Stark}
+\date{Draft \today}
+\begin{document}
+\maketitle
+
+\section{Background}
+Push back on the notion of ``teaching effectiveness.''
+There ought to be \emph{some} interaction between characteristics of the
+instructor and those of the student.
+If ``effectiveness'' is intrinsic to the instructor, ratings in one class shouldn't depend on
+which other classes a student takes.
+Looking at ratings ``per student'' doesn't make sense if you are trying to
+measure some underlying platonic ``effectiveness'' intrinsic to the instructor.
+In particular,  a showing that individual students who give a particular instructor higher ratings
+get higher grades, does not point to ....\todo{fix me}
+
+Cornell \& West, Bocconi on validity.
+Cite McNell, Boring on gender.
+Cite Lauer on comments.
+Cite defenders IDEA Benton \& Cashin in defense of SET.  
+
+How do these things fit together?
+
+Reliability and validity: the correlation argument.
+
+\section{Data}
+\todo{Anne to provide description. Triads, etc.}
+
+\section{Tests}
+
+\subsection{Per instructor}
+Pearson correlation between a summary statistic of effectiveness rating and a summary statistic
+of student performance, e.g., mean effectiveness (on various dimensions) and pass rate or mean
+final exam score.
+\todo{code is ready.  Do we do all metrics?}
+
+\subsubsection{Gender}
+Pearson correlation between a summary statistic of effectiveness rating and gender of instructor
+\todo{code is ready.  Do we do all metrics?}
+
+\subsection{Per student}
+For a single student, test correlation between course rating (overall, individual dimensions) and final grade/interim grade/professor gender.
+The null hypothesis is no correlation between rating and x.
+
+The test assumes independence between students within a triad of classes
+ We allow for unequal probability that teacher 1 in the triad gets rated above the other two teachers by weighting the different permutations. One weighting scheme could be something like
+P(teacher 1 gets rated best) = \% students given CAS > t by teacher 1/sum_i=1^3(\%students given CAS > t by teacher i)
+ 
+Or more simply, P(teacher 1 gets rated best) = CAS from teacher 1/sum_i=1^3 CAS > t from teacher i)
+Aggregate the test statistics (Pearson correlation) across strata (different students) to get an overall p-value.  There are roughly (3!)^14 different possible permutations.
+We expect to reject the null for the interim grades and for gender; do not expect to reject the null for final grades.
+ 
+Confidence bounds:
+We can lower bound the ``female disadvantage,'' i.e., 
+how much a female teacher needs to improve her ratings in order to destroy the 
+significant association from the test.
+Also can lower bound how much a teacher can lower the interim (continuous assessment) grades to break the association between interim grades and SET
+
+\section{Inter-rater reliability}
+There is a distinction between teaching evaluations measuring something unique to each student 
+(value added for them, from a particular teacher) versus 
+measuring something intrinsic about the teacher.  
+The goal of teaching evaluations is to measure intrinsic teaching ability.  
+How well this is accomplished should be reflected in how similarly 
+students rate their 6 teachers.
+We can rank the 6 teachers for each student based on the ratings 
+they've assigned, then measure concordance between students in a triad by asking how often they ranked teacher i with rank j.
+Other measures of value added on the instructor level include the fraction of 
+students who pass or the fraction of students with a final grade above x.  
+On this line of reasoning, we can do a permutation test for the 
+Pearson correlation between median rating from students in a class and the pass rate.
+Issues:
+We'll want to do these analyses separately for male and female students, 
+since there seems to be an interaction effect between student gender and teacher gender.
+We assume stationarity: students will be the same and perform the same from semester to semester.
+We also want to look at how ratings depend on teacher triplet genders (MMM, MMF, etc.)
+
+\subsection{Gender effects}
+Look at the interaction of grades and gender: 
+do students require higher grades from female teachers for warm glow effect?
+Triplet effect for gender--pool triplets with same number of instructors of a given gender.
+
+\subsection{Relative or absolute}
+Hypothesis: students are comparing teachers rather than making absolute judgments.
+
+\subsection{Punishment}
+Look at students who took two courses from the same instructor, and got a lower course grade than the interim grade in the first course.
+Null hypothesis: equally likely to rate the instructor higher in the first and second course, 
+independent of each other.
+Alternative: more likely to ``punish'' the instructor with a bad rating in the second course.
+
+
+\section{Code}
+Github repo.
+
+\section{Discussion}
+
+\section{Conclusions}
+
+\end{document}
