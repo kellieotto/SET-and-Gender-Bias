@@ -52,23 +52,28 @@ Pearson correlation between a summary statistic of effectiveness rating and gend
 
 \subsection{Per student}
 For a single student, test correlation between course rating (overall, individual dimensions) and final grade/interim grade/professor gender.
-The null hypothesis is no correlation between rating and x.
+The null hypothesis is no correlation between rating and $x$.
 
-The test assumes independence between students within a triad of classes
- We allow for unequal probability that teacher 1 in the triad gets rated above the other two teachers by weighting the different permutations. One weighting scheme could be something like
+The test assumes independence among students within a triad of classes.
+First null: all $3! = 6$ orderings equally likely.
+If we don't reject that, no need to go further.
 
-$$P(\text{teacher 1 gets rated best}) = \frac{\%\text{ students given CAS }> t\text{ by teacher 1}}{\sum_{i=1}^3(\%\text{ students given CAS }> t\text{ by teacher }i)}$$
+We \emph{could} allow for unequal probability that students have preferences
+related, e.g., to grades, but keep the independence assumption.
+One candidate weighting scheme is:
+
+$$P(\text{teacher $i$ gets rated best}) = \frac{\%\text{ students given CAS }> t\text{ by teacher $i$}}{\sum_{j=1}^3(\%\text{ students given CAS }> t\text{ by teacher }j)}$$
  
 Or more simply, 
 
-$$P(\text{teacher 1 gets rated best}) = \frac{\text{CAS from teacher 1}}{\sum_{i=1}^3\text{ CAS from teacher }i}$$
+$$P(\text{teacher $i$ gets rated best}) = \frac{\text{CAS from teacher $i$}}{\sum_{j=1}^3\text{ CAS from teacher }j}$$
 Aggregate the test statistics (Pearson correlation) across strata (different students) to get an overall p-value.  There are roughly $(3!)^{14}$ different possible permutations.
 We expect to reject the null for the interim grades and for gender; do not expect to reject the null for final grades.
  
 Confidence bounds:
 We can lower bound the ``female disadvantage,'' i.e., 
 how much a female teacher needs to improve her ratings in order to destroy the 
-significant association from the test.
+significant association from the test, assuming a constant effect size.
 Also can lower bound how much a teacher can lower the interim (continuous assessment) grades to break the association between interim grades and SET
 
 \section{Inter-rater reliability}
