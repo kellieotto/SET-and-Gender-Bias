@@ -1,6 +1,8 @@
 \documentclass[12pt]{article}
 \usepackage[breaklinks=true]{hyperref}
 % \usepackage[html,png]{tex4ht}
+\usepackage{color}
+\usepackage{amsmath,amssymb,amsthm}
 
 \newcommand{\cD}{{\mathcal D}}
 \newcommand{\cF}{{\mathcal F}}
@@ -53,10 +55,13 @@ The null hypothesis is no correlation between rating and x.
 
 The test assumes independence between students within a triad of classes
  We allow for unequal probability that teacher 1 in the triad gets rated above the other two teachers by weighting the different permutations. One weighting scheme could be something like
-P(teacher 1 gets rated best) = \% students given CAS > t by teacher 1/sum_i=1^3(\%students given CAS > t by teacher i)
+
+$$P(\text{teacher 1 gets rated best}) = \frac{\%\text{ students given CAS }> t\text{ by teacher 1}}{\sum_{i=1}^3(\%\text{ students given CAS }> t\text{ by teacher }i)}$$
  
-Or more simply, P(teacher 1 gets rated best) = CAS from teacher 1/sum_i=1^3 CAS > t from teacher i)
-Aggregate the test statistics (Pearson correlation) across strata (different students) to get an overall p-value.  There are roughly (3!)^14 different possible permutations.
+Or more simply, 
+
+$$P(\text{teacher 1 gets rated best}) = \frac{\text{CAS from teacher 1}}{\sum_{i=1}^3\text{ CAS from teacher }i}$$
+Aggregate the test statistics (Pearson correlation) across strata (different students) to get an overall p-value.  There are roughly $(3!)^{14}$ different possible permutations.
 We expect to reject the null for the interim grades and for gender; do not expect to reject the null for final grades.
  
 Confidence bounds:
