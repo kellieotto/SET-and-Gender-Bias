@@ -1,5 +1,5 @@
-.ipynb_checkpoints/*
-./Code/.ipynb_checkpoints/*
+.ipynb_checkpoints/
+./Code/.ipynb_checkpoints/
 *.log
 *.aux
 *.synctex.gz
