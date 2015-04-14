@@ -1,8 +1,10 @@
 .ipynb_checkpoints/
 ./Code/.ipynb_checkpoints/
-*.log
-*.aux
-*.synctex.gz
-*.out
+./Ms/*.log
+./Ms/*.aux
+./Ms/*.synctex.gz
+./Ms/*.out
 .DS_Store
+./Ms/.DS_Store
+./Code/.DS_Store
 .Rapp.history
