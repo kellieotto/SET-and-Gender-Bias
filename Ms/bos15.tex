@@ -84,7 +84,8 @@ Students have been completing their SETs online since 2008.
 The response rate is close to 100\% as it is mandatory for 
 students to complete their SETs. 
 They risk a number of sanctions if they do not complete their SETs, such as not being able 
-to register in the following semester. Students complete their SETs before they take their final exams. The SET scores are
+to register in the following semester. Students complete their SETs 
+before they take their final exams. The SET scores are
 anonymous to the teachers, who only have access to them once all grades have been officially recorded on student transcripts, 
 several weeks after final exams. Instructors and academic coordinators then have access to SETs. When scores are low, the 
 academic coordinator discusses the SETs with the instructor.   
@@ -112,7 +113,8 @@ For this set of questions, students have a choice between answering non-pertinen
 
 The other closed-ended questions that students answer are:
 Compared with other courses this semester, I invested much more effort / as much effort / much less effort in this course. 
-How many assessments did you have throughout the semester? 0 to 2 / 3 to 4 / 5 to 6 / 7 or more
+How many assessments did you have throughout the semester? 
+0 to 2 / 3 to 4 / 5 to 6 / 7 or more
 Were written assignments given back within the time deadlines?
 Were oral presentation grades given back within the time deadlines? 
 
@@ -152,15 +154,15 @@ $$P(\text{teacher $i$ gets rated best}) = \frac{\%\text{ students given CAS }> t
  
 Or more simply, 
 
-$$P(\text{teacher $i$ gets rated best}) = \frac{\text{CAS from teacher $i$}}{\sum_{j=1}^3\text{ CAS from teacher }j}$$
-Aggregate the test statistics (Pearson correlation) across strata (different students) to get an overall p-value.  There are roughly $(3!)^{14}$ different possible permutations.
-We expect to reject the null for the interim grades and for gender; do not expect to reject the null for final grades.
- 
-Confidence bounds:
-We can lower bound the ``female disadvantage,'' i.e., 
-how much a female teacher needs to improve her ratings in order to destroy the 
-significant association from the test, assuming a constant effect size.
-Also can lower bound how much a teacher can lower the interim (continuous assessment) grades to break the association between interim grades and SET
+   $$P(\text{teacher $i$ gets rated best}) = 
+   \frac{\text{CAS from teacher $i$}}{\sum_{j=1}^3\text{ CAS from teacher }j}
+   $$
+   
+Aggregate the test statistics (Pearson correlation) across strata (different students) to get an overall $p$-value.  
+There are roughly $(3!)^{14}$ different possible permutations.
+We expect to reject the null for the interim grades and for gender; 
+do not expect to reject the null for final grades.
+
 
 \section{Inter-rater reliability}
 There is a distinction between teaching evaluations measuring something unique to each student 
@@ -170,7 +172,7 @@ The goal of teaching evaluations is to measure intrinsic teaching ability.
 How well this is accomplished should be reflected in how similarly 
 students rate their 6 teachers.
 We can rank the 6 teachers for each student based on the ratings 
-they've assigned, then measure concordance between students in a triad by asking how often they ranked teacher i with rank j.
+they've assigned, then measure concordance between students in a triad by asking how often they ranked teacher $i$ with rank $j$.
 Other measures of value added on the instructor level include the fraction of 
 students who pass or the fraction of students with a final grade above x.  
 On this line of reasoning, we can do a permutation test for the 
@@ -182,24 +184,29 @@ We assume stationarity: students will be the same and perform the same from seme
 
 \subsection{Gender effects}
 Look at the interaction of grades and gender: 
-do students require higher grades from female teachers for warm glow effect?
-Triplet effect for gender--pool triplets with same number of instructors of a given gender. \\
+do students require higher grades from female teachers?
+Triplet effect for gender--pool triplets with same number of instructors of a given gender.
 
-Another potential idea for controlling is to match. One approach is to use students as their own control, looking at a pair of classes in which they got the same grade, one taught by a male and the other by a female. An approach that will be more powerful and easier to implement is matching/binning students on their final exam scores/overall class grades; within matches or bins, we can do a sort of sign test to compare the mean ratings of male and female instructors. Within a bin, it's like a coin flip to decide whether the average male or female rating is higher - test if the coin is fair or biased. Preliminary results suggest that the effect is more pronounced when comparing excellent to good ratings.
+Another potential idea for controlling is to match. 
+One approach is to use students as their own control, looking at a pair of classes in which they got the same grade, one taught by a male and the other by a female. 
+An approach that will be more powerful and easier to implement is matching/binning students on their final exam scores/overall class grades; within matches or bins, we can do a sort of sign test to compare the mean ratings of male and female instructors. 
+Within a bin, it's like a coin flip to decide whether the average male or 
+female rating is higher - test if the coin is fair or biased. 
+Preliminary results suggest that the effect is more pronounced when comparing excellent to good ratings.
 
 \subsection{Relative or absolute}
 Hypothesis: students are comparing teachers rather than making absolute judgments.
 
 
-\subsection{Punishment}
-Look at students who took two courses from the same instructor, and got a lower course grade than the interim grade in the first course.
-Null hypothesis: equally likely to rate the instructor higher in the first and second course, 
-independent of each other.
-Alternative: more likely to ``punish'' the instructor with a bad rating in the second course.
-
+%\subsection{Punishment}
+%Look at students who took two courses from the same instructor, and got a lower course grade than the interim grade in the first course.
+%Null hypothesis: equally likely to rate the instructor higher in the first and second course, 
+%independent of each other.
+%Alternative: more likely to ``punish'' the instructor with a bad rating in the second course.
+%
 
 \section{Code}
-Github repo.
+Github repo. \url{https://github.com/kellieotto/SET-and-Gender-Bias}
 
 \section{Discussion}
 
