@@ -8,11 +8,28 @@
 \newcommand{\cF}{{\mathcal F}}
 \newcommand{\todo}[1]{{\color{red}{TO DO: \sc #1}}}
 
-\title{What do Students Mean by ``Teaching Effectiveness"?}
+\title{Student Evaluations of Teaching (Mostly) Do Not Measure Teaching Effectiveness}
 \author{Anne Boring, Kellie Ottoboni, Philip B.~Stark}
 \date{Draft \today}
 \begin{document}
 \maketitle
+
+\begin{abstract}
+We examine a unique set of data on student evaluations of teaching (SET) at SciencesPo
+University, Paris, where, although students are not randomly assigned to sections,
+the assignments of first-year students form a natural experiment.
+Moreover, students in every section of a given course take the same final exam, set by
+someone other than the section instructor, and are graded anonymously;
+and students are required to submit SET.
+This combination of effectively random assignment and effectively perfect response
+rates allows unto study the relationships among SET and a number of covariates,
+including a measure of the value instructors add (effectiveness), 
+a measure of students' grade expectations, the genders of students and
+instructors, class time of day, and subject matter.
+Using nonparametric permutation tests, we find that \todo{more!}.
+Results vary by discipline.
+
+\end{abstract}
 
 \section{Background}
 Push back on the notion of ``teaching effectiveness.''
@@ -29,48 +46,53 @@ Carrell \& West, Braga, Paccagnella, \& Pellizzari, 2011 on validity.
 Cite McNell, Boring on gender.
 Cite Lauer on comments.
 Cite defenders IDEA Benton \& Cashin in defense of SET.  
-Cite Spooren, Brockx, and Mortelmans 2013 for discussion on reliability and validity. Apart for student performance on 
-the final exam, they cite an alternative to test for convergent validity (correlation between measures of student learning 
-and SETs): using the class mean (as suggested by Clayson 2009) 
+Cite Spooren, Brockx, and Mortelmans 2013 for discussion on reliability and validity. 
+Apart for student performance on 
+the final exam, they cite an alternative to test for convergent validity 
+(correlation between measures of student learning 
+and SETs): using the class mean (as suggested by \cite{clayson09}). 
 
 How do these things fit together?
 
 Reliability and validity: the correlation argument.
 
 \section{Data}
-\subsection{Organization of courses}
+\subsection{SciencesPo Curriculum}
+First-year undergraduate students take six mandatory courses: in the fall,
+introduction to microeconomics, political institutions, and history; 
+and in the spring, introduction to macroeconomics, political 
+science, and sociology.
+Semesters last twelve weeks.
+Each week, for each course, students attend two one-hour lectures by a tenured professor
+(approximately 900 students per lecture) and two one-hour tutorial sections 
+(between 10 and 24 students per section). 
+Our SET data include students' individual evaluations of instructors 
+in these sections for microeconomics, history, political institutions, and 
+macroeconomics for the five academic years 2008--2013,
+and for sociology and political science courses for the three academic years 2010--2013 
+(these two were introduced in 2010).
 
-First year undergraduate students at this university are required to take six mandatory courses: 
-introduction to microeconomics, political institutions and history during the fall semester; 
-and introduction to macroeconomics, political 
-science and sociology during the spring semester. 
-Each semester lasts twelve weeks, during which 
-students follow two hour long lectures by a tenured professor
-(approximately 900 students per lecture), and two hour long smaller tutoring classes for each course 
-(between 10 and 24 students per tutoring class). 
-The database includes students' individual evaluations of instructors 
-in these small classes for microeconomics, history, political institutions and 
-macroeconomics for five academic years from 
-2008--2009 to 2012--2013. 
-The database also includes students' individual evaluations of teachers for the sociology and
-political science courses for three academic years, as these two courses were introduced in 2010--2011.
+In the fall, students enroll in sections for the whole year, in cohorts called ``triads'':
+students in a triad take the same sections of all three courses.
+Students cannot pick and choose among individual instructors separately for
+each course, only among triads of sections.
+When possible according to students' and instructors' schedules, 
+students stay in the same triad for the spring semester courses. 
+Students are not allowed to change triads once courses have started in the fall. 
 
-The small classes are organized in ``triads''. 
-Each student registers for one triad at the beginning of the fall semester, 
-which means that a student be with the same group of students in the tutoring sessions for history, microeconomics and 
-political institutions. When possible according to students' and instructors' schedules, students then stay in the same triad
-for the spring semester courses. Students are not allowed to change triads once courses have started during the fall semester. 
-
-The main lecturer decides on the content of the course and writes the final exam for the course. Instructors write-up their 
-own syllabi and the administration values and encourages pedagogical freedom for individual instructors, especially regarding 
-the assignments that they use in the continuous assessment grades. Instructors must, however, follow the course program which
-is set by the main lecturer. 
+The professor who delivers the lectures sets the content of the course and 
+writes the final exam for the course as a whole. 
+Section instructors devise their own syllabi;
+the administration encourages pedagogical freedom, especially regarding 
+the assignments that instructors use to assess student progress during each term. 
+Section instructors must, however, follow the course program set by the professor. 
 
 One way to measure teaching effectiveness is to check how students perform on the final exam. 
 The main lecturer for the course writes the final exam, which all students have to take to pass the class 
 (the final exam grade counts as one third of the final grade for the course). 
 All papers are pooled and graded anonymously by different instructors of the course, such that instructors wouldn't know 
-if they were actually grading one of their students or other students. There are written exams for five out of the six 
+if they were actually grading one of their students or other students. 
+There are written exams for five out of the six 
 courses, whereas the political institutions final exam is an oral exam. 
 The instructor who gives the final exam in the 
 political institutions course is a different instructor from the one that students had during the semester;
@@ -84,7 +106,8 @@ Students have been completing their SETs online since 2008.
 The response rate is close to 100\% as it is mandatory for 
 students to complete their SETs. 
 They risk a number of sanctions if they do not complete their SETs, such as not being able 
-to register in the following semester. Students complete their SETs before they take their final exams. The SET scores are
+to register in the following semester. Students complete their SETs 
+before they take their final exams. The SET scores are
 anonymous to the teachers, who only have access to them once all grades have been officially recorded on student transcripts, 
 several weeks after final exams. Instructors and academic coordinators then have access to SETs. When scores are low, the 
 academic coordinator discusses the SETs with the instructor.   
@@ -112,7 +135,8 @@ For this set of questions, students have a choice between answering non-pertinen
 
 The other closed-ended questions that students answer are:
 Compared with other courses this semester, I invested much more effort / as much effort / much less effort in this course. 
-How many assessments did you have throughout the semester? 0 to 2 / 3 to 4 / 5 to 6 / 7 or more
+How many assessments did you have throughout the semester? 
+0 to 2 / 3 to 4 / 5 to 6 / 7 or more
 Were written assignments given back within the time deadlines?
 Were oral presentation grades given back within the time deadlines? 
 
@@ -152,15 +176,15 @@ $$P(\text{teacher $i$ gets rated best}) = \frac{\%\text{ students given CAS }> t
  
 Or more simply, 
 
-$$P(\text{teacher $i$ gets rated best}) = \frac{\text{CAS from teacher $i$}}{\sum_{j=1}^3\text{ CAS from teacher }j}$$
-Aggregate the test statistics (Pearson correlation) across strata (different students) to get an overall p-value.  There are roughly $(3!)^{14}$ different possible permutations.
-We expect to reject the null for the interim grades and for gender; do not expect to reject the null for final grades.
- 
-Confidence bounds:
-We can lower bound the ``female disadvantage,'' i.e., 
-how much a female teacher needs to improve her ratings in order to destroy the 
-significant association from the test, assuming a constant effect size.
-Also can lower bound how much a teacher can lower the interim (continuous assessment) grades to break the association between interim grades and SET
+   $$P(\text{teacher $i$ gets rated best}) = 
+   \frac{\text{CAS from teacher $i$}}{\sum_{j=1}^3\text{ CAS from teacher }j}
+   $$
+   
+Aggregate the test statistics (Pearson correlation) across strata (different students) to get an overall $p$-value.  
+There are roughly $(3!)^{14}$ different possible permutations.
+We expect to reject the null for the interim grades and for gender; 
+do not expect to reject the null for final grades.
+
 
 \section{Inter-rater reliability}
 There is a distinction between teaching evaluations measuring something unique to each student 
@@ -170,7 +194,7 @@ The goal of teaching evaluations is to measure intrinsic teaching ability.
 How well this is accomplished should be reflected in how similarly 
 students rate their 6 teachers.
 We can rank the 6 teachers for each student based on the ratings 
-they've assigned, then measure concordance between students in a triad by asking how often they ranked teacher i with rank j.
+they've assigned, then measure concordance between students in a triad by asking how often they ranked teacher $i$ with rank $j$.
 Other measures of value added on the instructor level include the fraction of 
 students who pass or the fraction of students with a final grade above x.  
 On this line of reasoning, we can do a permutation test for the 
@@ -182,24 +206,29 @@ We assume stationarity: students will be the same and perform the same from seme
 
 \subsection{Gender effects}
 Look at the interaction of grades and gender: 
-do students require higher grades from female teachers for warm glow effect?
-Triplet effect for gender--pool triplets with same number of instructors of a given gender. \\
+do students require higher grades from female teachers?
+Triplet effect for gender--pool triplets with same number of instructors of a given gender.
 
-Another potential idea for controlling is to match. One approach is to use students as their own control, looking at a pair of classes in which they got the same grade, one taught by a male and the other by a female. An approach that will be more powerful and easier to implement is matching/binning students on their final exam scores/overall class grades; within matches or bins, we can do a sort of sign test to compare the mean ratings of male and female instructors. Within a bin, it's like a coin flip to decide whether the average male or female rating is higher - test if the coin is fair or biased. Preliminary results suggest that the effect is more pronounced when comparing excellent to good ratings.
+Another potential idea for controlling is to match. 
+One approach is to use students as their own control, looking at a pair of classes in which they got the same grade, one taught by a male and the other by a female. 
+An approach that will be more powerful and easier to implement is matching/binning students on their final exam scores/overall class grades; within matches or bins, we can do a sort of sign test to compare the mean ratings of male and female instructors. 
+Within a bin, it's like a coin flip to decide whether the average male or 
+female rating is higher - test if the coin is fair or biased. 
+Preliminary results suggest that the effect is more pronounced when comparing excellent to good ratings.
 
 \subsection{Relative or absolute}
 Hypothesis: students are comparing teachers rather than making absolute judgments.
 
 
-\subsection{Punishment}
-Look at students who took two courses from the same instructor, and got a lower course grade than the interim grade in the first course.
-Null hypothesis: equally likely to rate the instructor higher in the first and second course, 
-independent of each other.
-Alternative: more likely to ``punish'' the instructor with a bad rating in the second course.
-
+%\subsection{Punishment}
+%Look at students who took two courses from the same instructor, and got a lower course grade than the interim grade in the first course.
+%Null hypothesis: equally likely to rate the instructor higher in the first and second course, 
+%independent of each other.
+%Alternative: more likely to ``punish'' the instructor with a bad rating in the second course.
+%
 
 \section{Code}
-Github repo.
+Github repo. \url{https://github.com/kellieotto/SET-and-Gender-Bias}
 
 \section{Discussion}
 
