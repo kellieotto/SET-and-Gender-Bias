@@ -3,6 +3,7 @@
 % \usepackage[html,png]{tex4ht}
 \usepackage{color}
 \usepackage{amsmath,amssymb,amsthm}
+\usepackage{natbib}
 
 \newcommand{\cD}{{\mathcal D}}
 \newcommand{\cF}{{\mathcal F}}
@@ -55,9 +56,9 @@ Nonparametric permutation tests that aggregate within the 1,177 course sections 
             by male instructors (2-sided $\approx 0.68$)
 \end{itemize}
 These relationships vary by discipline.
-Student responses fail simple tests of data quality.
-For instance, 29\% of students report spending impossible amounts of time
-on their courses.
+%Student responses fail simple tests of data quality.
+%For instance, 29\% of students report spending impossible amounts of time
+%on their courses.
 
 \end{abstract}
 
@@ -66,13 +67,180 @@ on their courses.
 \end{quotation}
 
 \section{Background}
-Student evaluations of teaching (SET) are widely used to assess teaching quality,
+Student evaluations of teaching (SET) are used widely in higher education 
+as a measure of teaching quality,
 and figure in the hiring, promotion, and firing of instructors, especially non-tenured faculty.
-SET are generally treated as a measure of teaching effectiveness, rather than, for
-instance, a measure of student satisfaction with the instructor.
-Because measuring teaching effectiveness objectively is so difficult---for students,
-faculty, and administrators alike---there is 
+SET are generally treated as a measure of teaching effectiveness, rather than, e.g., a measure of student satisfaction.
+Because ascertaining teaching effectiveness is so difficult---for students,
+faculty, and administrators alike---attempts to measure teaching effectiveness by
+surveying student opinion may suffer from conscious or unconscious biases. 
+Recent work by \citet{mcNellEtal14} has demonstrated that this is the case: 
+their randomized, controlled experiment shows that, on average, students rate a given instructor
+lower on every aspect of teaching (including ``objective'' measures such as
+timeliness) when they think the instructor is female than when 
+they think the instructor is male.
 
+Randomized, controlled experiments also show that SET do not measure
+teaching effectiveness; the key studies are \citet{carrellWest10,bragaEtal11},
+which find that students confuse grades (or grade expectations) with long-term
+value.
+
+Here, we use a remarkable census of SET by first-year students at SciencesPo (Paris)
+collected between 2008 and 2013, 
+comprising 22,665 SETs by
+4,423 students of 1,177
+sections taught by 372 instructors.
+These data are discussed in detail by \citet{boring15}.
+The key aspects of the data are these:
+\begin{itemize}
+   \item All first year students take the same six courses, in history, macroeconomics, microeconomics, 
+            political institutions, political science, and sociology.
+            Each course has one main professor,
+            who delivers the lectures (to groups of approximately 900 students) and creates 
+            the final exams.
+            Courses have many sections of 10--24 students. 
+            Those sections are taught by different instructors.
+            The instructors have considerable pedagogical freedom.
+    
+   \item Students enroll in ``triads'' of sections of these courses. 
+            The enrollment process
+            does not allow students the freedom to select individual instructors.
+            The assignment of students to sections is ``as if'' at random.
+            
+   \item Section instructors provide interim grades during the term. 
+            Students know what their interim grades are, so interim grades are a 
+            good measure of grade expectations.
+            
+   \item Final exams are set by the main professor: all students in a given course take the
+            same final. Final exams are graded anonymously in all disciplines except Political
+            Institutions (which we omit from analyses involving final exam scores).
+            This makes performance on the final exam a reasonable measure of the value the
+            section instructor adds: students of more effective instructors should do better on
+            the final exam, on average.
+    
+   \item SET are mandatory: the response rates are nearly perfect.
+   
+\end{itemize}
+
+SETs include closed-ended and open-ended questions, 
+but the question that attracts the most attention is the overall 
+score, which is considered to be a summary 
+of the scores on the other questions. 
+
+%How do you evaluate:
+%\begin{itemize}
+%\item the preparation and the organization of classes?    
+%\item the quality of the teaching materials?
+%\item the clarity of the assessment criteria?
+%\item the usefulness of feedback?
+%\item your teacher's class leadership skills?
+%\item your teacher's ability to encourage group work? 
+%\item your teacher's availability and communication skills?
+%\item the course's ability to relate to current issues?
+%\item your teacher's contribution to your intellectual development?
+%\end{itemize}
+%
+%What is your overall level of satisfaction?
+%
+%For this set of questions, students have a choice between answering non-pertinent, insufficient, average, good or excellent.
+%
+%The other closed-ended questions that students answer are:
+%Compared with other courses this semester, I invested much more effort / as much effort / much less effort in this course. 
+%How many assessments did you have throughout the semester? 
+%0 to 2 / 3 to 4 / 5 to 6 / 7 or more
+%Were written assignments given back within the time deadlines?
+%Were oral presentation grades given back within the time deadlines? 
+%
+%Finally, the SET form ends with two closed-ended questions: 
+%What are the strong points of this course? 
+%What are the points that the teacher could improve?     
+ 
+We investigate 
+hypotheses relating to whether the overall satisfaction score SET primarily measures teaching
+effectiveness or something else, for instance, the gender of the instructor or students'
+grade expectations.
+The data also allow us to determine whether there are systematic differences
+in how students rate courses in different disciplines.
+
+We use nonparametric permutation tests rather than, for instance, logistic regression.
+Using nonparametric tests allows us to avoid counterfactual assumptions about
+generative models for the data, which regression-based methods (including
+ordinary linear regression, mixed effects models, logistic regression, etc.) and parametric
+methods such as $t$-tests and ANOVA, would require.
+The null hypotheses for our tests are simply that some 
+characteristic---e.g., instructor gender---amounts to an arbitrary label, and might as well
+have been assigned at random. 
+
+Our analysis is conducted at the level of courses, which matches how SET are
+used in practice by institutions: typically, student responses in a given course
+are averaged, and those averages are compared across instances of the course,
+across courses in a department, and across departments within a university.
+Some of the statistical issues in this reduction of SET to averages are 
+discussed by \citet{starkFreishtat14}
+
+
+%\section{Data}
+%\subsection{SciencesPo Curriculum}
+%First-year undergraduate students take six mandatory courses: in the fall,
+%introduction to microeconomics, political institutions, and history; 
+%and in the spring, introduction to macroeconomics, political 
+%science, and sociology.
+%Semesters last twelve weeks.
+%Each week, for each course, students attend two one-hour lectures by a tenured professor
+%(approximately 900 students per lecture) and two one-hour tutorial sections 
+%(between 10 and 24 students per section). 
+%Our SET data include students' individual evaluations of instructors 
+%in these sections for microeconomics, history, political institutions, and 
+%macroeconomics for the five academic years 2008--2013,
+%and for sociology and political science courses for the three academic years 2010--2013 
+%(these two were introduced in 2010).
+%
+%In the fall, students enroll in sections for the whole year, in cohorts called ``triads'':
+%students in a triad take the same sections of all three courses.
+%Students cannot pick and choose among individual instructors separately for
+%each course, only among triads of sections.
+%When possible according to students' and instructors' schedules, 
+%students stay in the same triad for the spring semester courses. 
+%Students are not allowed to change triads once courses have started in the fall. 
+%
+%The professor who delivers the lectures sets the content of the course and 
+%writes the final exam for the course as a whole. 
+%Section instructors devise their own syllabi;
+%the administration encourages pedagogical freedom, especially regarding 
+%the assignments that instructors use to assess student progress during each term. 
+%Section instructors must, however, follow the course program set by the professor. 
+%
+%One way to measure teaching effectiveness is to check how students perform on the final exam. 
+%The main lecturer for the course writes the final exam, which all students have to take to pass the class 
+%(the final exam grade counts as one third of the final grade for the course). 
+%All papers are pooled and graded anonymously by different instructors of the course, such that instructors wouldn't know 
+%if they were actually grading one of their students or other students. 
+%There are written exams for five out of the six 
+%courses, whereas the political institutions final exam is an oral exam. 
+%The instructor who gives the final exam in the 
+%political institutions course is a different instructor from the one that students had during the semester;
+%nonetheless, the grading is not anonymous and there is a large imbalance in the genders of the
+%instructors in political institutions---52 men and 12 women--so we omit political institutions courses
+%from our analysis.
+%If SET scores actually measure teaching effectiveness, then students who rate instructors 
+%higher would be likely to obtain higher final grades. 
+
+%Students have been completing their SETs online since 2008. 
+%The response rate is close to 100\% as it is mandatory for 
+%students to complete their SETs. 
+%They risk a number of sanctions if they do not complete their SETs, such as not being able 
+%to register in the following semester. Students complete their SETs 
+%before they take their final exams. The SET scores are
+%anonymous to the teachers, who only have access to them once all grades have been officially recorded on student transcripts, 
+%several weeks after final exams. Instructors and academic coordinators then have access to SETs. When scores are low, the 
+%academic coordinator discusses the SETs with the instructor.   
+
+\section{Tests}
+
+\section{Code}
+Github repo. \url{https://github.com/kellieotto/SET-and-Gender-Bias}
+
+\section{Discussion}
 Implicit in the use of of SET as a 
 Push back on the notion of ``teaching effectiveness.''
 There ought to be \emph{some} interaction between characteristics of the
@@ -84,195 +252,10 @@ measure some underlying platonic ``effectiveness'' intrinsic to the instructor.
 In particular,  a showing that individual students who give a particular instructor higher ratings
 get higher grades, does not point to ....\todo{fix me}
 
-Carrell \& West, Braga, Paccagnella, \& Pellizzari, 2011 on validity.
-Cite McNell, Boring on gender.
-Cite Lauer on comments.
-Cite defenders IDEA Benton \& Cashin in defense of SET.  
-Cite Spooren, Brockx, and Mortelmans 2013 for discussion on reliability and validity. 
-Apart for student performance on 
-the final exam, they cite an alternative to test for convergent validity 
-(correlation between measures of student learning 
-and SETs): using the class mean (as suggested by \cite{clayson09}). 
-
-How do these things fit together?
-
-Reliability and validity: the correlation argument.
-
-\section{Data}
-\subsection{SciencesPo Curriculum}
-First-year undergraduate students take six mandatory courses: in the fall,
-introduction to microeconomics, political institutions, and history; 
-and in the spring, introduction to macroeconomics, political 
-science, and sociology.
-Semesters last twelve weeks.
-Each week, for each course, students attend two one-hour lectures by a tenured professor
-(approximately 900 students per lecture) and two one-hour tutorial sections 
-(between 10 and 24 students per section). 
-Our SET data include students' individual evaluations of instructors 
-in these sections for microeconomics, history, political institutions, and 
-macroeconomics for the five academic years 2008--2013,
-and for sociology and political science courses for the three academic years 2010--2013 
-(these two were introduced in 2010).
-
-In the fall, students enroll in sections for the whole year, in cohorts called ``triads'':
-students in a triad take the same sections of all three courses.
-Students cannot pick and choose among individual instructors separately for
-each course, only among triads of sections.
-When possible according to students' and instructors' schedules, 
-students stay in the same triad for the spring semester courses. 
-Students are not allowed to change triads once courses have started in the fall. 
-
-The professor who delivers the lectures sets the content of the course and 
-writes the final exam for the course as a whole. 
-Section instructors devise their own syllabi;
-the administration encourages pedagogical freedom, especially regarding 
-the assignments that instructors use to assess student progress during each term. 
-Section instructors must, however, follow the course program set by the professor. 
-
-One way to measure teaching effectiveness is to check how students perform on the final exam. 
-The main lecturer for the course writes the final exam, which all students have to take to pass the class 
-(the final exam grade counts as one third of the final grade for the course). 
-All papers are pooled and graded anonymously by different instructors of the course, such that instructors wouldn't know 
-if they were actually grading one of their students or other students. 
-There are written exams for five out of the six 
-courses, whereas the political institutions final exam is an oral exam. 
-The instructor who gives the final exam in the 
-political institutions course is a different instructor from the one that students had during the semester;
-nonetheless, the grading is not anonymous and there is a large imbalance in the genders of the
-instructors in political institutions---52 men and 12 women--so we omit political institutions courses
-from our analysis.
-If SET scores actually measure teaching effectiveness, then students who rate instructors 
-higher would be likely to obtain higher final grades. 
-
-Students have been completing their SETs online since 2008. 
-The response rate is close to 100\% as it is mandatory for 
-students to complete their SETs. 
-They risk a number of sanctions if they do not complete their SETs, such as not being able 
-to register in the following semester. Students complete their SETs 
-before they take their final exams. The SET scores are
-anonymous to the teachers, who only have access to them once all grades have been officially recorded on student transcripts, 
-several weeks after final exams. Instructors and academic coordinators then have access to SETs. When scores are low, the 
-academic coordinator discusses the SETs with the instructor.   
-
-SETs include closed-ended and open-ended questions, but the question which attracts the most attention is the overall 
-satisfaction score, which is considered to be a summary of the scores on the other questions. The complete set of questions 
-that students fill-out is as follows:
-
-How do you evaluate:
-\begin{itemize}
-\item the preparation and the organization of classes?    
-\item the quality of the teaching materials?
-\item the clarity of the assessment criteria?
-\item the usefulness of feedback?
-\item your teacher's class leadership skills?
-\item your teacher's ability to encourage group work? 
-\item your teacher's availability and communication skills?
-\item the course's ability to relate to current issues?
-\item your teacher's contribution to your intellectual development?
-\end{itemize}
-
-What is your overall level of satisfaction?
-
-For this set of questions, students have a choice between answering non-pertinent, insufficient, average, good or excellent.
-
-The other closed-ended questions that students answer are:
-Compared with other courses this semester, I invested much more effort / as much effort / much less effort in this course. 
-How many assessments did you have throughout the semester? 
-0 to 2 / 3 to 4 / 5 to 6 / 7 or more
-Were written assignments given back within the time deadlines?
-Were oral presentation grades given back within the time deadlines? 
-
-Finally, the SET form ends with two closed-ended questions: 
-What are the strong points of this course? 
-What are the points that the teacher could improve?      
-
-
-We need to remove or run separate analyses for affirmative action (CEP) students. They tend to get lower overall 
-grades than the rest of the students, which may be a confounder.
-
-\section{Tests}
-
-\subsection{Per instructor}
-Pearson correlation between a summary statistic of effectiveness rating and a summary statistic
-of student performance, e.g., mean effectiveness (on various dimensions) and pass rate or mean
-final exam score.
-\todo{code is ready.  Do we do all metrics?}
-
-\subsubsection{Gender}
-Pearson correlation between a summary statistic of effectiveness rating and gender of instructor
-\todo{code is ready.  Do we do all metrics?}
-
-\subsection{Per student}
-For a single student, test correlation between course rating (overall, individual dimensions) and final grade/interim grade/professor gender.
-The null hypothesis is no correlation between rating and $x$.
-
-The test assumes independence among students within a triad of classes.
-First null: all $3! = 6$ orderings equally likely.
-If we don't reject that, no need to go further.
-
-We \emph{could} allow for unequal probability that students have preferences
-related, e.g., to grades, but keep the independence assumption.
-One candidate weighting scheme is:
-
-$$P(\text{teacher $i$ gets rated best}) = \frac{\%\text{ students given CAS }> t\text{ by teacher $i$}}{\sum_{j=1}^3(\%\text{ students given CAS }> t\text{ by teacher }j)}$$
- 
-Or more simply, 
-
-   $$P(\text{teacher $i$ gets rated best}) = 
-   \frac{\text{CAS from teacher $i$}}{\sum_{j=1}^3\text{ CAS from teacher }j}
-   $$
-   
-Aggregate the test statistics (Pearson correlation) across strata (different students) to get an overall $p$-value.  
-There are roughly $(3!)^{14}$ different possible permutations.
-We expect to reject the null for the interim grades and for gender; 
-do not expect to reject the null for final grades.
-
-
-\section{Inter-rater reliability}
-There is a distinction between teaching evaluations measuring something unique to each student 
-(value added for them, from a particular teacher) versus 
-measuring something intrinsic about the teacher.  
-The goal of teaching evaluations is to measure intrinsic teaching ability.  
-How well this is accomplished should be reflected in how similarly 
-students rate their 6 teachers.
-We can rank the 6 teachers for each student based on the ratings 
-they've assigned, then measure concordance between students in a triad by asking how often they ranked teacher $i$ with rank $j$.
-Other measures of value added on the instructor level include the fraction of 
-students who pass or the fraction of students with a final grade above x.  
-On this line of reasoning, we can do a permutation test for the 
-Pearson correlation between median rating from students in a class and the pass rate.
-Issues:
-We'll want to do these analyses separately for male and female students, 
-since there seems to be an interaction effect between student gender and teacher gender.
-We assume stationarity: students will be the same and perform the same from semester to semester.
-
-\subsection{Gender effects}
-Look at the interaction of grades and gender: 
-do students require higher grades from female teachers?
-Triplet effect for gender--pool triplets with same number of instructors of a given gender.
-
-Another potential idea for controlling is to match. 
-One approach is to use students as their own control, looking at a pair of classes in which they got the same grade, one taught by a male and the other by a female. 
-An approach that will be more powerful and easier to implement is matching/binning students on their final exam scores/overall class grades; within matches or bins, we can do a sort of sign test to compare the mean ratings of male and female instructors. 
-Within a bin, it's like a coin flip to decide whether the average male or 
-female rating is higher - test if the coin is fair or biased. 
-Preliminary results suggest that the effect is more pronounced when comparing excellent to good ratings.
-
-\subsection{Relative or absolute}
-Hypothesis: students are comparing teachers rather than making absolute judgments.
-
-
-%\subsection{Punishment}
-%Look at students who took two courses from the same instructor, and got a lower course grade than the interim grade in the first course.
-%Null hypothesis: equally likely to rate the instructor higher in the first and second course, 
-%independent of each other.
-%Alternative: more likely to ``punish'' the instructor with a bad rating in the second course.
-%
-
-\section{Code}
-Github repo. \url{https://github.com/kellieotto/SET-and-Gender-Bias}
-
-\section{Discussion}
+Mention defenses of SET?  The correlation between SET and performance isn't zero:
+it is positive, albeit not statistically significant.
+The larger point is that SET are better measures of student grade expectations and
+of instructor gender than they are of teaching effectiveness.
 
 \section{Conclusions}
 
