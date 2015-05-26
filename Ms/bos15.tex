@@ -4,6 +4,22 @@
 \usepackage{color}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{natbib}
+\usepackage{array}
+\usepackage{booktabs, multicol, multirow}
+\usepackage[nohead]{geometry}
+\usepackage[singlespacing]{setspace}
+\usepackage[bottom]{footmisc}
+\usepackage{floatrow}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{indentfirst}
+\usepackage{lscape}
+\usepackage{floatrow}
+\usepackage{epsfig}
+
+\floatsetup[table]{capposition=top}
+\floatsetup[figure]{capposition=top}
+
 
 \newcommand{\cD}{{\mathcal D}}
 \newcommand{\cF}{{\mathcal F}}
@@ -33,23 +49,23 @@ Hence, final exam scores are a proxy for the effectiveness of the section instru
 SET are mandatory.
 We study relationships among SET and the genders of students and
 instructors, topic, final exam scores, and students' grade expectations
-for 22,665 SETs of 372 instructors by 4,423 students over five years.
-Nonparametric permutation tests that aggregate within the 1,177 course sections show: 
+for 23,001 SETs of 379 instructors by 4,423 students over five years.
+Nonparametric permutation tests that aggregate within the 1,194 course sections show: 
 \begin{itemize}
    \item the association between SET and final 
             exam scores is negative but insignificant
-            ($P \approx 0.57$)
+            ($P \approx 0.70$)
    \item the association between SET and grade 
             expectations is positive and highly significant
             ($P \approx 0.00$)
    \item the association between instructor gender 
             and final exam scores is insignificant
-            (students of male instructors do worse, $P \approx 0.52$ overall, $0.76$ 
-            for male students, $0.68$ for female students)
+            (students of male instructors do worse, $P \approx 0.51$ overall, $0.76$ 
+            for male students, $0.65$ for female students)
    \item the association between instructor gender and SET is highly significant---because male
              students rate male instructors higher 
             (men get higher ratings, $P \approx 0.00$ overall, $0.00$ for male students,
-            $0.53$ for female students)
+            $0.49$ for female students)
 \end{itemize}
 These relationships vary by discipline.
 %Student responses fail simple tests of data quality.
@@ -70,23 +86,23 @@ SET are generally treated as a measure of teaching effectiveness, rather than, e
 Because ascertaining teaching effectiveness is so difficult---for students,
 faculty, and administrators alike---attempts to measure teaching effectiveness by
 surveying student opinion may suffer from conscious or unconscious biases. 
-Recent work by \citet{mcNellEtal14} has demonstrated that this is the case: 
+Recent work by \citet{MacNell2014} has demonstrated that this is the case: 
 their randomized, controlled experiment shows that, on average, students rate a given instructor
 lower on every aspect of teaching (including ``objective'' measures such as
 timeliness) when they think the instructor is female than when 
 they think the instructor is male.
 
 Randomized, controlled experiments also show that SET do not measure
-teaching effectiveness; the key studies are \citet{carrellWest10,bragaEtal11},
+teaching effectiveness; the key studies are \citet{Carrell2010a,Braga2014},
 which find that students confuse grades (or grade expectations) with long-term
 value.
 
 Here, we use a remarkable census of SET by first-year students at SciencesPo (Paris)
 collected between 2008 and 2013, 
 comprising 22,665 SETs by
-4,423 students of 1,177
-sections taught by 372 instructors.
-These data are discussed in detail by \citet{boring15}.
+4,423 students (57\% women) of 1,177
+sections and  taught by 372 instructors (33\% women)\footnote{The data include SET scores for the six first year mandatory courses, i.e. history, political institution, microeconomics, macroeconomics, political science and sociology}.
+These data are discussed in detail by \citet{Boring2015}.
 The key aspects of the data are these:
 \begin{itemize}
    \item All first year students take the same six courses, in history, macroeconomics, microeconomics, 
@@ -123,36 +139,8 @@ but the question that attracts the most attention is the overall
 score, which is considered to be a summary 
 of the scores on the other questions. 
 
-%How do you evaluate:
-%\begin{itemize}
-%\item the preparation and the organization of classes?    
-%\item the quality of the teaching materials?
-%\item the clarity of the assessment criteria?
-%\item the usefulness of feedback?
-%\item your teacher's class leadership skills?
-%\item your teacher's ability to encourage group work? 
-%\item your teacher's availability and communication skills?
-%\item the course's ability to relate to current issues?
-%\item your teacher's contribution to your intellectual development?
-%\end{itemize}
-%
-%What is your overall level of satisfaction?
-%
-%For this set of questions, students have a choice between answering non-pertinent, insufficient, average, good or excellent.
-%
-%The other closed-ended questions that students answer are:
-%Compared with other courses this semester, I invested much more effort / as much effort / much less effort in this course. 
-%How many assessments did you have throughout the semester? 
-%0 to 2 / 3 to 4 / 5 to 6 / 7 or more
-%Were written assignments given back within the time deadlines?
-%Were oral presentation grades given back within the time deadlines? 
-%
-%Finally, the SET form ends with two closed-ended questions: 
-%What are the strong points of this course? 
-%What are the points that the teacher could improve?     
- 
 We investigate 
-hypotheses relating to whether the overall satisfaction score SET primarily measures teaching
+hypotheses relating to whether the overall satisfaction score  primarily measures teaching
 effectiveness or something else, for instance, the gender of the instructor or students'
 grade expectations.
 The data also allow us to determine whether there are systematic differences
@@ -172,71 +160,248 @@ used in practice by institutions: typically, student responses in a given course
 are averaged, and those averages are compared across instances of the course,
 across courses in a department, and across departments within a university.
 Some of the statistical issues in this reduction of SET to averages are 
-discussed by \citet{starkFreishtat14}
+discussed by \citet{Stark2014}
 
+To further the analysis on the validity of SET scores as a measure of teaching effectiveness, we
+also use nonparametric permutation tests on the data from \citet{MacNell2014}. We find similar results: 
+SET scores primarily do not measure teaching effectiveness. Gender biases are a strong determinant of SET scores.
 
-%\section{Data}
-%\subsection{SciencesPo Curriculum}
-%First-year undergraduate students take six mandatory courses: in the fall,
-%introduction to microeconomics, political institutions, and history; 
-%and in the spring, introduction to macroeconomics, political 
-%science, and sociology.
-%Semesters last twelve weeks.
-%Each week, for each course, students attend two one-hour lectures by a tenured professor
-%(approximately 900 students per lecture) and two one-hour tutorial sections 
-%(between 10 and 24 students per section). 
-%Our SET data include students' individual evaluations of instructors 
-%in these sections for microeconomics, history, political institutions, and 
-%macroeconomics for the five academic years 2008--2013,
-%and for sociology and political science courses for the three academic years 2010--2013 
-%(these two were introduced in 2010).
-%
-%In the fall, students enroll in sections for the whole year, in cohorts called ``triads'':
-%students in a triad take the same sections of all three courses.
-%Students cannot pick and choose among individual instructors separately for
-%each course, only among triads of sections.
-%When possible according to students' and instructors' schedules, 
-%students stay in the same triad for the spring semester courses. 
-%Students are not allowed to change triads once courses have started in the fall. 
-%
-%The professor who delivers the lectures sets the content of the course and 
-%writes the final exam for the course as a whole. 
-%Section instructors devise their own syllabi;
-%the administration encourages pedagogical freedom, especially regarding 
-%the assignments that instructors use to assess student progress during each term. 
-%Section instructors must, however, follow the course program set by the professor. 
-%
-%One way to measure teaching effectiveness is to check how students perform on the final exam. 
-%The main lecturer for the course writes the final exam, which all students have to take to pass the class 
-%(the final exam grade counts as one third of the final grade for the course). 
-%All papers are pooled and graded anonymously by different instructors of the course, such that instructors wouldn't know 
-%if they were actually grading one of their students or other students. 
-%There are written exams for five out of the six 
-%courses, whereas the political institutions final exam is an oral exam. 
-%The instructor who gives the final exam in the 
-%political institutions course is a different instructor from the one that students had during the semester;
-%nonetheless, the grading is not anonymous and there is a large imbalance in the genders of the
-%instructors in political institutions---52 men and 12 women--so we omit political institutions courses
-%from our analysis.
-%If SET scores actually measure teaching effectiveness, then students who rate instructors 
-%higher would be likely to obtain higher final grades. 
-
-%Students have been completing their SETs online since 2008. 
-%The response rate is close to 100\% as it is mandatory for 
-%students to complete their SETs. 
-%They risk a number of sanctions if they do not complete their SETs, such as not being able 
-%to register in the following semester. Students complete their SETs 
-%before they take their final exams. The SET scores are
-%anonymous to the teachers, who only have access to them once all grades have been officially recorded on student transcripts, 
-%several weeks after final exams. Instructors and academic coordinators then have access to SETs. When scores are low, the 
-%academic coordinator discusses the SETs with the instructor.   
 
 \section{Tests}
+In this section, we provide the results of different nonparametric tests, whose purpose is to analyze the validity and reliability of SETs. 
+
+\subsection{Descriptive statistics}
+
+Our SET data include students' individual evaluations of instructors in the sections for microeconomics, history, political institutions, and macroeconomics for the five academic years 2008--2013, and for sociology and political science courses for the three academic years 2010--2013 
+(these two were introduced in 2010). Students have been completing their SETs online since 2008. The SET scores are
+anonymous to the teachers, who only have access to them once all grades have been officially recorded on student transcripts, several weeks after final exams. Instructors and academic coordinators then have access to SETs. When scores are low, the academic coordinator discusses the SETs with the instructor.   
+ 
+
+
+\begin{table}[htbp]
+  \centering
+  \footnotesize 
+  \caption{Descriptive statistics}
+    \begin{tabular}{lccc}
+    \toprule 
+                        & N. courses & N. instructors  & \% Female instructors  \\
+   \midrule
+  \textbf{Overall} &  \textbf{1,194} & \textbf{379}  &\textbf{33.8\%} \\
+    History    &               230 &      72          &   30.6\% \\
+    Political institutions  &  229 &      65          &   20.0\% \\    
+    Microeconomics   &         230 &      96          &   38.5\% \\
+    Macroeconomics   &         230 &      93          &   34.4\% \\
+    Political sciences &       137 &      49          &   32.7\% \\
+    Sociology   &              138 &      56          &   46.4\%    \\
+    \bottomrule
+    \end{tabular}%
+ \label{tab:description}%
+ 
+\textit{Note: the data for one political institutions section were excluded as this section had an experimental online format. The political science and sociology courses were originally not included in the triad system. The Administration nonetheless randomly assigned students randomly to different instruction sections.} 
+
+\end{table}%
+\normalsize
+
+43.1\% of students are men. 
+
+
+
+
+
+\subsection{The correlation between SET scores and student performance}
+
+Teaching effectiveness is multidimensional (cf. Marsh and Roche for reviews), and can therefore be difficult to measure. However, effective teaching should generate student learning, suggesting that effective instructors should lead their students to learn and understand more course material. Effective instructors should therefore cause their students to obtain higher grades, on average. 
+
+We first test whether SET scores are correlated with higher grades on the final exam, on average by section (Table \ref{tab:finalexam}). The results suggest that SET scores do not always measure actual teaching effectiveness. 
+
+\begin{table}[htbp]
+  \centering
+  \footnotesize 
+  \caption{Correlation between average SET scores and final exam grades, by course number}
+    \begin{tabular}{lcc}
+    \toprule 
+                        & $\rho$  & $p$-value  \\
+   \midrule
+    Overall &            -0.02 &       0.70  \\
+    History &             0.03 &       0.31  \\
+    Macroeconomics &      0.12 &       0.04  \\
+    Microeconomics &      0.13 &       0.03  \\
+    Political science & -0.01 &       0.53  \\
+    Sociology &           0.05 &       0.27  \\
+    \bottomrule
+    \end{tabular}%
+ \label{tab:finalexam}%
+ 
+  \textit{Note: one-sided $p$-values are reported.}
+\end{table}%
+\normalsize
+
+
+
+
+\subsection{The correlation between SET scores and gender}
+
+
+\begin{table}[htbp]
+  \centering
+  \footnotesize 
+  \caption{Correlation between final exam average and instructor gender, by course}
+    \begin{tabular}{lcc}
+    \toprule 
+                     & $\rho$  & $p$-value    \\
+   \midrule
+    Overall &            -0.02       & 0.51      \\
+    History &            -0.06       & 0.39      \\
+    Macroeconomics &      0.00       & 0.97      \\
+    Microeconomics &     -0.03       & 0.63      \\
+    Political sciences &  0.02       & 0.79      \\
+    Sociology &          -0.00       & 0.97      \\
+    \bottomrule
+    \end{tabular}%
+ \label{tab:instructor gender}%
+ 
+  \textit{Note: two-sided $p$-values are reported.}
+\end{table}%
+\normalsize
+
+\begin{table}[htbp]
+  \centering
+  \footnotesize 
+  \caption{Analyzing the correlation btw avg evaluation score and gender, by course}
+    \begin{tabular}{lcc}
+    \toprule 
+                          & $\rho$  & $p$-value   \\
+   \midrule
+    Overall &                 0.10       & 0.00     \\
+    History &                 0.12       & 0.07     \\
+    Political institutions &  0.11       & 0.10     \\
+    Macroeconomics &          0.11       & 0.08     \\
+    Microeconomics &          0.04       & 0.58     \\
+    Political sciences &      0.07       & 0.43      \\
+    Sociology &               0.10       & 0.26      \\
+    \bottomrule
+    \end{tabular}%
+ \label{tab:instructor gender}%
+  
+  \textit{Note: two-sided $p$-values are reported.}
+\end{table}%
+\normalsize
+
+
+
+\begin{table}[htbp]
+  \centering
+  \footnotesize 
+  \caption{Ratings and gender concordance}
+    \begin{tabular}{lcc}
+    \toprule 
+                          & $\rho$  & $p$-value   \\
+   \midrule
+     \multicolumn{3}{l}{\textit{Male students}} \\     
+      \quad  Overall &                 0.15       & 0.00       \\
+      \quad  History &                 0.18       & 0.00       \\
+      \quad  Political institutions &  0.12       & 0.07        \\
+      \quad  Macroeconomics &          0.14       & 0.04        \\
+      \quad  Microeconomics &          0.11       & 0.10        \\
+      \quad  Political sciences &      0.16       & 0.06       \\
+      \quad  Sociology &               0.12       & 0.15       \\
+   \midrule
+     \multicolumn{3}{l}{\textit{Female students}} \\     
+      \quad  Overall &                  0.02       & 0.49      \\
+      \quad  History &                 -0.04       & 0.54       \\
+      \quad  Political institutions &  -0.09       & 0.19       \\
+      \quad  Macroeconomics &          -0.08       & 0.21       \\
+      \quad  Microeconomics &           0.03       & 0.67       \\
+      \quad  Political sciences &       0.00       & 0.97       \\
+      \quad  Sociology &               -0.05       & 0.53       \\
+    \bottomrule
+    \end{tabular}%
+ \label{tab:gender concordance}%
+  
+  \textit{Note: two-sided $p$-values are reported.}
+\end{table}%
+\normalsize
+
+
+
+\begin{table}[htbp]
+  \centering
+  \footnotesize 
+  \caption{Student performance and gender concordance}
+    \begin{tabular}{lcc}
+    \toprule 
+                          & $\rho$  & $p$-value   \\
+   \midrule
+     \multicolumn{3}{l}{\textit{Male students}} \\     
+      \quad  Overall &                 -0.01       & 0.76      \\
+      \quad  History &                 -0.11       & 0.10        \\
+      \quad  Macroeconomics &           0.02       & 0.76        \\
+      \quad  Microeconomics &          -0.04       & 0.60        \\
+      \quad  Political sciences &       0.10       & 0.25        \\
+      \quad  Sociology &                0.02       & 0.85        \\
+   \midrule
+     \multicolumn{3}{l}{\textit{Female students}} \\     
+      \quad  Overall &                  0.01       & 0.65        \\
+      \quad  History &                  0.01       & 0.86        \\
+      \quad  Macroeconomics &          -0.00       & 0.97        \\
+      \quad  Microeconomics &           0.00       & 0.94      \\
+      \quad  Political sciences &       0.03       & 0.76        \\
+      \quad  Sociology &               -0.01       & 0.94        \\
+    \bottomrule
+    \end{tabular}%
+ \label{tab:gender concordance}%
+  
+  \textit{Note: two-sided $p$-values are reported.}
+\end{table}%
+\normalsize
+
+
+
+\subsection{The correlation between SET scores and grade expectations}
+\begin{table}[htbp]
+  \centering
+  \footnotesize 
+  \caption{Analyzing the correlation btw avg evaluation score and cont assessment, by course number}
+    \begin{tabular}{lcc}
+    \toprule 
+                          & $\rho$  & $p$-value  \\
+   \midrule
+    Overall &                 0.10       & 0.00   \\
+    History &                 0.32       & 0.00   \\
+    Political institutions &  0.06       & 0.19     \\
+    Macroeconomics &          0.22       & 0.00    \\
+    Microeconomics &          0.19       & 0.00     \\
+    Political sciences &      0.16       & 0.03     \\
+    Sociology &               0.27       & 0.00     \\
+    \bottomrule
+    \end{tabular}%
+ \label{tab:instructor gender}%
+  
+  \textit{Note: one-sided $p$-values are reported.}
+\end{table}%
+\normalsize
+
+
+
+Discuss correlation between continuous assessment and final exam grades? 
+
+
+
+
+
+
+
+
 
 \section{Code}
 Github repo. \url{https://github.com/kellieotto/SET-and-Gender-Bias}
 
 \section{Discussion}
+
+\subsection{Validity of SETs}
+
+Bias or preference? 
+BIas: cf. MacNell et al analysis
 Implicit in the use of of SET as a 
 Push back on the notion of ``teaching effectiveness.''
 There ought to be \emph{some} interaction between characteristics of the
@@ -253,6 +418,28 @@ it is positive, albeit not statistically significant.
 The larger point is that SET are better measures of student grade expectations and
 of instructor gender than they are of teaching effectiveness.
 
+These two examples also suggest that it is impossible to know what SETs are measuring at what time. 
+
+These 
+
+
+\subsection{Reliability of SETs}
+
+S
+
+\begin{figure}
+\begin{centering}
+  \caption{Proba}
+  \includegraphics[height=4in]{reliability}
+\end{centering}
+\end{figure}
+
+
+
+
 \section{Conclusions}
+
+\bibliographystyle{abbrvnat}
+\bibliography{SETs}
 
 \end{document}
