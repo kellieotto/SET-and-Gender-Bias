@@ -119,6 +119,19 @@
   Url                      = {http://pwq.sagepub.com/lookup/doi/10.1111/j.1471-6402.2006.00259.x}
 }
 
+@Article{Basow1987,
+  Title                    = {Student evaluations of college professors: Are female and male professors rated differently?},
+  Author                   = {Basow, Susan A. and Silberg, Nancy T.},
+  Journal                  = {Journal of Educational Psychology},
+  Year                     = {1987},
+  Number                   = {3},
+  Pages                    = {308-314},
+  Volume                   = {79},
+
+  Owner                    = {albor_000},
+  Timestamp                = {2015.05.31}
+}
+
 @Book{Becker1959,
   Title                    = {{The Economics of Discrimination}},
   Author                   = {Becker, Gary S.},
@@ -153,6 +166,32 @@
   File                     = {:C$\backslash$:/Users/Anne/Documents/ARTICLES/Student Eval of Teaching Papers/Econ Edu/SET lit/Becker et al\_How Departments of Economics Evaluate Teaching.pdf:pdf},
   ISSN                     = {0022-0485},
   Url                      = {http://www.tandfonline.com/doi/abs/10.1080/00220485.2012.686826}
+}
+
+@Article{Bennett1982,
+  Title                    = {Student perceptions of and expectations for male and female instructors: Evidence relating to the question of gender bias in teaching evaluation},
+  Author                   = {Bennett, S. K.},
+  Journal                  = {Journal of Educational Psychology},
+  Year                     = {1982},
+  Number                   = {2},
+  Pages                    = {170-179},
+  Volume                   = {74},
+
+  Owner                    = {albor_000},
+  Timestamp                = {2015.05.31}
+}
+
+@TechReport{Benton2012,
+  Title                    = {Student ratings of teaching: A summary of research and literature},
+  Author                   = {Benton, S. L. and Cashin, W. E.},
+  Institution              = {The IDEA Center},
+  Year                     = {2012},
+  Number                   = {50},
+  Type                     = {IDEA Paper},
+
+  Journal                  = {(IDEA Paper no. 50). Manhattan, KS: The IDEA Center.},
+  Owner                    = {albor_000},
+  Timestamp                = {2015.05.31}
 }
 
 @Article{Bettinger2005,
@@ -251,6 +290,33 @@
 
   Owner                    = {albor_000},
   Timestamp                = {2015.01.31}
+}
+
+@Article{Boring2015,
+  Title                    = {Gender Biases in Student Evaluations of Teachers},
+  Author                   = {Boring, Anne},
+  Journal                  = {OFCE Working Paper},
+  Year                     = {2015},
+
+  Month                    = {April},
+  Number                   = {13},
+  Pages                    = {1-68},
+
+  Owner                    = {albor_000},
+  Timestamp                = {2015.05.25}
+}
+
+@TechReport{Boring2015a,
+  Title                    = {Can students evaluate teaching quality objectively?},
+  Author                   = {Boring, Anne},
+  Institution              = {OFCE},
+  Year                     = {2015},
+  Type                     = {Le Blog de l'OFCE},
+
+  Journal                  = {Le Blog de l'OFCE},
+  Owner                    = {albor_000},
+  Timestamp                = {2015.05.31},
+  Url                      = {http://www.ofce.sciences-po.fr/blog/can-students-evaluate-teaching-quality-objectively/}
 }
 
 @Article{Sjoegren2007,
@@ -354,6 +420,19 @@
   Url                      = {http://www.jstor.org/stable/10.1086/653808}
 }
 
+@Article{Centra1977,
+  Title                    = {Student ratings of instruction and their relationship to student learning},
+  Author                   = {Centra, J. A.},
+  Journal                  = {American educational research journal},
+  Year                     = {1977},
+  Number                   = {1},
+  Pages                    = {17-24},
+  Volume                   = {14},
+
+  Owner                    = {albor_000},
+  Timestamp                = {2015.05.31}
+}
+
 @Article{Centra2000,
   Title                    = {{Is There Gender Bias in Student Evaluations of Teaching?}},
   Author                   = {Centra, John A. and Gaubatz, Noreen B.},
@@ -450,6 +529,19 @@
   File                     = {:C$\backslash$:/Users/Anne/Documents/ARTICLES/Student Eval of Teaching Papers/Econ Edu/SET lit/Denson\_Student evaluation of courses-what predicts satisfaction.pdf:pdf},
   ISSN                     = {0729-4360},
   Url                      = {http://www.tandfonline.com/doi/abs/10.1080/07294360903394466}
+}
+
+@Article{Elmore1974,
+  Title                    = {Effects of teacher sex and student sex on the evaluation of college instructors.},
+  Author                   = {Elmore, Patricia B. and LaPointe, Karen A.},
+  Journal                  = {Journal of Educational Psychology},
+  Year                     = {1974},
+  Number                   = {3},
+  Pages                    = {386-389},
+  Volume                   = {66},
+
+  Owner                    = {albor_000},
+  Timestamp                = {2015.05.31}
 }
 
 @Article{Emerson2012,
@@ -553,6 +645,19 @@
   Url                      = {http://doi.apa.org/getdoi.cfm?doi=10.1037/a0014695}
 }
 
+@Article{Galbraith2012,
+  Title                    = {Are Student Evaluations of Teaching Effectiveness Valid for Measuring Student Learning Outcomes in Business Related Classes? A Neural Network and Bayesian Analyses},
+  Author                   = {Galbraith, C. S. and Merrill, G. B. and Kline, D. M.},
+  Journal                  = {Research in Higher Education},
+  Year                     = {2012},
+  Number                   = {3},
+  Pages                    = {353-374},
+  Volume                   = {53},
+
+  Owner                    = {albor_000},
+  Timestamp                = {2015.05.31}
+}
+
 @Article{Kahn2004,
   Title                    = {Women in Economics: Moving up or Falling off the Academic Career Ladder?},
   Author                   = {Ginther, Donna K. and Kahn, Shulamit},
@@ -619,6 +724,19 @@
   Volume                   = {24},
 
   File                     = {:C$\backslash$:/Users/Anne/Documents/ARTICLES/Student Eval of Teaching Papers/Discrimination papers/Hamermesh-Parker\_Beauty in the Classroom.pdf:pdf}
+}
+
+@Article{Hill2010,
+  Title                    = {The Impact of Physical Classroom Environment on Student Satisfaction and Student Evaluation of Teaching in the University Environment},
+  Author                   = {Hill, Mary C. and Epps, Kathryn K.},
+  Journal                  = {Academy of Educational Leadership Journal},
+  Year                     = {2010},
+  Number                   = {4},
+  Pages                    = {65-79},
+  Volume                   = {14},
+
+  Owner                    = {albor_000},
+  Timestamp                = {2015.05.31}
 }
 
 @Article{Hoffmann2009,
@@ -700,6 +818,19 @@
 
   Owner                    = {albor_000},
   Timestamp                = {2015.01.30}
+}
+
+@Article{Kaschak1978,
+  Title                    = {Sex bias in student evaluations of college professors},
+  Author                   = {Kaschak, E.},
+  Journal                  = {Psychology of Women Quarterly},
+  Year                     = {1978},
+  Number                   = {3},
+  Pages                    = {235-243},
+  Volume                   = {2},
+
+  Owner                    = {albor_000},
+  Timestamp                = {2015.05.31}
 }
 
 @Article{Kelchtermans2013,
@@ -1084,6 +1215,19 @@
   Timestamp                = {2015.02.07}
 }
 
+@Article{Shevlin2000,
+  Title                    = {The validity of student evaluation of teaching in higher education: love me, love my lectures?},
+  Author                   = {Shevlin, M. and Banyard, P. and Davies, M. and Griffiths, M.},
+  Journal                  = {Assessment \& Evaluation in Higher Education},
+  Year                     = {2000},
+  Number                   = {4},
+  Pages                    = {397-405},
+  Volume                   = {25},
+
+  Owner                    = {albor_000},
+  Timestamp                = {2015.05.31}
+}
+
 @Article{Sinclair2000,
   Title                    = {{Motivated Stereotyping of Women: She's Fine if She Praised Me but Incompetent if She Criticized Me}},
   Author                   = {Sinclair, L. and Kunda, Z.},
@@ -1171,7 +1315,8 @@
   Year                     = {2014},
 
   Owner                    = {albor_000},
-  Timestamp                = {2015.03.06}
+  Timestamp                = {2015.03.06},
+  Url                      = {https://www.scienceopen.com/document/vid/42e6aae5-246b-4900-8015-dc99b467b6e4?10}
 }
 
 @Article{Suitor2001,
