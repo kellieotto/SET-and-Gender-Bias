@@ -174,8 +174,23 @@ The strong gender biases and the weak association between SET and student perfor
 imply that SET should not be relied upon as a measure of teaching effectiveness.
 In particular, reliance on SET for personnel decisions has disparate impact. 
 
-\section{Tests of \citet{Boring2015}}
+\section{Methods}
+Throughout the paper, we use permutation tests to compare the SET of male and female instructors.  Permutation tests suppose that we have a fixed number $N$ of individuals randomized into two groups, a treatment group of size $N_t$ and a control group of size $N_c = N-N_t$.  For each of the $N$ individuals, we measure a real-valued, quantitative response.  Each individual $i$ has two \textit{potential} outcomes: their response $t_i$ if they were assigned to the treatment group and their response $c_i$ if they were assigned to the control group.  We only observe one of these values for each individual, according to their treatment assignment.  In our analyses, the ``treatment'' assigned at random to each student is instructor gender.  \\
 
+The \textit{sharp} null hypothesis is that for all individuals, treatment has no effect: $t_i = c_i$ for all $i = 1,\dots,N$.  This is a strong hypothesis in the sense that if it is true, we know both potential outcomes for all individuals.  Namely, they would have the same response whether they were assigned to treatment or control.  We assume that there is no interference between individuals: the treatment assignment of individual $i$ does not affect the potential outcomes for individual $j$, for all pairs $i$ and $j$. \\
+
+Under this hypothesis, we can find the null distribution of any statistic computed from the responses of the two groups.  The differences between statistics computed from the responses of the two groups are due to which individuals are randomly assigned to treatment and control.  To generate this null distribution, we must generate all randomizations that were possible under the experimental design.  In \citet{Boring2015}, students sign up for triplets of classes without knowing the genders of their instructors, making it essentially random.  In \citet{MacNell2014}, students are assigned at random to one of four sections, making both their instructor's actual and reported gender a random treatment.  Section~\ref{boring:methods} describes the randomization tests and choices of test statistics for the data from \cite{Boring2015}.  Section~\ref{macnell:methods} describes these for the data from \cite{MacNell2014}. \\
+
+The p-value of the test is the probability of observing a test statistic as extreme or more extreme under the null hypothesis.  The p-value is obtained by comparing the observed test statistic to the null distribution.  In practice, it is often too computationally intensive to find the null distribution exactly by enumerating all possible treatment assignments and computing the corresponding test statistic.  Instead, we estimate the p-value by simulation.  Let $T^{obs}$ be the observed value of the test statistic.  Then, assign treatment to $N_t$ individuals at random by permuting the responses of all $N$ individuals and taking the first $N_t$ to be the treatment group.  Note that this is equivalent to generating a random treatment assignment vector of length $N$ containing $N_t$ ones and $N_c$ zeros.  For the complete randomization in \citet{Boring2015}, each possible permutation has probability $1/{ N \choose N_t}$.  Calculate the test statistic for the permuted data, say $T_1^*$.  Repeat this process of permuting the responses and calculating the test statistic $B-1$ more times.  We then have an approximate null distribution of $B$ test statistics $T_1^*, \dots, T_B^*$ generated under the null hypothesis.  For a one-sided test, where large values of $T$ are ``extreme'', the estimated p-value is the proportion of these test statistics that are as large or larger than the observed test statistic:
+$$\hat{p} = \frac{\{ \# T_i^* \geq T^{obs}\}}{B}$$
+\noindent For a two-sided test, if $T$ is centered at $0$ under the null, the estimated p-value is
+$$\hat{p} = \frac{\{ \# \lvert T_i^*\rvert \geq \lvert T^{obs}\rvert\}}{B}$$
+\noindent In our implementations, we use $B = 10,000$ repetitions.\\
+
+A benefit of the permutation approach to testing is that it is fully nonparametric.  We make no distributional assumptions about the data or outcomes.  Instead, the sharp null hypothesis fully specifies the distribution of any test statistic.  The correctness of the p-value of a permutation test does not rely on any model specification, estimated parameters, or asymptotics.  Another benefit of permutation tests is that we are free to choose any test statistic for our test; we can find the exact distribution of any test statistic, no matter how unusual, by simulation.  A suitable test statistic should provide power to reject the null hypothesis in favor of some alternative hypothesis of interest.   In this paper, most of our alternative hypotheses are that there is a difference in the potential outcomes for some individuals, for various outcomes (e.g. SET and student grades).  We use the difference in means between the two groups and the Spearman correlation as test statistics.  These statistics are well-powered to detect a difference between two groups when their averages are different.  Both of these test statistics have asymptotic distributions which only approximate the null distribution in finite samples. Our permutation approach allows us to find the null distributions of these statistics without relying on asymptotic results.
+
+
+\section{Tests of \citet{Boring2015}}
 \subsection{The data}
 
 We first use a remarkable census of SET by first-year students at a French university, collected between 2008 and 2013, 
@@ -249,6 +264,12 @@ Our SET database includes students' individual evaluations of instructors in the
 
 While 34\% of the 1,194 instruction sections are taught by women (Table \ref{tab:description}), there is some variation by discipline. The political institutions sections are the ones more often taught by men (only 20\% are taught by women). The sociology sections are almost equally divided between male and female instructors (46.4\% are taught by women). The microeconomics and macroeconomics sections have a larger number of different instructors, because of a higher turnover of instructors.   
 
+\subsection{Methods}\label{boring:methods}
+In this section, we carry out two sorts of analyses: tests for outcomes pertaining to instructors and tests pertaining to student behavior. In all our tests, we aggregate variables within instruction sections.  Since students sign up for courses in triads without knowledge of who their instructors will be, random assignment of instructors to courses seems like a fair proxy.  In these tests, we view each instruction section as an experimental unit, and the treatment each unit receives is their instructor assignment.  With this randomization, an instructor is equally likely to be assigned to any course and its associated average SET and grades.  Under the sharp null hypothesis, these variables do not change according to instructor, but are a property of the students in a course.  We do not randomize individual students, as this would ignore possible correlations within courses.  We use the Spearman correlation as the test statistic.  \\
+
+We first examine the outcomes for each instructor.  Course-level averages are relevant metrics that universities use to make hiring and tenure decisions.  These include the correlation between average SET and average final grade (Table~\ref{tab:finalexam}), average SET and average interim grade (Table~\ref{tab:instructor gender}),  average SET and instructor gender (Table~\ref{tab:instructorgender}), and average final grade and instructor gender (Table~\ref{tab:genderfinal}).  We perform these tests for all instructors in the data, assuming that they are exchangeable between departments, and also by department, allowing for the possibility that relationships between the variables of interest may vary by discipline. \\
+
+Then, we examine how students of different genders rate their instructors and perform in classes.  Stratifying by gender accounts for intrinsic differences between male and female students.  It also allows us to identify interactions between student and instructor gender: if relationships between instructor gender and another outcome vary according to student gender, then there is an interaction.  Here, we continue to aggregate student outcomes within courses, but now we take averages separately for the male and female students.  These tests include the correlation between SET and gender concordance (Table~\ref{tab:genderconcordance}) and the correlation between final exam grade and gender concordance (Table~\ref{tab:finalconcordance}).
 
 
 \subsection{Analysis of SET and grades}
@@ -447,7 +468,6 @@ Not only are SET scores correlated with gender, but they are also positively and
 
 
 
-
 To summarize our results, the fact that SET scores are largely uncorrelated with student achievement measured by students' final exam grades suggests that (male) students may be expressing a gender bias in favor of men when rating instructors. Furthermore, students appear to reward instructors who give them higher interim grades. We conclude that gender and expected grades create biases in SET scores, which are unrelated to effective teaching. 
 
 \section{Tests of \citet{MacNell2014}}
@@ -464,8 +484,27 @@ instructor to be male rated their instructor significantly higher than did the s
 two groups that perceived their assistant instructor to be female, regardless of the actual gender
 of the assistant instructor." 
 
-In this section, we once again use permutation tests, this time to analyze the data provided by \citet{MacNell2014}. The use of permutation tests is especially appropriate in this case, given the small sample size. We develop their analysis to test for the male student-instructor bias we discussed in the previous section. 
 
+\subsection{Methods}\label{macnell:methods}
+In this section, we once again use permutation tests, this time to analyze the data provided by \citet{MacNell2014}. The use of permutation tests is especially appropriate in this case, given the small sample of twenty male and twenty-three female students.
+
+Each student's potential responses are represented by numbers on a ticket:
+\begin{itemize}
+\item the rating that the student would assign to instructor 1 if instructor 1 is identified as male
+\item the rating that the student would assign to instructor 1 if instructor 1 is identified as female
+\item the rating that the student would assign to instructor 2 if instructor 2 is identified as male
+\item the rating that the student would assign to instructor 2 if instructor 2 is identified as female
+\end{itemize}
+
+The null hypothesis is that the first two numbers are equal and the second two numbers are equal, but the first two numbers might be different from the second two numbers. This corresponds to the hypothesis that students assigned to a given instructor would rate him or her the same, whether that instructor seemed to be male or female. For all students assigned to instructor 1, we know both of the first two numbers if the null hypothesis is true, but we know neither of the second two numbers. Similarly, if the null hypothesis is true, we know both of the second two numbers for all students assigned to instructor 2, but we know neither of the first two numbers for those students. \\
+
+Because of how the randomization was performed, all allocations of students to class sections that preserve the number of students in each section are equally likely.  In particular, all allocations that keep the same students assigned to each actual instructor the same are equally likely.  \\
+
+To test the difference in SET between male-identified and female-identified instructors, we use the difference in means between the two groups as our test statistics (Table~\ref{tab:macnell1}).  We look at the instructors' overall rating as well as their rating in each category.  To approximate the null distributions, we permute students who were assigned to instructor 1 and instructor 2 separately, then allocate students within those two groups to the male-identified and female-identified sections.  This stratified permutation method corresponds to testing the null described above. \\
+
+Additionally, we test the correlation between ratings and the concordance of student and reported instructor gender (Table~\ref{tab:macnell2}), correlation between ratings and concordance of student and actual instructor gender (Table~\ref{tab:macnell3}), and correlation between student grades and actual instructor gender(Table~\ref{tab:macnell4}).  For these tests, we use the Spearman correlation.  The tests involving reported instructor gender use the stratified permutations described above, where as the tests of actual instructor gender simply permute all students irrespective of their instructor's reported gender.
+
+\subsection{Analysis of SET and gender}
 We first analyze the correlation between student ratings and the reported instructor gender (Table \ref{tab:macnell1}). A positive result signifies that the perceived male instructor received higher evaluations. We find a weak positive correlation between the perceived gender and overall satisfaction ($p$-value 0.10). The statistical significance is stronger for several of the criteria which students rated: fairness ($p$-value 0.00), giving praise ($p$-value 0.01), caring and promptness (both criteria have $p$-values of 0.04), enthusiasm ($p$-value 0.05), communication ($p$-value 0.06), professionalism and respect (both criteria have $p$-values of 0.07), and being consistent and helpful (both criteria have $p$-values of 0.09). The criteria that were not statistically significant were feedback, responsiveness, being knowledgeable and clear. Our permutation tests confirm and extend the results found by \citet{MacNell2014}.
 
 
