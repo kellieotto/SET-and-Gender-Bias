@@ -47,9 +47,10 @@
 We examine whether student evaluations of teaching (SET) 
 primarily measure teaching effectiveness, using nonparametric tests applied
 to two datasets. 
-For the first dataset, 23,001 SET of 379 instructors by 4,423 students over five years in six different mandatory first year courses arising from a natural experiment at a French university, 
+For the first dataset, 23,001~SET of 379~instructors by 4,423~students over five years in six different mandatory first year courses arising from a natural experiment at a French university, 
 we study relationships among SET and the genders of students and instructors, final exam scores, and students' grade expectations. 
-For the second dataset, 43 SET for 4 sections of an online course arising from a randomized, controlled experiment at a US university, 
+For the second dataset, 43~SET for 4~sections of an online course arising from a randomized, controlled, 
+blind experiment at a US university, 
 we study the relationships among SET, the gender of students, and the actual and perceived genders of instructors. 
 The perceived gender of the instructor has a large, statistically significant effect 
 (in the randomized experiment)
@@ -65,7 +66,7 @@ Rather, they primarily measure measure student biases and expectations.
 There is strong statistical evidence that at the aggregate level, reliance on SET for 
 personnel decisions puts female instructors at a disadvantage.
 However, the extent and even the sign of gender biases vary by student and by subject, making it 
-difficult or impossible for universities to adjust for such biases. 
+difficult or impossible to adjust for the bias. 
 
 % Nonparametric permutation tests that aggregate within 1,194 course sections show: 
 %\begin{itemize}
@@ -104,10 +105,10 @@ difficult or impossible for universities to adjust for such biases.
 \end{quotation}
 
 \section{Background}
-Student evaluations of teaching (SET) are used widely as a measure of teaching quality,
-used in decisions about hiring, promoting, and firing instructors, especially non-tenured 
+Student evaluations of teaching (SET) are used widely 
+in decisions about hiring, promoting, and firing instructors, especially non-tenured 
 higher-education faculty. 
-Universities generally treat SET as a measure of teaching effectiveness, 
+Universities generally treat SET as a measure of teaching effectiveness or teaching quality, 
 rather than, e.g., a measure of student satisfaction.
 Because ascertaining teaching effectiveness is difficult---for students,
 faculty, and administrators alike---attempts to measure teaching effectiveness by
@@ -115,17 +116,17 @@ surveying student opinion may suffer from conscious or unconscious biases.
 In this article, we adopt the definition by \citet[p.17]{Centra2000}, according to whom 
 biases in SET correspond to a situation in which ``a teacher
 or course characteristic affects teacher evaluations, either positively or
-negatively, but is unrelated to criteria of good teaching, such as increasedstudent learning." 
+negatively, but is unrelated to criteria of good teaching, such as increased student learning." 
 
-Past research suggests that biases pervade SET. 
+Past research suggests that SET are biased, according to this definition. 
 For instance, randomized experiments show that students confuse grades (or grade expectations) with long-term value \citep{Carrell2010a,Braga2014}. 
 These experiments show that SET scores are not associated with student performance in follow-on courses, suggesting that SET do not measure actual teaching effectiveness nor effective learning. 
 Instead, students may---on the whole---``reward'' instructors who give higher grades for
 less effort. 
-Instructors who are easy graders or who teach to the test may therefore obtain high SET scores, 
-despite the fact that they encourage shallow learning.    
+Instructors who are easy graders or who ``teach to the test'' may therefore obtain higher SET scores
+than instructors who are more demanding.    
 
-Gender biases also affect how students rate instructors.
+Gender also affects how students rate instructors.
 Recent work by \citet{Boring2015} using data from a natural experiment at a French university
 suggests that gender biases and stereotypes influence SET. 
 Male first-year undergraduate students tend to give more \textit{excellent} scores to male instructors,
@@ -155,7 +156,7 @@ typically, student responses in a given course
 are averaged, and those averages are compared across instances of the course,
 across courses in a department, across instructors, and across departments.
 Statistical problems with this reduction to and reliance upon averages are 
-discussed by \citet{StarkFreishtat2014}
+discussed by \citet{StarkFreishtat2014}.
 
 Associations between objective measures of teaching effectiveness and SET are weak
 and not statistically significant.
@@ -175,26 +176,56 @@ imply that SET should not be relied upon as a measure of teaching effectiveness.
 In particular, reliance on SET for personnel decisions has disparate impact. 
 
 \section{Methods}
-Throughout the paper, we use permutation tests to compare the SET of male and female instructors.  Permutation tests suppose that we have a fixed number $N$ of individuals randomized into two groups, a treatment group of size $N_t$ and a control group of size $N_c = N-N_t$.  For each of the $N$ individuals, we measure a real-valued, quantitative response.  Each individual $i$ has two \textit{potential} outcomes: their response $t_i$ if they were assigned to the treatment group and their response $c_i$ if they were assigned to the control group.  We only observe one of these values for each individual, according to their treatment assignment.  In our analyses, the ``treatment'' assigned at random to each student is instructor gender.  \\
+Throughout the paper, we use permutation tests to compare SETs across instructors. 
+We  have a fixed number $N$ of students randomized into $k$ groups of sizes $N_1, \ldots, N_k$.
+Each group receives a different treatment.
+``Treatment'' is notional. For instance, the treatment might be the gender of the
+instructor in the class to which the student is assigned.
+For each individual $i$, we observe a real-valued response $R_i$.
+The response is random, but only because the treatment is assigned at random:
+the $k$ \emph{potential} values of $R_i$ are considered to have been fixed before the randomization.
+If individual $i$ is assigned to treatment $j$, then $R_i = r_{ij}$.
+An implicit assumption is \emph{non-interference}: student $i$'s response depends only on
+which treatment student $i$ receives, and not on which treatment other students receive.
+We observe only one potential outcome for individual $i$, depending on which treatment
+he or she receives.
 
-The \textit{sharp} null hypothesis is that for all individuals, treatment has no effect: $t_i = c_i$ for all $i = 1,\dots,N$.  This is a strong hypothesis in the sense that if it is true, we know both potential outcomes for all individuals.  Namely, they would have the same response whether they were assigned to treatment or control.  We assume that there is no interference between individuals: the treatment assignment of individual $i$ does not affect the potential outcomes for individual $j$, for all pairs $i$ and $j$. \\
+The \emph{strong} null hypothesis is that individual by individual, treatments have identical effects
+$r_{ij} = r_i$ for $j = 1, \ldots, k$, $i = 1, \ldots, N$, where $r_i$ is some fixed number that does
+not depend on which treatment individual $i$ receives.
+Under the strong null, we know all potential outcomes for every student once we have observed
+one potential outcome for each student, because each would have the same, fixed response $r_i$
+whether assigned to treatment or control.  
+In some cases, we will make a weaker assumption that some subsets of potential responses are equal.
+For instance, in analyzing the data from \citet{MacNell2014}, $k=4$ and the null hypothesis
+will be that $r_{i1} = r_{i2}$ and $r_{i3} = r_{i4}$, with no assertion that $r_{i1}=r_{i3}$.\\
 
-Under this hypothesis, we can find the null distribution of any statistic computed from the responses of the two groups.  The differences between statistics computed from the responses of the two groups are due to which individuals are randomly assigned to treatment and control.  To generate this null distribution, we must generate all randomizations that were possible under the experimental design.  In \citet{Boring2015}, students sign up for triplets of classes without knowing the genders of their instructors, making it essentially random.  In \citet{MacNell2014}, students are assigned at random to one of four sections, making both their instructor's actual and reported gender a random treatment.  Section~\ref{boring:methods} describes the randomization tests and choices of test statistics for the data from \cite{Boring2015}.  Section~\ref{macnell:methods} describes these for the data from \cite{MacNell2014}. \\
+In any event, the null hypothesis will allow us to find the null distribution of the test statistic computed 
+from the responses in the different treatment groups: 
+the randomness is entirely in the assignment of individuals to treatments.
 
-The p-value of the test is the probability of observing a test statistic as extreme or more extreme under the null hypothesis.  The p-value is obtained by comparing the observed test statistic to the null distribution.  In practice, it is often too computationally intensive to find the null distribution exactly by enumerating all possible treatment assignments and computing the corresponding test statistic.  Instead, we estimate the p-value by simulation.  Let $T^{obs}$ be the observed value of the test statistic.  Then, assign treatment to $N_t$ individuals at random by permuting the responses of all $N$ individuals and taking the first $N_t$ to be the treatment group.  Note that this is equivalent to generating a random treatment assignment vector of length $N$ containing $N_t$ ones and $N_c$ zeros.  For the complete randomization in \citet{Boring2015}, each possible permutation has probability $1/{ N \choose N_t}$.  Calculate the test statistic for the permuted data, say $T_1^*$.  Repeat this process of permuting the responses and calculating the test statistic $B-1$ more times.  We then have an approximate null distribution of $B$ test statistics $T_1^*, \dots, T_B^*$ generated under the null hypothesis.  For a one-sided test, where large values of $T$ are ``extreme'', the estimated p-value is the proportion of these test statistics that are as large or larger than the observed test statistic:
-$$\hat{p} = \frac{\{ \# T_i^* \geq T^{obs}\}}{B}$$
-\noindent For a two-sided test, if $T$ is centered at $0$ under the null, the estimated p-value is
-$$\hat{p} = \frac{\{ \# \lvert T_i^*\rvert \geq \lvert T^{obs}\rvert\}}{B}$$
-\noindent In our implementations, we use $B = 10,000$ repetitions.\\
+The $p$-value of the test is the probability of observing a test statistic as extreme or more extreme under the null hypothesis.  
+In practice, it is often hard to enumerate all possible treatment assignments to find the
+null distribution of the test statistic exactly.
+Instead, we estimate the $p$-value by simulation from a large random sample of assignments.  
+The uncertainty in the estimate of the probability can be accounted for rigorously.
 
-A benefit of the permutation approach to testing is that it is fully nonparametric.  We make no distributional assumptions about the data or outcomes.  Instead, the sharp null hypothesis fully specifies the distribution of any test statistic.  The correctness of the p-value of a permutation test does not rely on any model specification, estimated parameters, or asymptotics.  Another benefit of permutation tests is that we are free to choose any test statistic for our test; we can find the exact distribution of any test statistic, no matter how unusual, by simulation.  A suitable test statistic should provide power to reject the null hypothesis in favor of some alternative hypothesis of interest.   In this paper, most of our alternative hypotheses are that there is a difference in the potential outcomes for some individuals, for various outcomes (e.g. SET and student grades).  We use the difference in means between the two groups and the Spearman correlation as test statistics.  These statistics are well-powered to detect a difference between two groups when their averages are different.  Both of these test statistics have asymptotic distributions which only approximate the null distribution in finite samples. Our permutation approach allows us to find the null distributions of these statistics without relying on asymptotic results.
-
+The permutation approach is fully nonparametric.  
+We make no distributional assumptions about the data or outcomes.  
+Instead, the strong null hypothesis fully specifies the distribution of any test statistic.  
+The $p$-value does not rely on any model specification (other than the potential outcomes model), 
+estimated parameters, or asymptotics.  
+Moreover, we can estimate the null distribution of any test statistic, no matter how complicated, by simulation.  
+In this paper, most of our alternative hypotheses are that there is a difference in the potential outcomes for some individuals, for various outcomes (e.g. SET and student grades). 
+Because SET are most often reported as class averages or instructor averages, 
+we use differences in means and correlations between means and covariates (such as instructor
+gender) as the test statistic. 
 
 \section{Tests of \citet{Boring2015}}
 \subsection{The data}
 
-We first use a remarkable census of SET by first-year students at a French university, collected between 2008 and 2013, 
-comprising 23,001 SET by
+We first use a remarkable census of SET by first-year students at a French university, 
+collected between 2008 and 2013, comprising 23,001 SET by
 4,423 students (57\% women) of 1,177
 sections, taught by 379 instructors (34\% women). These data are discussed in detail by \citet{Boring2015}.
 The key aspects of the data are as follows:
