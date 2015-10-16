@@ -25,6 +25,9 @@
 \floatsetup[figure]{capposition=top}
 
 
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+
 \newcommand{\cD}{{\mathcal D}}
 \newcommand{\cF}{{\mathcal F}}
 \newcommand{\todo}[1]{{\color{red}{TO DO: \sc #1}}}
@@ -47,25 +50,25 @@
 We examine whether student evaluations of teaching (SET) 
 primarily measure teaching effectiveness, using nonparametric tests applied
 to two datasets. 
-For the first dataset, 23,001~SET of 379~instructors by 4,423~students over five years in six different mandatory first year courses arising from a natural experiment at a French university, 
-we study relationships among SET and the genders of students and instructors, final exam scores, and students' grade expectations. 
-For the second dataset, 43~SET for 4~sections of an online course arising from a randomized, controlled, 
+For the first dataset, 23,001~SET of 379~instructors by 4,423~students in six 
+mandatory first year courses in a five-year natural experiment at a French university, 
+we study relationships among SET and the genders of students and instructors, 
+grade expectations, and grades.
+For the second dataset, 43~SET for 4~sections of an online course in a randomized, controlled, 
 blind experiment at a US university, 
-we study the relationships among SET, the gender of students, and the actual and perceived genders of instructors. 
-The perceived gender of the instructor has a large, statistically significant effect 
-(in the randomized experiment)
-or association (in the natural experiment) on 
-SET: instructors perceived to be female receive lower SET scores.
-There are also statistically significant associations between SET and expected grades 
-(higher expected grades are associated with higher SET scores). 
+we study the relationships among SET, the genders of students, 
+the actual and perceived genders of instructors, and grades.
+Instructors perceived to be female receive lower SET scores by an amount that is large and
+statistically significant.
+There are also statistically significant positive associations between SET and expected grades. 
 However, SET are not significantly associated with an objective measure of teaching effectiveness,
-student performance on anonymously graded standardized final exams. 
+student performance on anonymously graded finals. 
 This suggests that SET do not primarily measure instructors' 
 effects on student learning. 
-Rather, they primarily measure measure student biases and expectations.
-There is strong statistical evidence that at the aggregate level, reliance on SET for 
-personnel decisions puts female instructors at a disadvantage.
-However, the extent and even the sign of gender biases vary by student and by subject, making it 
+Rather, they primarily measure student biases and expectations.
+There is strong statistical evidence that at the aggregate level, relying on SET for 
+personnel decisions disadvantages female instructors.
+The biases vary by student and by subject, making it 
 difficult or impossible to adjust for the bias. 
 
 % Nonparametric permutation tests that aggregate within 1,194 course sections show: 
@@ -110,64 +113,65 @@ in decisions about hiring, promoting, and firing instructors, especially non-ten
 higher-education faculty. 
 Universities generally treat SET as a measure of teaching effectiveness or teaching quality, 
 rather than, e.g., a measure of student satisfaction.
-Because ascertaining teaching effectiveness is difficult---for students,
-faculty, and administrators alike---attempts to measure teaching effectiveness by
-surveying student opinion may suffer from conscious or unconscious biases. 
+Measuring teaching effectiveness is difficult---for students,
+faculty, and administrators alike.
+Evaluation surveys may measure something other than teaching effectiveness:
+they may be consciously or unconsciously biased. 
 In this article, we adopt the definition by \citet[p.17]{Centra2000}, according to whom 
-biases in SET correspond to a situation in which ``a teacher
+biases in SET occur when ``a teacher
 or course characteristic affects teacher evaluations, either positively or
 negatively, but is unrelated to criteria of good teaching, such as increased student learning." 
 
-Past research suggests that SET are biased, according to this definition. 
-For instance, randomized experiments show that students confuse grades (or grade expectations) with long-term value \citep{Carrell2010a,Braga2014}. 
-These experiments show that SET scores are not associated with student performance in follow-on courses, suggesting that SET do not measure actual teaching effectiveness nor effective learning. 
-Instead, students may---on the whole---``reward'' instructors who give higher grades for
-less effort. 
-Instructors who are easy graders or who ``teach to the test'' may therefore obtain higher SET scores
-than instructors who are more demanding.    
+Randomized experiments show that students confuse grades 
+(or grade expectations) with long-term value \citep{Carrell2010a,Braga2014}. 
+These experiments found that SET scores are not associated with 
+student performance in follow-on courses, i.e., with effectiveness. 
+Instead, high SET appear---on the whole---to be a reward students give 
+instructors who are easy graders or who ``teach to the test.''  
 
 Gender also affects how students rate instructors.
-Recent work by \citet{Boring2015} using data from a natural experiment at a French university
-suggests that gender biases and stereotypes influence SET. 
+\citet{Boring2015} finds that SET are affected by gender biases and stereotypes. 
 Male first-year undergraduate students tend to give more \textit{excellent} scores to male instructors,
-even though an objective measure of student performance indicates that there is no difference between
-the learning of students of male and of female instructors.
-Recent work by \citet{MacNell2014} involving a randomized, controlled experiment shows that, on average, students rate the very same instructor lower on every aspect of teaching,
+even though there is no difference between
+the academic performance of students of male and of female instructors.
+Recent experimental work by \citet{MacNell2014} finds that
+students rate the very same instructor lower on every aspect of teaching,
 including ``objective'' measures such as timeliness, when they think the instructor is 
 female than when they think the instructor is male. 
 
 Here, we use the datasets of \citet{Boring2015} and \citet{MacNell2014} to investigate 
-hypotheses relating to whether the SET scores, including the overall satisfaction score, 
-primarily measure teaching effectiveness or student biases. 
+whether SET scores, including the overall satisfaction score, 
+primarily measure teaching effectiveness or something else---biases.
 The two main sources of bias we study are students' grade expectations and the gender of the 
 instructor. 
-We also investigate systematic differences by discipline using data from \citet{Boring2015}.
+We also investigate differences in bias by discipline using data from \citet{Boring2015}.
 
-We use nonparametric permutation tests, which allow us to avoid counterfactual assumptions about
+We use permutation tests that allow us to avoid 
+contrived, counterfactual assumptions about
 generative models for the data, which regression-based methods (including
 ordinary linear regression, mixed effects models, logistic regression, etc.) and parametric
-methods such as $t$-tests and ANOVA, require.
-The null hypotheses for our tests are simply that some 
+methods such as $t$-tests and ANOVA generally require.
+The null hypotheses for our tests are that some 
 characteristic---e.g., instructor gender---amounts to an arbitrary label and might as well
 have been assigned at random. 
 
-Our analysis is conducted at the level of courses, matching how institutions use SET: 
+We work with course-level summaries, matching how institutions use SET: 
 typically, student responses in a given course
 are averaged, and those averages are compared across instances of the course,
 across courses in a department, across instructors, and across departments.
 Statistical problems with this reduction to and reliance upon averages are 
 discussed by \citet{StarkFreishtat2014}.
 
-Associations between objective measures of teaching effectiveness and SET are weak
+We find that associations between objective measures of teaching effectiveness and SET are weak
 and not statistically significant.
 Gender biases are stronger determinants of SET than teaching effectiveness is.
 Instructors perceived to be male receive significantly higher SET scores on average:
-in the French data, male students tend to rate male instructors higher
+in the French data, \emph{male} students tend to rate male instructors higher
 than they rate female instructors, with no difference in ratings by female students;
 in contrast, in the US data, \emph{female} students tend to rate (perceived) male instructors 
-higher than they rate female instructors, with no difference in ratings by male students. 
-The French data also show that biases vary by course topic. 
-The French data also that students conflate grade expectations with teaching effectiveness.
+higher than they rate (perceived) female instructors, with no difference in ratings by male students. 
+The French data also show that gender biases vary by course topic, and 
+that students conflate grade expectations with teaching effectiveness.
 We therefore conclude that SET primarily do not measure teaching effectiveness; that
 they have strong biases unrelated to actual teaching effectiveness; that the biases are not uniform;
 and that it is impossible to adjust for these biases. 
@@ -175,132 +179,282 @@ The strong gender biases and the weak association between SET and student perfor
 imply that SET should not be relied upon as a measure of teaching effectiveness.
 In particular, reliance on SET for personnel decisions has disparate impact. 
 
-\section{Methods}
-Throughout the paper, we use permutation tests to compare SETs across instructors. 
-We  have a fixed number $N$ of students randomized into $k$ groups of sizes $N_1, \ldots, N_k$.
+\section{Methods and Notation}
+We use the Neyman ``potential outcomes'' framework.
+A fixed number $N$ of individuals---typically, students---is randomized (either truly, or
+as if by Nature) into 
+$k \ge 2$ groups of sizes $N_1, \ldots, N_k$.
 Each group receives a different treatment.
-``Treatment'' is notional. For instance, the treatment might be the gender of the
-instructor in the class to which the student is assigned.
-For each individual $i$, we observe a real-valued response $R_i$.
-The response is random, but only because the treatment is assigned at random:
-the $k$ \emph{potential} values of $R_i$ are considered to have been fixed before the randomization.
+``Treatment'' is notional. 
+For instance, the treatment might be the gender of the
+instructor in the class the student takes.
+
+For each individual $i$, we observe a numerical response $R_i$.
 If individual $i$ is assigned to treatment $j$, then $R_i = r_{ij}$.
-An implicit assumption is \emph{non-interference}: student $i$'s response depends only on
-which treatment student $i$ receives, and not on which treatment other students receive.
-We observe only one potential outcome for individual $i$, depending on which treatment
-he or she receives.
+The numbers $\{r_{ij}\}$ are considered to have been fixed before the experiment.
+Implicit in this notation is the \emph{non-interference} assumption that
+each individual's response depends only on which treatment that individual receives, 
+and not on the treatments other individuals receive.
+We observe only one potential outcome for individual $i$, 
+depending on which treatment she or he receives.
+The responses $\{R_i\}_{i=1}^N$ are random, but only because individuals are 
+assigned to treatments at random.
 
-The \emph{strong} null hypothesis is that individual by individual, treatments have identical effects
-$r_{ij} = r_i$ for $j = 1, \ldots, k$, $i = 1, \ldots, N$, where $r_i$ is some fixed number that does
-not depend on which treatment individual $i$ receives.
-Under the strong null, we know all potential outcomes for every student once we have observed
-one potential outcome for each student, because each would have the same, fixed response $r_i$
-whether assigned to treatment or control.  
-In some cases, we will make a weaker assumption that some subsets of potential responses are equal.
-For instance, in analyzing the data from \citet{MacNell2014}, $k=4$ and the null hypothesis
-will be that $r_{i1} = r_{i2}$ and $r_{i3} = r_{i4}$, with no assertion that $r_{i1}=r_{i3}$.\\
+Our approach relies on the distribution induced by the random
+assignment, with no assumption about the distribution of SET or other variables, 
+no parameter estimates, and no model other than the potential outcomes 
+framework with non-interference.
 
-In any event, the null hypothesis will allow us to find the null distribution of the test statistic computed 
-from the responses in the different treatment groups: 
-the randomness is entirely in the assignment of individuals to treatments.
+To illustrate the approach in detail, consider the experiment conducted by \citet{MacNell2014},
+in which $N$ students were assigned at random to four sections of an online course
+in which the students neither saw nor heard the section instructor: interaction was online, with no
+audio or video.
+Two sections were taught by a female instructor and two by a male instructor.
+In one section taught by each instructor, that instructor used a female name; in the other, 
+that instructor used a male name.
+Students were given comparable biographies for the instructors in all four sections.
+Assignments were returned at the same time in all sections.
+We observe the SET each student gave the instructor of his or her section;
+we do not know what SET the student would have given that instructor had that instructor
+used a name with a different gender, nor what SETs the student would have given the other instructor.
 
-The $p$-value of the test is the probability of observing a test statistic as extreme or more extreme under the null hypothesis.  
-In practice, it is often hard to enumerate all possible treatment assignments to find the
-null distribution of the test statistic exactly.
-Instead, we estimate the $p$-value by simulation from a large random sample of assignments.  
-The uncertainty in the estimate of the probability can be accounted for rigorously.
+In the notation above, each student $i$ could be assigned to any of $k=4$ treatment conditions:
+either of two instructors, each identified as either male or female.
+Let $r_{i1}$ and $r_{i2}$ be the ratings student $i$ would give instructor A when instructor 
+A is identified as male and as female, respectively, and let 
+$r_{i3}$ and $r_{i4}$ the ratings student $i$ would give instructor B when that instructor
+is identified as male and as female, respectively.
+The assignment was made at random: each of the
+\beq
+ {{N}\choose{N_1 N_2 N_3 N_4}} = \frac{N!}{N_1! N_2! N_3! N_4!}
+\eeq
+possible assignments of $N_1$ students to instructor A identified as male,
+$N_2$ student to instructor A identified as female, etc., was equally likely.
 
-The permutation approach is fully nonparametric.  
-We make no distributional assumptions about the data or outcomes.  
-Instead, the strong null hypothesis fully specifies the distribution of any test statistic.  
-The $p$-value does not rely on any model specification (other than the potential outcomes model), 
-estimated parameters, or asymptotics.  
-Moreover, we can estimate the null distribution of any test statistic, no matter how complicated, by simulation.  
-In this paper, most of our alternative hypotheses are that there is a difference in the potential outcomes for some individuals, for various outcomes (e.g. SET and student grades). 
+In general, the null hypotheses we test assert that for each $i$, some subset of
+$\{r_{ij}\}$ are  equal.
+For assessing whether the identified gender of the instructor affects SET,
+the null hypothesis is that for each $i$,
+$r_{i1} = r_{i2}$ (the rating the $i$th student would give instructor A is the same,
+whether instructor A is identified as male or female), 
+and $r_{i3} = r_{i4}$ (the rating the $i$th student would give instructor B is
+the same, whether instructor B is identified as male or female).
+Different students might give different ratings
+under the same treatment condition
+(the null does not assert that $r_{ij} = r_{\ell j}$ for $i \ne \ell$), and
+the $i$th student might 
+give different ratings to instructor A and instructor B
+(the null does not assert that $r_{i1} = r_{i3}$).
+The null hypothesis makes no assertion about the (population) distributions of 
+$\{r_{i1}\}$ and $\{r_{i3}\}$.
+
+For student $i$, we observe exactly one of $\{r_{i1}, r_{i2}, r_{i3}, r_{i4}\}$.
+If we observe $r_{i1}$, then---if the null hypothesis is true---we also know what $r_{i2}$ is,
+and vice versa, but we do not know anything about $r_{i3}$ or $r_{i4}$.
+Similarly, if we observe $r_{i3}$ or $r_{i4}$, we know the value of the other, if the
+null is true, but we do not know anything about $r_{i1}$ or $r_{i2}$.
+
+Consider the average of the SET for the $N_2 + N_4$ students
+assigned to sections taught by an apparently female instructor, minus the 
+average of the SET for the $N_1 + N_3$ students
+assigned to sections taught by an apparently male instructor; then
+take the absolute value of that difference in averages.
+This is the test statistic used by \cite{MacNell2014}.
+If there were no difference in how students rated instructors based on the perceived
+gender of the instructor, we would expect this absolute difference of averages to be close to
+zero.\footnote{%
+We would expect it to be a least a little different from zero both because of the luck of the draw
+in assigning students to sections and because students might rate the two instructors
+differently, regardless of the instructor's perceived gender, and the groups are not all the same size.
+}
+How ``surprising'' is the observed absolute difference in averages?
+
+Consider the
+\beq
+{{N_1 + N_2} \choose {N_1}} \times {{N_3+N_4} \choose {N_3}}
+\eeq
+assignments that keep the same $N_1 + N_2$ students in instructor A's
+sections (but might change which of those sections a student is in) 
+and the same $N_3 + N_4$ students in instructor B's sections.
+For each of those assignments, we know what $\{R_i\}_{i=1}^N$ would
+have been if the null hypothesis is true, namely, each would be exactly the same
+as its observed value, since those
+assignments keep students in sections taught by the same instructor.
+Hence, we can calculate the value that the test statistic would have had for each
+of those assignments.
+
+Because all ${N}\choose{N_1 N_2 N_3 N_4}$ possible assignments of students
+to sections are equally likely, these assignments are also equally likely.
+The fraction of those assignments that produce a value of the test statistic that
+is at least as large (in absolute value) as the observed value of the test statistic
+is the $p$-value of the null hypothesis that \todo{fix}.
+
+\todo{conditioning: argument.}
+
+\todo{one more complication: have to assume under the null that the same students
+would not have submitted SET, regardless of which section they were in (if assigned to the
+same instructor)}
+
+
+
+Most of the alternative hypotheses we consider involve
+differences in the potential outcomes for some individuals, for various treatments 
+(e.g., that SETs differ by instructor gender or by exam grade). 
 Because SET are most often reported as class averages or instructor averages, 
-we use differences in means and correlations between means and covariates (such as instructor
-gender) as the test statistic. 
+we use differences in means between groups and 
+correlations between means of SET and other covariates as the test statistics:
+we evaluate SET as they typically would be used.
+
+
+In some cases, we will test a weaker null hypothesis that particular subsets of each individual's
+potential responses are equal.
+
+
+We estimate $p$-values by simulation, but construct exact confidence bounds for the true
+$p$-values based on those estimates.
+Code for all our analyses is provided at \url{http://www.github.com/????} \todo{Fix!}
+The \cite{MacNell2014} data are available online at \todo{Fix!}.
+The \cite{Boring2015} data are not public, owing to French restrictions on human subjects data.
+
+The $p$-value of the test is the probability 
+of observing a test statistic ``as 
+extreme or more extreme'' as the actual observed value of the test statistic,
+if the null hypothesis is true.
+In principle, this can be calculated exactly by enumerating all possible
+assignments of individuals to treatments; but
+in practice, complete enumeration may be prohibitively time consuming. 
+Instead, we estimate the $p$-value by simulating a large random sample of assignments.  
+The uncertainty in the resulting estimate of the $p$-value is accounted for rigorously through
+confidence bounds for the $p$-value (found by inverting exact Binomial tests).
+
 
 \section{Tests of \citet{Boring2015}}
 \subsection{The data}
 
-We first use a remarkable census of SET by first-year students at a French university, 
-collected between 2008 and 2013, comprising 23,001 SET by
-4,423 students (57\% women) of 1,177
-sections, taught by 379 instructors (34\% women). These data are discussed in detail by \citet{Boring2015}.
-The key aspects of the data are as follows:
+We first study a census of SET from first-year students at a French university.
+The data, collected between 2008 and 2013, comprise 23,001 SET from
+4,423 students (57\% women) in 1,177
+sections, taught by 379 instructors (34\% women). 
+\citet{Boring2015} describes the data in detail; key features include:
 \begin{itemize}
-   \item All first year students take the same six mandatory courses, in: history, macroeconomics, microeconomics, 
-            political institutions, political science and sociology.
-            Each course has one main professor,
-            who delivers the lectures (to groups of approximately 900 students). All main professors are men.
+   \item All first-year students take the same six mandatory courses: 
+            History, Macroeconomics, Microeconomics, 
+            Political Institutions, Political Science and Sociology.
+            Each course has one professor
+            who delivers the lectures (to groups of approximately 900 students). 
+            All those professors are male.
             Courses have many sections of 10--24 students. 
-            Those sections are taught by different instructors.
+            Those sections are taught by a variety of instructors, male and female.
             The instructors have considerable pedagogical freedom.
     
    \item Students enroll in ``triads'' of sections of these courses. 
             The enrollment process
-            does not allow students the freedom to select individual instructors.
-            The assignment of students to sections is ``as if'' at random.
+            does not allow students to select individual instructors.
+            The assignment of students to sections is ``as if'' at random,
+            forming a \emph{natural experiment}.
             
-   \item Section instructors provide interim grades during the semester. 
-            Students know what their interim grades are when they complete their SET, so interim grades are a 
-            good measure of grade expectations.
+   \item Section instructors assign interim grades during the semester.
+            Interim grades are known to the students before they submit SET.
+            Interim grades hence measure student grade expectations.
             
-   \item Final exams are created by the main professor, and all students in a given course take the
-            same final. Final exams are graded anonymously in all disciplines except political
-            institutions (which we omit from analyses involving final exam scores).
-            This feature makes performance on the final exam a reasonable measure of the value the
+   \item Final exams are created by the professor, not the instructors.
+            All students in a given course take the same final, regardless of which section they
+            are enrolled in.
+            Final exams are graded anonymously (in every discipline but Political
+            Institutions, which we therefor omit from analyses involving final exam scores).
+            Performance on the final exam is therefore a measure of the value the
             section instructor adds: students of more effective instructors should do better on
             the final exam, on average.
     
-   \item SET are mandatory: the response rates are nearly perfect.
+   \item SET are mandatory: the response rates are nearly 100\%.
    
 \end{itemize}
 
 SET include closed-ended and open-ended questions, 
-but the question that attracts the most attention is the overall
-score, which is considered to be a summary 
-of the scores on the other questions. 
+but the item that attracts the most attention is the \emph{overall score}, 
+which is treated as a summary of the other items.
 
-
-Our SET database includes students' individual evaluations of instructors in the sections for microeconomics, history, political institutions, and macroeconomics for the five academic years 2008--2013, and for sociology and political science courses for the three academic years 2010--2013 
-(these two courses were introduced in 2010). The SET scores are anonymous to the instructors, who only have access to them once all grades have been officially recorded on student transcripts, several weeks after final exams. Instructors and academic coordinators then have access to the SET. When scores are low, the academic coordinator discusses the SET with the instructor and decides to maintain the instructor for the next semester or not.   
- 
-
+The SET data include students' individual evaluations of section
+instructors in microeconomics, history, political institutions, and 
+macroeconomics for the five academic years 2008--2013, and for 
+sociology and political science for the three academic years 2010--2013 
+(these two subjects were introduced in 2010). 
+The SET are anonymous to the instructors, who have access to them only after 
+all grades have been officially recorded.  
 
 \begin{table}[htbp]
   \centering
   \footnotesize 
-  \caption{Descriptive statistics of instruction sections}
+  \caption{Descriptive statistics of sections}
     \begin{tabular}{lccc}
     \toprule 
-                        & N. courses & N. instructors  & \% Female instructors  \\
+                        & \# courses & \# instructors  & \% Female instructors  \\
    \midrule
   \textbf{Overall} &  \textbf{1,194} & \textbf{379}  &\textbf{33.8\%} \\
     History    &               230 &      72          &   30.6\% \\
-    Political institutions  &  229 &      65          &   20.0\% \\    
+    Political Institutions  &  229 &      65          &   20.0\% \\    
     Microeconomics   &         230 &      96          &   38.5\% \\
     Macroeconomics   &         230 &      93          &   34.4\% \\
-    Political science &       137 &      49          &   32.7\% \\
+    Political Science &       137 &      49          &   32.7\% \\
     Sociology   &              138 &      56          &   46.4\%    \\
     \bottomrule
     \end{tabular}%
  \label{tab:description}%
  
-\textit{Note: the data for one political institutions section were excluded as this section had an experimental online format. The political science and sociology courses were originally not included in the triad system, and students were randomly assigned by the administration to different sections.} 
+\textit{Data for one section of Political Institutions were excluded because that 
+section had an experimental online format. 
+Political Science and Sociology originally were not included in the triad system; instead, students were randomly assigned by the administration to different sections.
+} 
 
 \end{table}%
 \normalsize
 
-While 34\% of the 1,194 instruction sections are taught by women (Table \ref{tab:description}), there is some variation by discipline. The political institutions sections are the ones more often taught by men (only 20\% are taught by women). The sociology sections are almost equally divided between male and female instructors (46.4\% are taught by women). The microeconomics and macroeconomics sections have a larger number of different instructors, because of a higher turnover of instructors.   
+Overall, 34\% of the 1,194 instruction sections were taught by women 
+(Table~\ref{tab:description}), but the percentage varies by discipline. 
+Only 20\% of Political Institutions sections were taught by women. 
+Sociology is almost equally divided between male and female instructors (46.4\% were taught by women). 
+Microeconomics and Macroeconomics have more instructors in all, because of higher turnover.
 
 \subsection{Methods}\label{boring:methods}
-In this section, we carry out two sorts of analyses: tests pertaining to teaching effectiveness and tests pertaining to student behavior. In all our tests, we aggregate variables within instruction sections.  Course-level averages are relevant metrics that universities use to make hiring and tenure decisions.  Since students sign up for courses in triads without knowledge of who their instructors will be, random assignment of instructors to courses seems like a fair proxy.  With this randomization, an instructor is equally likely to be assigned to any course.  We do not randomize individual students, as this would ignore possible correlations within courses.  We use the Spearman correlation as the test statistic.  \\
+In this section, we report tests of the relationships among the French data,
+on SET, teaching effectiveness, and student behavior.
+Our tests aggregate data within course sections, to match how SET are typically
+used in personnel decisions. 
+Our tests are based on the Neyman ``potential outcomes'' framework for causal inference.
+ 
+Since students sign up for courses in triads without knowing who their instructors will be, 
+it seems reasonable to model the assignment of instructors to students as random.
+Because there may be cohort and social effects among students in sections (a form of
+``interference,'' as the term is used in causal inference), the randomization we
+use as the basis of our tests keeps intact the group of students who take each section;
+the randomization assigns those (fixed) groups of students at random to instructors.
+Equivalently, the randomization assigns instructors at random to sections of the class,
+holding the set of students enrolled in each section fixed.
+We use the Spearman correlation as the test statistic.  \\
 
-In the first sort of analysis, we want to test whether SET are a measure of teaching effectiveness intrinsic to each instructor.  If this is true, an instructor's ratings should be the same no matter which group of students he or she teaches.  Each instructor may be viewed as an experimental unit having a ticket with a number for each course, where the number is the average SET from the students in the course.  Under the null, all numbers on a ticket are the same, for all instructors.  Then we can test whether this is correlated with grades in the class.  If SET is a measure of teaching effectiveness, then courses taught by instructors with high SET should tend to have high grades.  The tests we run under this framework include the correlation between average SET and average final grade (Table~\ref{tab:finalexam}), average SET and average interim grade (Table~\ref{tab:instructor gender}), and average final grade and instructor gender (Table~\ref{tab:genderfinal}).  We perform these tests for all instructors in the data, assuming that they are exchangeable between departments, and also by department, allowing for the possibility that relationships between the variables of interest may vary by discipline. \\
+We first test whether SET are a measure of teaching effectiveness intrinsic to an instructor.  
+If so, an instructor's ratings should not depend on the group of students she or he teaches.
+To check, we model 
+Each instructor has a set of potential responses each time s/he teaches, depending on which 
+section of students is assigned to the instructor that time.
+Under the null hypothesis, each instructor's potential responses are all equal;
+different instructors may have different potential responses.
 
-The second sort of analysis aims to test whether students use SET as a reliable or meaningful metric when they rate instructors.  We can think of each course as an experimental unit.  Each course has an average SET and average grade, and then courses get randomly assigned an instructor.  A course is represented by a ticket with a number for each instructor, and each number is either the class's average SET or average grade with that instructor.  Under the sharp null, each course's average SET and average grades will be the same for all instructors.  Then we can test whether this is average SET is correlated with properties of the instructor (e.g. gender, Table~\ref{tab:instructorgender}).  Stratifying by gender accounts for intrinsic differences between male and female students.  It also allows us to identify interactions between student and instructor gender: if relationships between instructor gender and another outcome vary according to student gender, then there is an interaction.  Here, we continue to aggregate student outcomes within courses, but now we take averages separately for the male and female students.  These tests include the correlation between SET and gender concordance (Table~\ref{tab:genderconcordance}) and the correlation between final exam grade and gender concordance (Table~\ref{tab:finalconcordance}).
+Then we can test whether this is correlated with grades in the class.  
+If SET is a measure of teaching effectiveness, then the average grade in courses taught by 
+instructors with high SET should tend to be high.  
+The tests we run under this framework include the correlation between average SET and average final grade (Table~\ref{tab:finalexam}), average SET and average interim grade 
+(Table~\ref{tab:instructor gender}), and average final grade and instructor gender (Table~\ref{tab:genderfinal}).  We perform these tests for all instructors in the data, assuming that they are exchangeable between departments, and also by department, allowing for the possibility that relationships between the variables of interest may vary by discipline. \\
+
+The second sort of analysis aims to test whether students use SET as a reliable or meaningful metric when they rate instructors.  We can think of each course as an experimental unit.  
+Each course has an average SET and average grade, and then courses get randomly assigned an instructor.  
+A course is represented by a ticket with a number for each instructor, and each number is either the class's average SET or average grade with that instructor.  
+Under the sharp null, each course's average SET and average grades will be the same for all instructors.  
+Then we can test whether this is average SET is correlated with properties of the instructor (e.g. gender, Table~\ref{tab:instructorgender}).  
+Stratifying by gender accounts for intrinsic differences between male and female students.  
+It also allows us to identify interactions between student and instructor gender: if relationships between instructor gender and another outcome vary according to student gender, then there is an interaction.  
+Here, we continue to aggregate student outcomes within courses, but now we take averages separately for the male and female students.  
+These tests include the correlation between SET and gender concordance (Table~\ref{tab:genderconcordance}) and the correlation between final exam grade and gender concordance (Table~\ref{tab:finalconcordance}).
 
 These two approaches, treating the instructors as units versus treating the courses as units, are conceptually different experimental designs.  However, they lead to the same permutation algorithm.
 
@@ -507,7 +661,8 @@ To summarize our results, the fact that SET scores are largely uncorrelated with
 
 While our analysis of the data in the previous section suggests that SET scores are largely unrelated to teaching effectiveness, the natural experimental setting of the French university data does not enable us to control for potential differences in teaching styles of men and women. We know of two experiments which were able to control for teaching styles: \citet{Arbuckle2003} and \citet{MacNell2014}. These two experiments tend to confirm that students express gender biases in SET scores, rather than reward a teaching style that matches their learning style. In both experiments, students tend to give higher SET scores when they think that the course is being taught by a man, regardless of whether the course is actually taught by a man or a woman. Hence, differences in teaching or learning styles do not seem to explain the differences in men and women's SET scores.
 
-In the \citet{Arbuckle2003} experiment, a group of 352 students watched \textquotedblleft slides of an age- and gender-neutral stick figure and listened to a neutral voice presenting a lecture and then evaluated it on teacher evaluation forms that indicated 1 of 4 different age and gender conditions (male, female, \textquotedblleft old," and \textquotedblleft young")" [\citealp{Arbuckle2003}, p.507]. The goal of the experiment was to measure whether \textquotedblleft students' perceptions of a professor's age and gender influence their perceptions of the professor's warmth and enthusiasm". Differences in evaluations could thus only be caused by students' subjective age and gender-biased judgments in evaluating the lecturer's competence. The researchers find that students rated the young male instructors higher than the other three combinations, especially on \textquotedblleft enthusiasm", \textquotedblleft showed interest in subject"  and \textquotedblleft using a meaningful voice tone". 
+In the \citet{Arbuckle2003} experiment, a group of 352 students watched \textquotedblleft slides of an age- and gender-neutral stick figure and listened to a neutral voice presenting a lecture and then evaluated it on teacher evaluation forms that indicated 1 of 4 different age and gender conditions (male, female, \textquotedblleft old," and \textquotedblleft young")" [\citealp{Arbuckle2003}, p.507]. 
+The goal of the experiment was to measure whether \textquotedblleft students' perceptions of a professor's age and gender influence their perceptions of the professor's warmth and enthusiasm". Differences in evaluations could thus only be caused by students' subjective age and gender-biased judgments in evaluating the lecturer's competence. The researchers find that students rated the young male instructors higher than the other three combinations, especially on \textquotedblleft enthusiasm", \textquotedblleft showed interest in subject"  and \textquotedblleft using a meaningful voice tone". 
 
 The results of \citet{Arbuckle2003} are reinforced by those of \citet{MacNell2014} who use a different set-up to control for differences in teaching styles. In their experiment, \citet{MacNell2014} used SET data collected from an online course in which 43 students were randomly assigned to four discussion groups for a course, each taught by one of two assistant instructors (one man and one woman). The two instructors each taught one course under their real identity, while they taught the other course under the other instructor's identity. In this set-up, one group of twelve students thought they had a female instructor when the instructor was actually male, and twelve other students thought they had the male instructor when the instructor was actually female. The two instructors worked together with the main professor of the course, to make sure that they gave similar types of feedback to students, graded papers in exactly the same time frame, etc., so as to limit differences in teaching styles or grading to a strict minimum. 
 
@@ -523,11 +678,14 @@ In this section, we once again use permutation tests, this time to analyze the d
 
 Each student's potential responses are represented by numbers on a ticket:
 \begin{itemize}
-\item the rating that the student would assign to instructor 1 if instructor 1 is identified as male
-\item the rating that the student would assign to instructor 1 if instructor 1 is identified as female
-\item the rating that the student would assign to instructor 2 if instructor 2 is identified as male
-\item the rating that the student would assign to instructor 2 if instructor 2 is identified as female
+\item the rating that the student would assign to instructor A if instructor A is identified as male
+\item the rating that the student would assign to instructor A if instructor A is identified as female
+\item the rating that the student would assign to instructor B if instructor B is identified as male
+\item the rating that the student would assign to instructor B if instructor B is identified as female
 \end{itemize}
+
+Nonresponse: there were 3 nonresponders in group 5 and one in group 6.
+
 
 The null hypothesis is that the first two numbers are equal and the second two numbers are equal, but the first two numbers might be different from the second two numbers. This corresponds to the hypothesis that students assigned to a given instructor would rate him or her the same, whether that instructor seemed to be male or female. For all students assigned to instructor 1, we know both of the first two numbers if the null hypothesis is true, but we know neither of the second two numbers. Similarly, if the null hypothesis is true, we know both of the second two numbers for all students assigned to instructor 2, but we know neither of the first two numbers for those students. \\
 
