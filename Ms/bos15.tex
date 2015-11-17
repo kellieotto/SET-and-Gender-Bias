@@ -65,8 +65,8 @@ by an amount that is statistically significant.
 However, SET and apparent instructor gender are not significantly associated 
 with an objective measure of teaching effectiveness,
 student performance on anonymously graded finals. 
-Evidently, SET do not primarily measure instructors' effects on student learning. 
-Rather, they primarily measure student biases and expectations.
+Evidently, SET are more sensitive to student biases and expectations than to teaching 
+effectiveness.
 There is strong statistical evidence that relying on SET for 
 personnel decisions disadvantages female instructors.
 The biases vary by student and by subject, making it 
@@ -201,8 +201,10 @@ The data are not public, owing to French restrictions on human subjects data.
    \item Students enroll in ``triads'' of sections of these courses. 
             The enrollment process
             does not allow students to select individual instructors.
-            The assignment of students to sections is ``as if'' at random,
+            The assignment of instructors to sets of students is ``as if'' at random,
             forming a \emph{natural experiment}.
+            The assignment can be treated as if it is independent across 
+            courses.
             
    \item Section instructors assign interim grades during the semester.
             Interim grades are known to the students before they submit SET.
@@ -238,7 +240,7 @@ all grades have been officially recorded.
   \caption{Summary statistics of sections}
     \begin{tabular}{lccc}
     \toprule 
-                        & \# courses & \# instructors  & \% Female instructors  \\
+    subject     & \# sections & \# instructors  & \% Female instructors  \\
    \midrule
   \textbf{Overall} &  \textbf{1,194} & \textbf{379}  &\textbf{33.8\%} \\
     History    &               230 &      72          &   30.6\% \\
@@ -293,13 +295,13 @@ The SET data are not linked to the grade data.
 \section{Methods and Notation} \label{sec:methods}
 
 We use the Neyman ``potential outcomes'' framework.
-A fixed number $N$ of individuals---typically, students---are assigned either
+A fixed number $N$ of individuals---e.g., students or classes---are assigned either
 randomly or as if at random by Nature into 
 $k \ge 2$ groups of sizes $N_1, \ldots, N_k$.
 Each group receives a different treatment.
 ``Treatment'' is notional. 
 For instance, the treatment might be the gender of the
-instructor in the class the student takes.
+class instructor.
 
 For each individual $i$, we observe a numerical response $R_i$.
 If individual $i$ is assigned to treatment $j$, then $R_i = r_{ij}$.
@@ -317,7 +319,62 @@ assignment, with no assumption about the distribution of SET or other variables,
 no parameter estimates, and no models other than the potential outcomes 
 framework.
 
-To illustrate the approach, consider the experiment conducted by \citet{MacNell2014},
+\subsection{Illustration: French natural Experiment}
+Consider the French data described above. 
+The selection of course sections by students---and the implicit assignment of instructors to cohorts of students---is as if at random within 
+disciplines, independent across disciplines.
+However, the ``triad'' system keeps groups students together in their classes in different disciplines.
+Hence, an appropriate hypothetical randomization would keep groups of students
+together, and randomize the assignment of instructors across classes within
+each discipline, independently across disciplines.
+
+Consider testing whether, overall, SET are associated with final exam scores.
+As the test statistic, we use the sum of the Pearson correlation coefficients between
+average SET and average final exam score for sections of each subject; in principle,
+positive correlations for some course subjects might offset negative correlations for others.
+If SET do measure instructors' contributions to learning, we would expect this sum of
+correlations to be positive: higher average SET in each discipline would tend to occur
+in sections with high average final exam scores.
+
+How surprising is the observed sum, if there is no (overall) connection between
+average SET and average final exam for sections of a course?
+The number $i$ of ``individuals'' is 950, the number of course sections of subjects other
+than Political Institutions, because the final exam in Political Institutions is oral (and hence not
+graded anonymously).
+Each of the 950 course sections has an average SET and an average final exam score.
+There were 224 sections of History, 229 of Macroeconomics, 226 of Microeconomics,
+135 of Political Science, and 136 of Sociology. \todo{these numbers are from the ipynb, which
+disagrees with the table \ref{tab:description} above. Why the discrepancy?}
+Under the hypothetical randomization, within each of those five subjects, the instructors
+were assigned sections as if at random, independently across subjects, with
+the number of sections of each subject that each instructor teaches held fixed.
+For instance, if there were $N_H$ sections of History taught by $K_H$ instructors in all,
+with instructor $k$ teaching $N_{Hk}$ sections, then in the hypothetical randomization,
+all
+\beq
+    {N_H}\choose{N_{H1} \cdots N_{HK_H}}
+\eeq
+assignments of the specified number of History sections to each History instructor 
+would be equally likely.
+The same would hold for sections of other courses,
+and each combination of assignments across courses would be equally likely,
+owing to the assumption that the assignments are independent.
+
+Under the null hypothesis that SET have no connection to final exam scores,
+final exam averages for sections in each course subject are exchangeable given the average SET
+for the sections.
+Imagine ``shuffling'' the average final exam scores across sections of each course, independently
+for different courses.
+For each shuffle, compute the Pearson correlation between average SET for each section
+and average final exam score for each section, for each course subject.
+Add the five Pearson correlations.
+The distribution of this sum is the null distribution of the test statistic.
+The $p$-value is the upper tail probability of that distribution beyond the observed value of the 
+test statistic.
+\todo{more here}
+
+\subsection{Illustration: US Experiment}
+As another illustration, consider the experiment conducted by \citet{MacNell2014},
 in which $N$ students were assigned at random to six sections of an online course,
 of which four were taught by TAs.
 The analysis focuses on the four sections taught by TAs.
