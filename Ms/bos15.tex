@@ -240,7 +240,7 @@ all grades have been officially recorded.
   \caption{Summary statistics of sections}
     \begin{tabular}{lccc}
     \toprule 
-    subject     & \# sections & \# instructors  & \% Female instructors  \\
+    course     & \# sections & \# instructors  & \% Female instructors  \\
    \midrule
   \textbf{Overall} &  \textbf{1,194} & \textbf{379}  &\textbf{33.8\%} \\
     History    &               230 &      72          &   30.6\% \\
@@ -321,33 +321,45 @@ framework.
 
 \subsection{Illustration: French natural Experiment}
 Consider the French data described above. 
-The selection of course sections by students---and the implicit assignment of instructors to cohorts of students---is as if at random within 
-disciplines, independent across disciplines.
+The selection of course sections by students---and the implicit assignment of instructors to cohorts of students---is as if at random within each
+discipline each year, independent across disciplines and across years.
+It is as if each student is randomly assigned to one of the instructors teaching a section of each
+course.
+
 However, the ``triad'' system keeps groups students together in their classes in different disciplines.
 Hence, an appropriate hypothetical randomization would keep groups of students
 together, and randomize the assignment of instructors across classes within
 each discipline, independently across disciplines.
 
-Consider testing whether, overall, SET are associated with final exam scores.
-As the test statistic, we use the sum of the Pearson correlation coefficients between
-average SET and average final exam score for sections of each subject; in principle,
-positive correlations for some course subjects might offset negative correlations for others.
-If SET do measure instructors' contributions to learning, we would expect this sum of
-correlations to be positive: higher average SET in each discipline would tend to occur
-in sections with high average final exam scores.
+Consider testing the hypothesis that SET are unrelated to instructor value, as 
+measured by performance on a uniform, anonymously graded final exam in each course,
+against the alternative that, all else equal, instructors who get higher average SET
+enable their students to do better on these exams.
 
-How surprising is the observed sum, if there is no (overall) connection between
+As the test statistic, we use the sum of the Pearson correlation coefficients between
+average SET and average final exam score for sections of each course each year.
+If SET do measure instructors' contributions to learning, we would expect this sum of
+correlations to be positive: sections with above-average average SET in each discipline each year
+would tend to be sections with above-average average final exam scores.
+Stratifying on course topic and year keeps students who took the same final
+exam together in the randomization.
+Treating sections to be the unit of observation, with instructors assigned randomly to
+fixed sets of students, keeps together students who are in the same ``triad,'' which
+allows for cohort effects. 
+
+
+How surprising is the observed sum of correlation coefficients, if there is no (overall) 
+connection between
 average SET and average final exam for sections of a course?
 The number $i$ of ``individuals'' is 950, the number of course sections of subjects other
 than Political Institutions, because the final exam in Political Institutions is oral (and hence not
 graded anonymously).
 Each of the 950 course sections has an average SET and an average final exam score.
-There were 224 sections of History, 229 of Macroeconomics, 226 of Microeconomics,
-135 of Political Science, and 136 of Sociology. \todo{these numbers are from the ipynb, which
-disagrees with the table \ref{tab:description} above. Why the discrepancy?}
-Under the hypothetical randomization, within each of those five subjects, the instructors
-were assigned sections as if at random, independently across subjects, with
-the number of sections of each subject that each instructor teaches held fixed.
+These fall in $3\times5 + 2 \times 3 = 21$ year-by-course strata.
+ 
+Under the hypothetical randomization, within each of those strata, the instructors
+were assigned sections as if at random, independently across years and courses, with
+the number of sections of each course that each instructor teaches held fixed.
 For instance, if there were $N_H$ sections of History taught by $K_H$ instructors in all,
 with instructor $k$ teaching $N_{Hk}$ sections, then in the hypothetical randomization,
 all
@@ -361,13 +373,14 @@ and each combination of assignments across courses would be equally likely,
 owing to the assumption that the assignments are independent.
 
 Under the null hypothesis that SET have no connection to final exam scores,
-final exam averages for sections in each course subject are exchangeable given the average SET
+final exam averages for sections in each course each year are exchangeable given the average SET
 for the sections.
-Imagine ``shuffling'' the average final exam scores across sections of each course, independently
-for different courses.
+Imagine ``shuffling'' the average final exam scores across sections of each course
+each year, independently
+for different courses and different years.
 For each shuffle, compute the Pearson correlation between average SET for each section
-and average final exam score for each section, for each course subject.
-Add the five Pearson correlations.
+and average final exam score for each section, for each course, for each year.
+Add the resulting 21 Pearson correlations.
 The distribution of this sum is the null distribution of the test statistic.
 The $p$-value is the upper tail probability of that distribution beyond the observed value of the 
 test statistic.
