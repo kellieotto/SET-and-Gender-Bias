@@ -293,66 +293,59 @@ The SET data include the genders and birth years of the students; the grade data
 The SET data are not linked to the grade data.
 
 \section{Methods and Notation} \label{sec:methods}
-
-We use the Neyman ``potential outcomes'' framework.
-A fixed number $N$ of individuals---e.g., students or classes---are assigned either
-randomly or as if at random by Nature into 
-$k \ge 2$ groups of sizes $N_1, \ldots, N_k$.
-Each group receives a different treatment.
-``Treatment'' is notional. 
-For instance, the treatment might be the gender of the
-class instructor.
-
-For each individual $i$, we observe a numerical response $R_i$.
-If individual $i$ is assigned to treatment $j$, then $R_i = r_{ij}$.
-The numbers $\{r_{ij}\}$ are considered to have been fixed before the experiment.
-Implicit in this notation is the \emph{non-interference} assumption that
-each individual's response depends only on the treatment that individual receives, 
-and not on which treatments other individuals receive.
-We observe only one potential outcome for individual $i$, 
-depending on which treatment she or he receives.
-In this model, the responses $\{R_i\}_{i=1}^N$ are random, but only because individuals are 
-assigned to treatments at random.
-
-Our tests involve probability distributions induced by the random
+We use permutation tests based on the as-if-random (in the French natural experiment)
+or truly random (in the US experiment) assignment of students
+to class sections.
+In most cases, our tests are stratified: we randomize separately in different
+groups, independently across the groups.
+For instance, for the US data we randomize students assigned to each TAs separately,
+and for the French data, we randomize students in different courses and in different years 
+separately.
+The null distributions of the test statistics\footnote{%
+ The test statistics are correlations of variables or differences in means across experimental
+ conditions, aggregated across strata.
+}
+are induced by the random
 assignment, with no assumption about the distribution of SET or other variables, 
-no parameter estimates, and no models other than the potential outcomes 
-framework.
+no parameter estimates, and no models.
 
 \subsection{Illustration: French natural Experiment} \label{sec:boringMethods}
-Consider the French data described above. 
-The selection of course sections by students---and the implicit assignment of instructors to sets of students---is as if at random within sections of each
+The selection of course sections by students at the French university---and the implicit 
+assignment of instructors to sets of students---is as if at random within sections of each
 course each year, independent across courses and across years.
-It is as if each student is randomly assigned to one of the instructors who teaches a section of each
-course in the year that the student takes the course.
-The ``triad'' system groups students in their classes in different disciplines.
-Hence, an appropriate hypothetical randomization keeps groups of students
-together.
+The university's ``triad'' system groups students in their classes across disciplines,
+building small cohorts for the year.
+Hence, our hypothetical randomization keeps these groups of students intact.
 Stratifying on course topic and year keeps students who took the same final
-exam together in the randomization and honors the ``natural'' randomization:
-when first-year students enroll in courses, they are assigned instructors as if
-at random from the instructors teaching sections of each course that year.
-Treating sections to be the unit of observation, with instructors assigned randomly to
-fixed sets of students, keeps together students who are in the same ``triad,'' which
-allows for cohort effects. 
+exam grouped in the randomization and honors the natural experiment.
+
+Teaching effectiveness is multidimensional (e.g. \citet{Marsh1997}) and difficult to define,
+much less measure. 
+But whatever it is, effective teaching should promote student learning:
+students of an effective instructor should have better learning outcomes. 
+To the extent that final exams are designed well and graded fairly, final exam scores 
+reflect relevant learning outcomes for
+the course:
+Students of more effective instructors should get higher scores on the final exams, on average,
+than students of less effective instructors.
 
 Consider testing the hypothesis that SET are unrelated to instructor value (as 
-measured by performance on a uniform, anonymously graded final exam in each course)
+measured by performance on a uniform, anonymously graded final exam)
 against the alternative that, all else equal, students of instructors who get higher average SET
 learn more (again, as measured by performance on the final).
+For this test, we omit Political Institutions because its final exam is oral 
+and hence not graded anonymously.
 
-As the test statistic, we use the sum of the Pearson correlations between
+The test statistic is the sum over courses and years of the Pearson correlation between
 average SET and average final exam score for sections of each course each year.
 If SET do measure instructors' contributions to learning, we would expect this sum of
 correlations to be positive: sections with above-average average SET in each discipline each year
 would tend to be sections with above-average average final exam scores.
 
-How surprising is the observed sum of correlation coefficients, if there is no (overall) 
-connection between
-average SET and average final exam for sections of a course?
-The number $i$ of ``individuals'' is 950, the number of course sections of subjects other
-than Political Institutions (we omit Political Institutions because its final exam is oral 
-and hence not graded anonymously).
+How surprising is the observed sum of correlation coefficients, if there is no overall
+connection between average SET and average final exam for sections of a course?
+There are 950 ``individuals,'' course sections of subjects other
+than Political Institutions.
 Each of the 950 course sections has an average SET and an average final exam score.
 These fall in $3\times5 + 2 \times 3 = 21$ year-by-course strata.
  
@@ -379,12 +372,33 @@ each year, independently
 for different courses and different years.
 For each shuffle, compute the Pearson correlation between average SET for each section
 and average final exam score for each section, for each course, for each year.
-Add the resulting 21 Pearson correlations.
+Sum the resulting 21 Pearson correlations.
 The distribution of this sum is the null distribution of the test statistic.
 The $p$-value is the upper tail probability of that distribution beyond the observed value of the 
 test statistic.
+Results are given below in section~\ref{sec:Fr-set-final}.
 
 \subsection{Illustration: US Experiment}
+To test whether perceived instructor gender affects SET,
+we use the Neyman ``potential outcomes'' framework.
+A fixed number $N$ of individuals---e.g., students or classes---are assigned either
+randomly or as if at random by Nature into 
+$k \ge 2$ groups of sizes $N_1, \ldots, N_k$.
+Each group receives a different treatment.
+``Treatment'' is notional. 
+For instance, the treatment might be the gender of the
+class instructor.
+
+For each individual $i$, we observe a numerical response $R_i$.
+If individual $i$ is assigned to treatment $j$, then $R_i = r_{ij}$.
+The numbers $\{r_{ij}\}$ are considered to have been fixed before the experiment.
+Implicit in this notation is the \emph{non-interference} assumption that
+each individual's response depends only on the treatment that individual receives, 
+and not on which treatments other individuals receive.
+We observe only one potential outcome for individual $i$, 
+depending on which treatment she or he receives.
+In this model, the responses $\{R_i\}_{i=1}^N$ are random, but only because individuals are 
+assigned to treatments at random.
 As another illustration, consider the experiment conducted by \citet{MacNell2014},
 in which $N$ students were assigned at random to six sections of an online course,
 of which four were taught by TAs.
@@ -495,29 +509,24 @@ $(1/2)/ \sqrt{10^5}
 \approx 0.0016$.
 Code for all our analyses is provided at \url{http://www.github.com/????} \todo{Fix!}
 
-\section{The French Natural Experiment}
+\section{The French Natural Experiment} \label{sec:Fr-results}
 In this section, we test hypotheses about relationships among
 SET, teaching effectiveness, grade expectations, and student and instructor gender.
 Our tests aggregate data within course sections, to match how SET are typically
 used in personnel decisions. 
-Because there may be cohort effects among students in sections (a form of
-\emph{interference}, as the term is used in causal inference), the hypothetical randomization we
-use as the basis of our tests keeps intact the group of students in each section;
-the randomization assigns those (fixed) groups of students at random to instructors.
-Equivalently, the randomization assigns instructors at random to sections of the class,
-holding the set of students enrolled in each section fixed.
-We use the Spearman correlation coefficient as the test statistic,\footnote{%
+We use the sum of Pearson correlations across strata as the test statistic,\footnote{%
 As discussed above, we find $p$-values from the permutation distribution, not from
-the theoretical distribution of the Spearman correlation 
+the theoretical distribution of the Pearson correlation 
 under the parametric assumption of bivariate normality.
 } 
 which allows us to test both for 
-differences in means (which amount to correlations with a dummy variable) and for 
-trends (correlations with an ordinal or quantitative variable).
+differences in means (which can be written as correlations with a dummy variable) and for 
+association with ordinal or quantitative variables.
 
-In these analyses, individual $i$ is a course; the ``treatment'' is the instructor's gender, 
+In these analyses, individual $i$ is a section of a course; the ``treatment'' is the instructor's gender, 
 the average interim grade, or the average final exam score;
 and the ``response'' is the average SET or the average final exam score.
+Strata consist of all sections of a single course in a single year.
 
 Our tests for overall effects stratify on the discipline, to account for systematic
 differences across departments:
@@ -526,30 +535,22 @@ department, but not across departments.
 We also perform tests separately in different departments, and in some cases separately by
 student gender.
 
-\subsection{SET and final exam scores}
-Teaching effectiveness is multidimensional (e.g. \citet{Marsh1997}) and difficult to define,
-much less measure. 
-But whatever it is, effective teaching should promote student learning:
-students of an effective instructor should have better learning outcomes. 
-To the extent that final exams are designed well, they reflect relevant learning outcomes for
-the course:
-Students of more effective instructors should get higher scores on the final exams, on average,
-than students of less effective instructors.
-
-We test the association between average SET scores and average final exam scores, by course
-section (Table~\ref{tab:finalexam}). 
-The null hypothesis is that the pairing (by section)
-of average final grade and average SET is as if at random.
-We test this overall (stratified by discipline and year) and separately
-by discipline (Table~\ref{tab:finalexam}), using the sum of Pearson correlations, as described 
+\subsection{SET and final exam scores} \label{sec:Fr-set-final}
+We test whether average SET scores and average final exam scores for course
+sections are associated (Table~\ref{tab:finalexam}). 
+The null hypothesis is that the pairing
+of average final grade and average SET for sections of a course each year is as if at random,
+independent across courses and across years.
+We test this hypothesis overall and separately by discipline 
+(Table~\ref{tab:finalexam}), using the sum of Pearson correlations across strata, as described 
 in section~\ref{sec:boringMethods}.
 If the null hypothesis were true, we would expect the test statistic to be 
 close to zero.
-On the other hand, if SET do measure teaching effectiveness, we would expect these to 
-variables to be positively correlated within courses within years, making the
-test statistic positive. 
+On the other hand, if SET do measure teaching effectiveness, we would expect average
+SET and average final exam score to be positively correlated within courses within years, 
+making the test statistic positive. 
 
-The results suggest that SET scores do not measure teaching effectiveness well, overall:
+The numbers show that SET scores do not measure teaching effectiveness well, overall:
 the one-sided $p$-value for the hypothesis that the correlation is zero is 0.70 (the
 observed correlation is actually negative). 
 Separate tests by discipline find that for microeconomics and macroeconomics, the 
@@ -582,13 +583,14 @@ with higher final exam scores.}
 \normalsize
 
 
-\subsection{SET and Instructor Gender}
+\subsection{SET and Instructor Gender} \label{sec:Fr-set-gender}
 The second null hypothesis we test is that the pairing (by section) of 
-instructor gender and SET is as if at random.
-If gender does not affect SET, we would expect the association between these
-variables to be small in each course in each year.
-On the other hand, if students tend to rate male instructors higher, we would
-expect each association to be positive.
+instructor gender and SET is as if at random within courses each year, independently
+across years and courses.
+If gender does not affect SET, we would expect the correlation between average SET
+and instructor gender to be small in each course in each year.
+On the other hand, if students tend to rate instructors of one gender higher, we would
+expect the sum of these correlations to be large in absolute value.
 We find that average SET are significantly associated with instructor gender, with male instructors
 getting higher ratings (overall $p$-value 0.00). 
 Male instructors get higher SET on average in every discipline  (Table~\ref{tab:instructorgender})
@@ -617,21 +619,22 @@ with two-sided $p$-values ranging from $0.07$ for history to $0.58$ for microeco
 \end{table}%
 \normalsize
 
-\subsection{Instructor Gender and Learning Outcomes}
+\subsection{Instructor Gender and Learning Outcomes} \label{sec:Fr-gender-final}
 Do men receive higher SET scores overall because they are better instructors? 
 The third null hypothesis we test is that the pairing (by course) of instructor gender and
-average final exam score is as if at random.
-If so, we would expect the association to be small.
-If the effectiveness of instructors varies systematically by gender,
-we would expect the association to be larger. 
+average final exam score is as if at random within courses each year, independent
+across courses and across years.
+If this hypothesis is true, we would expect the sum of correlations to be small.
+If the effectiveness of instructors differs systematically by gender,
+we would expect sum of correlations to be large in absolute value. 
 Table~\ref{tab:genderfinal} shows that on the whole, students of male instructors
 perform worse on the final than students of female instructors, but by an amount that is
 not statistically significant ($p$-value 0.51 overall).
 The only discipline in which students of male instructors perform better is political science,
 but by an amount that is not statistically significant ($p$-value 0.79)
-This suggests that male instructors are not signiticantly more effective than female instructors, 
-and perhaps are less effective. 
-Hence, the statistically significant difference in SET scores for male and female instructors
+This suggests that male instructors are not noticeably more effective than female instructors, 
+and perhaps are less effective:
+The statistically significant difference in SET scores for male and female instructors
 does not seem to reflect a difference in their teaching effectiveness.
 
 
@@ -834,7 +837,9 @@ of the assistant instructor.''
 \citet{MacNell2014} used parametric tests whose assumptions did not match their experimental
 design; part of our contribution is to show that their data admit a more rigorous analysis
 using permutation tests that honor the underlying randomization and that avoid parametric
-assumptions about SET, and that the analysis supports their conclusions.
+assumptions about SET. 
+The new analysis supports their conclusions, in some cases even more strongly than the original
+analysis.
 
 \subsection{Methods}\label{macnell:methods}
 We use permutation tests as described above in section~\ref{sec:methods}.
@@ -868,7 +873,8 @@ We also perform tests involving the association of concordance of student and ap
 gender,
 (Table~\ref{tab:macnell2}), SET and concordance of student and actual TA gender 
 (Table~\ref{tab:macnell3}), and grades and actual TA gender (Table~\ref{tab:macnell4}).  
-These tests use the Spearman correlation as the test statistic, but we find the $p$-value
+These tests use the sum of Pearson correlations across strata as the test statistic, 
+but we find the $p$-value
 based on the stratified permutation distribution of the test statistic, avoiding
 parametric assumptions.
 
