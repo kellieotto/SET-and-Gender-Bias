@@ -260,12 +260,12 @@ students were randomly assigned by the administration to different sections.
 
 \end{table}%
 \normalsize
-Overall, 34\% of the 1,194 sections were taught by women 
-(Table~\ref{tab:description}), but the percentage varies by discipline. 
-Only 20\% of Political Institutions sections were taught by women. 
-Sociology is divided approximately equally between male and female instructors 
-(46.4\% of sections were taught by women). 
-Microeconomics and Macroeconomics had more instructors total, because of higher turnover.
+%Overall, 34\% of the 1,194 sections were taught by women 
+%(Table~\ref{tab:description}), but the percentage varies by discipline. 
+%Only 20\% of Political Institutions sections were taught by women. 
+%Sociology is divided approximately equally between male and female instructors 
+%(46.4\% of sections were taught by women). 
+%Microeconomics and Macroeconomics had more instructors total, because of higher turnover.
 
 \subsection{U.S. Randomized Experiment}
 These data, described in detail by \cite{MacNell2014}, are available at 
@@ -821,40 +821,14 @@ by teaching effectiveness.
 \section{The US Randomized Experiment} \label{sec:US-results}
 
 The previous section suggests that SET have little
-connection to teaching effectiveness, but the natural experimental setting of the French 
-university data does not enable us to control for potential differences in teaching 
+connection to teaching effectiveness, but the natural experiment 
+does not enable us to control for potential differences in teaching 
 styles across instructors. 
-
-To our knowledge, only two experiments have controlled for teaching style in
-their designs: \citet{Arbuckle2003} and \citet{MacNell2014}. 
-Both experiments suggest that SET reflect gender bias rather than a match
-of teaching style and student learning style. 
-In both experiments, students generally give higher SET when they \emph{think} the instructor
-is male, regardless of the actual gender of the instructor.
-Hence, differences in teaching or learning styles do not seem to explain the differences
-SET scores.
-
-In the \citet{Arbuckle2003} experiment, a group of 352 students watched 
-``slides of an age- and gender-neutral stick figure and listened to a neutral voice 
-presenting a lecture and then evaluated it on teacher evaluation forms that indicated 
-1 of 4 different age and gender conditions 
-(male, female, ``old,'' and ``young'')'' \citealp[p.507]{Arbuckle2003}. 
-The experiment sought to measure whether 
-``students' perceptions of a professor's age and gender influence their perceptions of the 
-professor's warmth and enthusiasm.'' 
-Since all students saw the same stick figure and heard the same voice, differences in SET 
-could thus be attributed to the age and gender the students were told the instructor had.
-That is, differences revealed students' age and gender biases when evaluating the instructor. 
-\citet{Arbuckle2003} found that students rated apparently young male instructors higher 
-than the other three combinations, especially on ``enthusiasm,'' ``showed interest in subject,'' 
-and ``using a meaningful voice tone.'' 
-
-The work of \citet{Arbuckle2003} is reinforced by that of \citet{MacNell2014},
-an experiment embedded in an actual for-credit university course. 
-As discussed above, \citet{MacNell2014} used SET from an online course in which 
+\citet{MacNell2014} does.
+As discussed above used SET from an online course in which 
 43 students were randomly assigned to four\footnote{%
-As discussed above, there were six sections in all, of which two were taught by the professor and four
-were taught by TAs.
+   As discussed above, there were six sections in all, of which two were taught by the professor and four
+   were taught by TAs.
 } 
 discussion groups, each taught by one of two TAs, one male and one female. 
 The TAs gave similar feedback to students, returned assignments at exactly the same time, etc., 
@@ -1082,7 +1056,7 @@ perceived gender of the instructor.
 These results suggest that students rate instructors more on the basis of the 
 instructor's perceived gender than on the basis of the instructor's effectiveness. 
 
-\section{Code and Reproducibility}
+\section{Code, Data, and Reproducibility}
 IPython notebooks containing our analyses are at
 \url{https://github.com/kellieotto/SET-and-Gender-Bias}.
 The US data are available at \url{http://n2t.net/ark:/b6078/d1mw2k}.
@@ -1116,7 +1090,31 @@ Given the relatively small number of students in the US experiment, it is remark
 \emph{any} of the $p$-values is small.
 It would be valuable to replicate the experiment.
 
+\todo{Omnibus test using the joint distribution of the tests? Need something to comb at multiplicity}
+
 \section{Discussion and Conclusions}
+To our knowledge, only two experiments have controlled for teaching style in
+their designs: \citet{Arbuckle2003} and \citet{MacNell2014}. 
+In both experiments, students generally give higher SET when they \emph{think} the instructor
+is male, regardless of the actual gender of the instructor.
+Both experiments found that systematic differences in SET by instructor gender reflect gender bias 
+rather than a match of teaching style and student learning style or differences
+in teaching effectiveness. 
+
+\citet{Arbuckle2003} showed a group of 352 students 
+``slides of an age- and gender-neutral stick figure and listened to a neutral voice 
+presenting a lecture and then evaluated it on teacher evaluation forms that indicated 
+1 of 4 different age and gender conditions 
+(male, female, ``old,'' and ``young'')'' \citealp[p.507]{Arbuckle2003}. 
+The experiment sought to measure whether 
+``students' perceptions of a professor's age and gender influence their perceptions of the 
+professor's warmth and enthusiasm.'' 
+Students saw the same stick figure and heard the same voice, so differences in SET 
+could be attributed to the age and gender the students were \emph{told} the instructor had.
+\citet{Arbuckle2003} found that students rated apparently young male instructors higher 
+than the other three combinations, especially on ``enthusiasm,'' ``showed interest in subject,'' 
+and ``using a meaningful voice tone.'' 
+
 We used permutation tests to examine data collected  by
 \citet{Boring2015} and \citet{MacNell2014}, both of which find that gender biases prevent 
 SET from measuring teaching effectiveness accurately and fairly. 
