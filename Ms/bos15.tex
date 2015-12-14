@@ -1063,7 +1063,7 @@ The US data are available at \url{http://n2t.net/ark:/b6078/d1mw2k}.
 The French data are not available, owing to French privacy law.
 
 \section{Technical Notes}
-We did not adjust our tests for multiplicity.
+We did not adjust the tests reported above for multiplicity.
 We performed a total of approximately 50 tests on the French data, of which we
 consider four to be our primary results:
 \begin{enumerate}
@@ -1075,11 +1075,22 @@ consider four to be our primary results:
     \item association between SET and interim grades
 \end{enumerate}        
 Bonferroni's adjustment for these four tests would \todo{fix me when the results are in}
-We performed a total of 77 tests on the US data, of which we consider
-15 to be our primary results: differences in mean SET by perceived TA gender for
-the 15 teaching dimensions, including the overall rating.
 
-On the other hand, we made no attempt to optimize the tests to have power 
+We performed a total of 77 tests on the US data.
+We consider the two primary conclusions to be that 
+(1)~SET differ by perceived instructor gender (women are rated lower), and
+(2)~SET differ by concordance of student gender and perceived instructor gender (female students
+rate male instructors higher).
+To account for multiplicity, we tested these two ``omnibus'' hypotheses 
+using the nonparametric combination of tests (NPC) method with Fisher's combining 
+function~\citep[Chapter 4]{pesarinSalmaso10} to combine the 15 dimensions of teaching into
+a single test statistic that measures how ``surprising'' the 15 observed differences would be
+for each of the two null hypotheses.
+In $10^5$ replications, the empirical $p$-values for both omnibus hypotheses were \todo{???},
+giving an upper 99\% confidence bound of \todo{????} for the actual $p$-values (the upper bound
+was obtained by inverting Binomial hypothesis tests).
+
+We made no attempt to optimize the tests to have power 
 against the alternatives considered.
 For instance, with the US data, the test statistic
 grouped the two identified-as-female sections and the two identified-as-male conditions,
@@ -1087,10 +1098,8 @@ in keeping with how \citet{MacNell2014} tabulated their results,
 rather than using each TA as his or her own control (although the randomization keeps the 
 two strata intact). 
 Given the relatively small number of students in the US experiment, it is remarkable that
-\emph{any} of the $p$-values is small.
-It would be valuable to replicate the experiment.
-
-\todo{Omnibus test using the joint distribution of the tests? Need something to comb at multiplicity}
+\emph{any} of the $p$-values is small, much less that the $p$-values for the omnibus
+tests are effectively zero.
 
 \section{Discussion and Conclusions}
 To our knowledge, only two experiments have controlled for teaching style in
