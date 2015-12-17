@@ -1,4 +1,4 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{21}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -7,16 +7,9 @@
 
 \bibitem[Arbuckle and Williams(2003)]{Arbuckle2003}
 J.~Arbuckle and B.~D. Williams.
-\newblock {Students ' Perceptions of Expressiveness : Age and Gender Effects on
+\newblock {Students' Perceptions of Expressiveness : Age and Gender Effects on
   Teacher Evaluations}.
 \newblock \emph{Sex Roles}, 49\penalty0 (November):\penalty0 507--516, 2003.
-
-\bibitem[Basow and Silberg(1987)]{Basow1987}
-S.~A. Basow and N.~T. Silberg.
-\newblock Student evaluations of college professors: Are female and male
-  professors rated differently?
-\newblock \emph{Journal of Educational Psychology}, 79\penalty0 (3):\penalty0
-  308--314, 1987.
 
 \bibitem[Bennett(1982)]{Bennett1982}
 S.~K. Bennett.
@@ -101,12 +94,6 @@ M.~C. Hill and K.~K. Epps.
 \newblock \emph{Academy of Educational Leadership Journal}, 14\penalty0
   (4):\penalty0 65--79, 2010.
 
-\bibitem[Kaschak(1978)]{Kaschak1978}
-E.~Kaschak.
-\newblock Sex bias in student evaluations of college professors.
-\newblock \emph{Psychology of Women Quarterly}, 2\penalty0 (3):\penalty0
-  235--243, 1978.
-
 \bibitem[MacNell et~al.(2014)MacNell, Driscoll, and Hunt]{MacNell2014}
 L.~MacNell, A.~Driscoll, and A.~N. Hunt.
 \newblock What’s in a name: Exposing gender bias in student ratings of
@@ -124,6 +111,12 @@ D.~J. Merritt.
 \newblock Bias, the brain, and student evaluations of teaching.
 \newblock \emph{St. John's Law Review}, 81\penalty0 (1):\penalty0 235--288,
   2008.
+
+\bibitem[Pesarin and Salmaso(2010)]{pesarinSalmaso10}
+F.~Pesarin and L.~Salmaso.
+\newblock \emph{Permutation Tests for Complex Data: Theory, Applications and
+  Software}.
+\newblock Wiley, New York, 2010.
 
 \bibitem[Pounder(2007)]{Pounder2007}
 J.~S. Pounder.
