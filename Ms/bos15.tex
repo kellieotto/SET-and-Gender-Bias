@@ -949,13 +949,17 @@ communication ($p$-value 0.07),
 professionalism ($p$-value 0.06), 
 respect ($p$-value 0.07), and 
 caring ($p$-value 0.09). 
-Items for which the $p$-values were greater than 0.10 include clarity,
+For seven items, the nonparametric permutation 
+$p$-values are smaller than the parametric $p$-values reported by
+\citet{MacNell2014}.
+Items for which the permutation $p$-values were greater than 0.10 include clarity,
 consistency, feedback, helpfulness, responsiveness, and knowledgeability.
 SET were on a 5-point scale, so a difference in means of 0.80, observed
 in student ratings of the promptness with which assignments were returned, 
 is 16\% of the full scale---an enormous difference.
 Since assignments were returned at exactly the same time in all
-four sections of the class, this seriously impugns the objectivity of SET.
+four sections of the class, this seriously impugns the ability of SET to measure
+even putatively objective characteristics of teaching.
 
 \begin{table}[htbp]
   \centering
@@ -1083,9 +1087,10 @@ Students of both genders rated the apparently male instructor higher on all
 dimensions, by an amount that often was statistically significant for female students 
 (Table~\ref{tab:macnell2}).
 However, students rated the actual male instructor higher on some dimensions
-and lower on others, by amounts that did not tend to rise to statistical significance
+and lower on others, by amounts that generally were not statistically significant
 (Table~\ref{tab:macnell3}). 
-The only exceptions were praise ($p$-value 0.02) and responsiveness ($p$-value 0.05), where female students tended to rate the actual female instructor significantly lower.
+The exceptions were praise ($p$-value 0.02) and responsiveness ($p$-value 0.05), 
+where female students tended to rate the actual female instructor significantly lower.
 
 Students of the actual male instructor performed better in the course on average,
 by an amount that was statistically significant (Table~\ref{tab:macnell4}). 
@@ -1113,14 +1118,8 @@ perceived gender of the instructor.
 These results suggest that students rate instructors more on the basis of the 
 instructor's perceived gender than on the basis of the instructor's effectiveness. 
 
-\section{Code, Data, and Reproducibility}
-IPython notebooks containing our analyses are at
-\url{https://github.com/kellieotto/SET-and-Gender-Bias}.
-The US data are available at \url{http://n2t.net/ark:/b6078/d1mw2k}.
-French privacy law prohibits publishing the French data. 
-
-\section{Technical Notes}
-We did not adjust the tests reported above for multiplicity.
+\section{Multiplicity}
+We did not adjust the $p$-values reported above for multiplicity.
 We performed a total of approximately 50 tests on the French data, of which we
 consider four to be our primary results:
 \begin{enumerate}
@@ -1163,20 +1162,29 @@ Given the relatively small number of students in the US experiment, it is remark
 \emph{any} of the $p$-values is small, much less that the $p$-values for the omnibus
 tests are effectively zero.
 
-\section{Discussion and Conclusions}
+\section{Code and Data}
+IPython notebooks containing our analyses are at
+\url{https://github.com/kellieotto/SET-and-Gender-Bias}.
+The US data are available at \url{http://n2t.net/ark:/b6078/d1mw2k}.
+French privacy law prohibits publishing the French data. 
+
+
+\section{Discussion}
+
+\subsection{Other studies}
 To our knowledge, only two experiments have controlled for teaching style in
 their designs: \citet{Arbuckle2003} and \citet{MacNell2014}. 
-In both experiments, students generally give higher SET when they \emph{think} the instructor
+In both experiments, students generally gave higher SET when they \emph{thought} the instructor
 is male, regardless of the actual gender of the instructor.
 Both experiments found that systematic differences in SET by instructor gender reflect gender bias 
-rather than a match of teaching style and student learning style or differences
-in teaching effectiveness. 
+rather than a match of teaching style and student learning style or a difference
+in actual teaching effectiveness. 
 
 \citet{Arbuckle2003} showed a group of 352 students 
 ``slides of an age- and gender-neutral stick figure and listened to a neutral voice 
 presenting a lecture and then evaluated it on teacher evaluation forms that indicated 
 1 of 4 different age and gender conditions 
-(male, female, ``old,'' and ``young'')'' \citealp[p.507]{Arbuckle2003}. 
+(male, female, `old,' and `young')'' \citep[p.507]{Arbuckle2003}. 
 The experiment sought to measure whether 
 ``students' perceptions of a professor's age and gender influence their perceptions of the 
 professor's warmth and enthusiasm.'' 
@@ -1186,6 +1194,7 @@ could be attributed to the age and gender the students were \emph{told} the inst
 than the other three combinations, especially on ``enthusiasm,'' ``showed interest in subject,'' 
 and ``using a meaningful voice tone.'' 
 
+\subsection{Summary}
 We used permutation tests to examine data collected  by
 \citet{Boring2015} and \citet{MacNell2014}, both of which find that gender biases prevent 
 SET from measuring teaching effectiveness accurately and fairly. 
@@ -1236,7 +1245,7 @@ Other studies find that gender and SET are not significantly associated \citep{B
   developing SET instruments and conducting SET.
 } 
 The contradictions among conclusions suggests that if SET are ever valid, they
-are not valid in general: universities are not justified in assuming that SET are broadly valid at their
+are not valid in general: universities should not assume that SET are broadly valid at their
 institution, valid in any particular department, or valid for any particular course. 
 Given the many sources of bias in 
 SET and the unpredictable magnitude of their effects, as a practical matter it is impossible to adjust
@@ -1255,14 +1264,15 @@ assignments.\footnote{%
   SET in decisions that might affect  tenured instructors' careers (c.f. \citet{Boring2015ofce}). 
 }
 
-We find that in two very different universities and in a broad range of course topics, 
-SET are biased against female instructors, and that
-they measure gender biases and grade expectations more than they measure teaching 
+\subsection{Conclusion}
+In two very different universities and in a broad range of course topics, 
+SET are biased against female instructors:
+They measure gender biases and grade expectations more than they measure teaching 
 effectiveness.
 There is no evidence that gender bias is the exception, rather than the rule.
 Hence, the onus should be on universities 
 that rely on SET for employment decisions to provide convincing affirmative evidence
-that such use does not have disparate impact on women,
+that such reliance does not have disparate impact on women,
 under-represented minorities, or other protected groups.
 
 \bibliographystyle{abbrvnat}
