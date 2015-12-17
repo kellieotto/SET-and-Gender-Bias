@@ -44,6 +44,7 @@
     \emph{The truth will set you free, but first it will piss you off.}
     
      \hfill Gloria Steinem
+\end{quotation}
 
 \begin{abstract}
 
@@ -51,23 +52,27 @@ We test whether student evaluations of teaching (SET)
 primarily measure teaching effectiveness, using 
 two datasets:
 23,001~SET of 379~instructors by 4,423~students in six 
-mandatory first year courses in a five-year natural experiment at a French university, 
+mandatory first-year courses in a five-year natural experiment at a French university, 
 and
-43~SET for 4~sections of an online course in a randomized, controlled, 
+43~SET for four sections of an online course in a randomized, controlled, 
 blind experiment at a US university.
 We study relationships among SET and the genders of students and actual and
 perceived genders of instructors, grade expectations, and grades.
-Nonparametric tests show that on average students rate apparently female instructors lower 
+Nonparametric tests show that, on average, students rate apparently female instructors lower 
 by an amount that is 
-large and statistically significant, even on putatively objective measures such as promptness.
-On average, students who expect higher grades give higher SET, 
-by an amount that is statistically significant.
+large and statistically significant, even on putatively objective measures (e.g., how
+quickly the instructor returns assignments).
+Interim grades are positively associated with SET
+by an amount that is statistically significant, indicating that students who expect
+higher grades give higher SET.
 However, neither SET nor apparent instructor gender is significantly associated 
-with student performance on anonymously graded uniform final exams. 
-SET are more sensitive to student biases and grade expectations than to teaching 
-effectiveness.
-The bias varies by student and by subject, so it is effectively impossible to adjust for. 
-Relying on SET for personnel decisions disadvantages female instructors.
+with student performance on anonymously graded uniform final exams, indicating
+that SET do not measure teaching effectiveness well. 
+We conclude that SET are more sensitive to student gender biases and grade 
+expectations than to teaching effectiveness.
+The bias varies by student and by subject, so it is in practice impossible to adjust for. 
+Relying on SET for personnel decisions has disparate impact, disadvantaging 
+female instructors.
 
 
 % Nonparametric permutation tests that aggregate within 1,194 course sections show: 
@@ -104,8 +109,6 @@ Relying on SET for personnel decisions disadvantages female instructors.
 
 \newpage
 
-\end{quotation}
-
 \section{Background}
 Student evaluations of teaching (SET) are used widely 
 in decisions about hiring, promoting, and firing instructors. 
@@ -113,30 +116,37 @@ Measuring teaching effectiveness is difficult---for students,
 faculty, and administrators alike.
 Universities generally treat SET as if they primarily
 measure teaching effectiveness or teaching quality.
-This assumption may not be justified.
-SET may be more sensitive to something other than teaching effectiveness:
-they may be strongly \emph{biased}.\footnote{%
+While it may seem natural to think that students' answers to questions like
+``how effective was the instructor?'' measure teaching effectiveness,
+it is not a foregone conclusion that they do.
+Indeed, the best evidence so far shows that they do not:
+they have \emph{biases}\footnote{%
   \citet[p.17]{Centra2000} define bias to occur when ``a teacher
    or course characteristic affects teacher evaluations, either positively or
 negatively, but is unrelated to criteria of good teaching, such as increased student learning.'' 
 }
+that are stronger than any connection they might have effectiveness.
+Worse, in some circumstances the association between SET and an objective measure
+of teaching effectiveness is
+\emph{negative}, as our results below reinforce.
 
 Randomized experiments \citep{Carrell2010a,Braga2014}
 have shown that students confuse grades 
 and grade expectations with the long-term value of a course and that SET are not associated with 
-student performance in follow-on courses, i.e., with teaching effectiveness. 
-On the whole, high SET amount to a reward students give 
-instructors who are easy graders or who ``teach to the test.''  
+student performance in follow-on courses, a proxy for teaching effectiveness. 
+On the whole, high SET seem to be a reward students give 
+instructors who make them anticipate getting a good grade, for whatever reason.
 
 Gender matters too.
 \citet{Boring2015} finds that SET are affected by gender biases and stereotypes. 
-Male first-year undergraduate students give more \textit{excellent} scores to male instructors,
+Male first-year undergraduate students give more \emph{excellent} scores to male instructors,
 even though there is no difference between
 the academic performance of male students of male and of female instructors.
 Experimental work by \citet{MacNell2014} finds that when students think
 an instructor is female,
 students rate the instructor lower on every aspect of teaching,
-including putatively objective measures such as timeliness.
+including putatively objective measures such as the timeliness with which instructors
+return assignments.
 
 Here, we apply nonparametric permutation tests to data from \citet{Boring2015} and 
 \citet{MacNell2014} to investigate whether SET primarily measure teaching effectiveness or 
@@ -155,33 +165,36 @@ characteristic---e.g., instructor gender---amounts to an arbitrary label and mig
 have been assigned at random. 
 
 We work with course-level summaries to match how institutions use SET: 
-typically, SET for a course
-are averaged, and those averages are compared across instances of the course,
+typically, SET are averaged for each offering of a course, and those averages are 
+compared across instances of the course,
 across courses in a department, across instructors, and across departments.
 \citet{StarkFreishtat2014} discuss statistical problems with this reduction to 
 and reliance upon averages.
 
-We find that the association between SET and an objective measure of teaching effectiveness 
-is weak and not statistically significant.
+We find that the association between SET and an objective measure of teaching effectiveness,
+performance on the anonymously graded final, 
+is weak and---for these data---not statistically significant.
 In contrast, the association between SET and (perceived) instructor gender 
 is large and statistically significant:
-instructors who students believe are male receive significantly higher average SET.
+instructors whom students believe are male receive significantly higher average SET.
+
 In the French data, \emph{male} students tend to rate male instructors higher
-than they rate female instructors, with little difference in ratings by female students;
-in the US data, \emph{female} students tend to rate (perceived) male instructors 
+than they rate female instructors, with little difference in ratings by female students.
+In the US data, \emph{female} students tend to rate (perceived) male instructors 
 higher than they rate (perceived) female instructors, with little difference in ratings by male students. 
 The French data also show that gender biases vary by course topic, and 
-that grade expectations and SET are strongly associated.
+that SET have a strong positive association with students' grade expectations.
 
 We therefore conclude that SET primarily do not measure teaching effectiveness; that 
-they are strongly and non-uniformly biased by factors such as the gender of the instructor
-and student; and that it is impossible to adjust for these biases. 
+they are strongly and non-uniformly biased by factors including the genders of the instructor
+and student; that they disadvantage female instructors;
+and that it is impossible to adjust for these biases. 
 SET should not be relied upon as a measure of teaching effectiveness.
 Relying on SET for personnel decisions has disparate impact by gender, in general. 
 
 \section{Data}
 \subsection{French Natural Experiment}
-The data, collected between 2008 and 2013, are a census of 23,001 SET from
+These data, collected between 2008 and 2013, are a census of 23,001 SET from
 4,423 first-year students at a French university students (57\% women) in 1,177
 sections, taught by 379 instructors (34\% women). 
 The data are not public, owing to French restrictions on human subjects data.
@@ -192,7 +205,7 @@ Key features include:
             History, Macroeconomics, Microeconomics, 
             Political Institutions, Political Science, and Sociology.
             Each course has one (male) professor
-            who delivers the lectures, to groups of approximately 900 students. 
+            who delivers the lectures to groups of approximately 900 students. 
             Courses have sections of 10--24 students. 
             Those sections are taught by a variety of instructors, male and female.
             The instructors have considerable pedagogical freedom.
@@ -201,19 +214,19 @@ Key features include:
             The enrollment process does not allow students to select individual instructors.
             The assignment of instructors to sets of students is as if at random,
             forming a \emph{natural experiment}.
-            The assignment can be treated as if it is independent across 
+            It is reasonable to treat the assignment as if it is independent across 
             courses.
             
    \item Section instructors assign interim grades during the semester.
-            Interim grades are known to the students before they submit SET.
-            Interim grades are a reasonable proxy for student grade expectations.
+            Interim grades are known to the students before the students submit SET.
+            Interim grades are thus a proxy for students' grade expectations.
             
-   \item Final exams are written by the professor, not the section instructors.
+   \item Final exams are written by the course professor, not the section instructors.
             Students in all sections of a course in a given year take the same final.
             Final exams are graded anonymously, except in Political
             Institutions, which we therefore omit from analyses involving final exam scores.
-            To the extent that the final measures appropriate learning outcomes, 
-            performance on the final exam is a measure of the effectiveness of
+            To the extent that the final exam measures appropriate learning outcomes, 
+            performance on the final is a measure of the effectiveness of
             an instructor: in a given course in a given year,
             students of more effective instructors should do better on
             the final exam, on average, than students of less effective instructors.
@@ -223,14 +236,15 @@ Key features include:
 \end{itemize}
 
 SET include closed-ended and open-ended questions.
-The item that attracts the most attention is the \emph{overall score}, 
+The item that attracts the most attention, especially from the administration,
+is the \emph{overall score}, 
 which is treated as a summary of the other items.
 The SET data include students' individual evaluations of section
 instructors in microeconomics, history, political institutions, and 
 macroeconomics for the five academic years 2008--2013, and for 
 sociology and political science for the three academic years 2010--2013 
 (these two subjects were introduced in 2010). 
-The SET are anonymous to the instructors, who have access to the ratings only after 
+The SET are anonymous to the instructors, who have access to SET only after 
 all grades have been officially recorded.  
 
 \begin{table}[htbp]
@@ -267,7 +281,7 @@ students were randomly assigned by the administration to different sections.
 %(46.4\% of sections were taught by women). 
 %Microeconomics and Macroeconomics had more instructors total, because of higher turnover.
 
-\subsection{U.S. Randomized Experiment}
+\subsection{US Randomized Experiment}
 These data, described in detail by \cite{MacNell2014}, are available at 
 \url{http://n2t.net/ark:/b6078/d1mw2k}.
 Students in an online course were randomized into six sections of about a dozen students each, 
@@ -280,42 +294,59 @@ and in two they were led to believe they were being taught by a man.
 Students had no direct contact with TAs: the primary interactions were through
 discussion boards.
 The TA credentials presented to the students were comparable; the TAs covered
-the same material; and assignments were returned at the same time in all sections.
+the same material; and assignments were returned at the same time in all sections
+(hence, objectively, the TAs returned assignments equally promptly in all four sections).
 
 SET included an overall score and questions relating to
 professionalism, respectfulness, care, enthusiasm, communication, helpfulness,
 feedback, promptness, consistency, fairness, responsiveness, praise, knowledge, 
 and clarity.
 Fourty-seven students in the four sections taught by TAs finished the class,
-of whom 43 completed SET.
-The SET data include the genders and birth years of the students; the grade data do not.
+of whom 43 submitted SET.
+The SET data include the genders and birth years of the students;\footnote{%
+One birth year is obviously incorrect, but our analyses do not rely on the birth years.
+}%
+the grade data do not.
 The SET data are not linked to the grade data.
 
 \section{Methods} \label{sec:methods}
-We use permutation tests based on the as-if-random (French natural experiment)
+Previous analyses of these data relied on parametric tests based on null
+hypotheses that do not match the experimental design.
+For example, the tests assumed that SET of male and female instructors
+are independent random samples from normally distributed populations with 
+equal variances and possibly different means.
+As a result, the $p$-values reported in those studies are for unrealistic
+null hypotheses and might be misleading.
+
+In contrast, we use permutation tests based on the as-if-random (French natural experiment)
 or truly random (US experiment) assignment of students
-to class sections.
-In most cases, our tests are stratified: we randomize separately in different
-groups of students, independently across the groups.
-For instance, for the US data the randomization is stratified on the actual TA:
+to class sections, with no counterfactual assumption that the students, SET scores,
+grades, or any other variables comprise random samples from any populations, much
+less populations with normal distributions.
+
+In most cases, our tests are \emph{stratified}.
+For the US data, for instance, the randomization is stratified on the actual TA:
 students are randomized within the two sections taught by each TA,
 but students assigned to different TAs comprise different strata.
+The randomization is independent across strata.
 For the French data, the randomization is stratified on course and year:
-students in different courses or in different years comprise different strata.
+students in different courses or in different years comprise different strata,
+and the randomization is independent across strata.
 The null distributions of the test statistics\footnote{%
- The test statistics are correlations of variables or differences in means across experimental
+ The test statistics are correlations of a response variable with experimental variables,
+ or differences in the means of a response variable across experimental
  conditions, aggregated across strata.
 }
 are induced by this random
 assignment, with no assumption about the distribution of SET or other variables, 
-no parameter estimates, and no models.
+no parameter estimates, and no model.
 
 \subsection{Illustration: French natural Experiment} \label{sec:boringMethods}
 The selection of course sections by students at the French university---and the implicit 
 assignment of instructors to sets of students---is as if at random within sections of each
 course each year, independent across courses and across years.
-The university's ``triad'' system groups students in their classes across disciplines,
-building small cohorts for the year.
+The university's triad system groups students in their classes across disciplines,
+building small cohorts for each semester.
 Hence, the randomization for our test keeps these groups of students intact.
 Stratifying on course topic and year keeps students who took the same final
 exam grouped in the randomization and honors the design of the natural experiment.
@@ -323,6 +354,7 @@ exam grouped in the randomization and honors the design of the natural experimen
 Teaching effectiveness is multidimensional \citep{Marsh1997} and difficult to define,
 much less measure. 
 But whatever it is, effective teaching should promote student learning:
+\emph{ceteris paribus},
 students of an effective instructor should have better learning outcomes
 than students of an ineffective instructor have.
 In the French university, in all courses other than Political Institutions,\footnote{%
@@ -330,18 +362,22 @@ In the French university, in all courses other than Political Institutions,\foot
 }
 students in every section of a course in a given year take the same anonymously graded
 final exam.
-To the extent that final exams are designed well, scores on these finals reflect relevant 
+To the extent that final exams are designed well, scores on these exams reflect relevant 
 learning outcomes for the course.
-Hence, in each course each year, students of more effective instructors should do better 
+Hence, in each course each semester, students of more effective instructors should do better 
 on the final, on average, than students of less effective instructors.
 
-Consider testing the hypothesis that SET are unrelated to performance on the final
+Consider testing the hypothesis that SET are unrelated to performance on the final exam
 against the alternative that, all else equal, students of instructors who get higher average SET
-learn more.
-For this hypothesis test, we omit Political Institutions.
+get higher final exam scores, indicating that they learned more.
+For this hypothesis test, we omit Political Institutions because the final exam was not
+anonymous.
 
 The test statistic is the sum over courses and years of the Pearson correlation between
 mean SET and mean final exam score among sections of each course each year.
+(Because we are adding the correlation coefficients for 21 course offerings---five years for
+three courses and three years for two courses---and each correlation coefficient
+is between $\pm 1$, the test statistic is between $\pm 21$.)
 If SET do measure instructors' contributions to learning, we would expect this sum of
 correlations to be positive: sections with above-average mean SET in each discipline each year
 would tend to be sections with above-average mean final exam scores.
@@ -361,15 +397,16 @@ all
 \beq
     {N}\choose{N_1 \cdots N_K}
 \eeq
-ways of assigning $N_k$ of the $N$ 2008 History sections to instructor $k$ 
+ways of assigning $N_k$ of the $N$ 2008 History sections to instructor $k$, for 
+$k=1, \ldots, K$,
 would be equally likely.
-The same would hold for sections of other courses and other years;
-each combination of assignments across courses and years would be equally likely:
+The same would hold for sections of other courses and other years.
+Each combination of assignments across courses and years is equally likely:
 the assignments are independent across strata.
 
 Under the null hypothesis that SET have no relationship to final exam scores,
-final exam averages for sections in each course each year are exchangeable given the average SET
-for the sections.
+average final exam scores for sections in each course each year are \emph{exchangeable} 
+given the average SET for the sections.
 Imagine ``shuffling'' (i.e., permuting)
 the average final exam scores across sections of each course
 each year, independently
@@ -378,10 +415,10 @@ For each permutation, compute the Pearson correlation between average SET for ea
 and average final exam score for each section, for each course, for each year.
 Sum the resulting 21 Pearson correlations.
 The probability distribution of that sum is the null distribution of the test statistic.
-The $p$-value is the upper tail probability of that distribution beyond the observed value of the 
-test statistic.
+The $p$-value is the upper tail probability beyond the observed value of the 
+test statistic, for that null distribution.
 
-The randomization holds triads fixed, to allow for cohort effects
+The hypothetical randomization holds triads fixed, to allow for cohort effects
 and to match the natural experiment.
 Hence, the test is conditional on which students happen to sign up for which triad triads.
 However, if we test at level no greater than $\alpha$ conditionally 
@@ -510,7 +547,7 @@ Because all ${N}\choose{N_1 N_2 N_3 N_4}$ possible assignments of students
 to sections are equally likely, these 
 ${{N_1 + N_2} \choose {N_1}} \times {{N_3+N_4} \choose {N_3}}$ 
 assignments are also equally likely.
-The fraction of those assignments that produce a value of the test statistic that
+The fraction of those assignments for which the value of the test statistic
 is at least as large (in absolute value) as the observed value of the test statistic
 is the $p$-value of the null hypothesis that students give the same rating (or none) to
 an TA, regardless of the gender that TA appears to have.
@@ -529,7 +566,7 @@ possible assignments
 of 47 students to the 4 TA-led sections that keep constant which
 students are assigned to each TA).
 Hence, we estimate $p$-values by simulation, drawing $10^5$ equally likely assignments
-at random.
+at random, with one exception, noted below.
 The distribution of the number of simulated assignments for which the test statistic
 is greater than or equal to its observed value is Binomial with $n$ equal to the number of
 simulated assignments and $p$ equal to the true $p$-value.
