@@ -21,6 +21,7 @@
             urlcolor=RawSienna,
             linkcolor=RawSienna,
             citecolor=NavyBlue]{hyperref}
+\usepackage{breakurl}
 \floatsetup[table]{capposition=top}
 \floatsetup[figure]{capposition=top}
 
@@ -867,23 +868,24 @@ by teaching effectiveness.
 
 The previous section suggests that SET have little
 connection to teaching effectiveness, but the natural experiment 
-does not enable us to control for potential differences in teaching 
+does not allow us to control for differences in teaching 
 styles across instructors. 
 \citet{MacNell2014} does.
-As discussed above used SET from an online course in which 
+As discussed above,  \citet{MacNell2014}
+collected SET from an online course in which 
 43 students were randomly assigned to four\footnote{%
    As discussed above, there were six sections in all, of which two 
    were taught by the professor and four
    were taught by TAs.
 } 
 discussion groups, each taught by one of two TAs, one male and one female. 
-The TAs gave similar feedback to students, returned assignments at exactly the same time, etc., 
-minimizing differences in teaching styles and grading.
+The TAs gave similar feedback to students, returned assignments at exactly the same time, etc.
 
-Biases in student ratings are revealed by differences in ratings for a given TA when that 
-TA is identified as male versus as female.
+Biases in student ratings are revealed by differences in ratings each TA received
+when that TA is identified to the students as male versus as female.
 \citet{MacNell2014} find that ``the male identity received significantly higher scores on professionalism, promptness, fairness, respectfulness, enthusiasm, giving praise, and the
-student ratings index \textellipsis Students in the two groups that perceived their assistant
+student ratings index \textellipsis 
+Students in the two groups that perceived their assistant
 instructor to be male rated their instructor significantly higher than did the students in the
 two groups that perceived their assistant instructor to be female, regardless of the actual gender
 of the assistant instructor.'' 
@@ -891,13 +893,14 @@ of the assistant instructor.''
 design; part of our contribution is to show that their data admit a more rigorous analysis
 using permutation tests that honor the underlying randomization and that avoid parametric
 assumptions about SET. 
-The new analysis supports their conclusions, in some cases even more strongly than the original
-analysis.
+The new analysis supports their overall conclusions, in some cases substantiall more strongly 
+than the original analysis (for instance, $p$-values of 0.01 versus 0.19 for promptness and fairness).
+In other cases, the original parametric tests overstated the evidence
+(for instance, a $p$-value of 0.29 versus 0.04 for knowledgeability).
 
 We use permutation tests as described above in section~\ref{sec:methods}.
 Individual $i$ is a student; the treatment is the combination of the TA's identity and the TA's
 apparent gender (there are $K=4$ treatments).
-
 The null hypothesis is that each student would give a TA the same SET score,
 whether that TA is apparently male or apparently female.
 A student might give the two TAs different scores,
@@ -916,11 +919,11 @@ and take the mean, then subtract the second mean from the first mean
 This is what \cite{MacNell2014} report as their main result.
 
 As described above, the randomization is stratified and conditions on the set of students 
-allocated to each of the two TAs, because, under the null hypothesis, we then know what 
+allocated to each TA, because, under the null hypothesis, we then know what 
 SET students would have given for each possible allocation, completely specifying the
 null distribution of the test statistic.
 The randomization includes the nonresponders, who are omitted from the averages of the
-group they end up in.
+group they are assigned to.
 
 We also perform tests involving the association of concordance of student and apparent 
 TA gender,
@@ -928,45 +931,56 @@ TA gender,
 (Table~\ref{tab:macnell3}), and grades and actual TA gender (Table~\ref{tab:macnell4}).  
 These tests use the average Pearson correlation across strata as the test statistic, 
 but we find the $p$-value
-based on the stratified permutation distribution of the test statistic, avoiding
+from the stratified permutation distribution of the test statistic, avoiding
 parametric assumptions.
 
 \subsection{SET and Perceived Instructor Gender}
-\todo{make sure the category names make sense in the prose}
 The first hypothesis we test is that students would rate a given TA the same,
 whether the student thinks the TA is female or male. 
-A positive value of the test statistic indicates that students give higher SET
+A positive value of the test statistic means that students give higher SET on average
 to apparently male instructors.
 There is weak evidence that the overall SET score depends on the perceived gender ($p$-value 0.12). 
-The evidence is stronger for several other items students rated: fairness ($p$-value 0.01), 
-promptness ($p$-value 0.01), giving praise ($p$-value 0.01), 
-enthusiasm ($p$-value 0.06), communication ($p$-value 0.07), professionalism ($p$-value 0.06), respect ($p$-value 0.07), and caring ($p$-value 0.09). 
+The evidence is stronger for several other items students rated: 
+fairness ($p$-value 0.01), 
+promptness ($p$-value 0.01), 
+giving praise ($p$-value 0.01), 
+enthusiasm ($p$-value 0.06), 
+communication ($p$-value 0.07), 
+professionalism ($p$-value 0.06), 
+respect ($p$-value 0.07), and 
+caring ($p$-value 0.09). 
 Items for which the $p$-values were greater than 0.10 include clarity,
 consistency, feedback, helpfulness, responsiveness, and knowledgeability.
+SET were on a 5-point scale, so a difference in means of 0.80, observed
+in student ratings of the promptness with which assignments were returned, 
+is 16\% of the full scale---an enormous difference.
+Since assignments were returned at exactly the same time in all
+four sections of the class, this seriously impugns the objectivity of SET.
 
 \begin{table}[htbp]
   \centering
   \footnotesize 
   \caption{Mean ratings and reported instructor gender (male minus female)}
-    \begin{tabular}{lcc}
+    \begin{tabular}{lrrr}
     \toprule 
-                          & difference in means  & $p$-value  \\
+                          & difference & nonparametric & MacNell et al. \\
+                          & in means  & $p$-value  &  $p$-value\\
    \midrule
-    Overall &                 0.47       & 0.12   \\
-    Professional &            0.61       & 0.06   \\
-    Respectful			   &  0.61       & 0.07   \\
-    Caring &                  0.52       & 0.09    \\
-    Enthusiastic   &          0.57       & 0.06     \\
-    Communicate        &      0.57       & 0.07     \\
-    Helpful   &               0.46       & 0.18     \\
-    Feedback   &              0.47       & 0.16     \\
-    Prompt    &               0.80       & 0.01     \\
-    Consistent   &            0.46       & 0.21     \\
-    Fair   &                  0.76       & 0.01     \\
-    Responsive   &            0.22       & 0.49     \\
-    Praise   &                0.67       & 0.01     \\
-    Knowledge   &             0.35       & 0.29     \\
-    Clear   &                 0.41       & 0.29     \\
+    Overall &                 0.47       & 0.12  & 0.128 \\
+    Professional &            0.61       & 0.06  & 0.124 \\
+    Respectful  &           0.61       & 0.07  & 0.124 \\
+    Caring &                  0.52       & 0.09    & 0.071\\
+    Enthusiastic   &          0.57       & 0.06   & 0.112  \\
+    Communicate        &      0.57       & 0.07  & NA   \\
+    Helpful   &               0.46       & 0.18   & 0.049  \\
+    Feedback   &              0.47       & 0.16  & 0.054   \\
+    Prompt    &               0.80       & 0.01  & 0.191   \\
+    Consistent   &            0.46       & 0.21  & 0.045   \\
+    Fair   &                  0.76       & 0.01   & 0.188  \\
+    Responsive   &            0.22       & 0.49  & 0.013   \\
+    Praise   &                0.67       & 0.01  & 0.153   \\
+    Knowledge   &             0.35       & 0.29 & 0.038    \\
+    Clear   &                 0.41       & 0.29   & NA  \\
     \bottomrule
     \end{tabular}%
  \label{tab:macnell1}%
@@ -981,22 +995,22 @@ In contrast to our findings for the French data, where male students
 rated male instructors higher, 
 for the \citet{MacNell2014} data perceived male instructors received 
 significantly higher evaluation scores because female students rated the perceived 
-male instructors higher (Table ~\ref{tab:macnell2}). 
+male instructors higher (Table~\ref{tab:macnell2}). 
 Male students rated the perceived male instructor significantly (though weakly) 
 higher on only one criterion: fairness ($p$-value 0.09). 
 Female students, however, rated the perceived male instructor higher on overall satisfaction 
-($p$-values of 0.11) and most teaching dimensions: 
+($p$-value 0.11) and most teaching dimensions: 
 praise ($p$-value 0.01), 
 enthusiasm ($p$-value 0.05), 
 caring ($p$-value 0.05), 
 fairness ($p$-value 0.05), 
 respectfulness ($p$-value 0.12),  
-communication ($p$-values of 0.10), 
+communication ($p$-value 0.10), 
 professionalism ($p$-value 0.12), 
 and feedback ($p$-value 0.10). 
 Female students rate (perceived) female instructors lower on 
 helpfulness, promptness, consistency, responsiveness, 
-knowledge, and clarity, although the difference is not significant.
+knowledge, and clarity, although the differences are not statistically significant.
 
 \begin{table}[htbp]
   \centering
@@ -1103,7 +1117,7 @@ instructor's perceived gender than on the basis of the instructor's effectivenes
 IPython notebooks containing our analyses are at
 \url{https://github.com/kellieotto/SET-and-Gender-Bias}.
 The US data are available at \url{http://n2t.net/ark:/b6078/d1mw2k}.
-The French data are not available, owing to French privacy law.
+French privacy law prohibits publishing the French data. 
 
 \section{Technical Notes}
 We did not adjust the tests reported above for multiplicity.
@@ -1117,7 +1131,8 @@ consider four to be our primary results:
     \item association between SET and instructor gender
     \item association between SET and interim grades
 \end{enumerate}        
-Bonferroni's adjustment for these four tests would \todo{fix me when the results are in}
+Bonferroni's adjustment for these four tests would leave the last two associations
+highly significant, with adjusted $p$-values less than 0.01.
 
 We performed a total of 77 tests on the US data.
 We consider the three primary null hypotheses to be that 
@@ -1126,11 +1141,15 @@ We consider the three primary null hypotheses to be that
 (3)~female students rate perceived male and female instructors the same.
 To account for multiplicity, we tested these three ``omnibus'' hypotheses 
 using the nonparametric combination of tests (NPC) method with Fisher's combining 
-function~\citep[Chapter 4]{pesarinSalmaso10} to combine the 15 dimensions of teaching into
+function~\citep[Chapter 4]{pesarinSalmaso10} to summarize the 15 dimensions of teaching into
 a single test statistic that measures how ``surprising'' the 15 observed differences would be
 for each of the three null hypotheses.
-In $10^4$ replications, the empirical $p$-values for the omnibus hypotheses were $0$, $0.466$, and $0$, respectively.
-The upper 99\% confidence bounds for the actual $p$-values is $4.6 \times 10^{-4}$ for the two empirical p-values of 0, and $0.4776$ for the non-zero empirical p-value (the upper bounds were obtained by inverting Binomial hypothesis tests).
+In $10^4$ replications, the empirical $p$-values for the omnibus hypotheses were 
+$0$, $0.466$, and $0$, respectively.
+The upper 99\% confidence bounds for the actual $p$-values is 
+$4.6 \times 10^{-4}$ for the two estimated $p$-values of 0, and 
+$0.478$ for the non-zero estimated $p$-value 
+(the upper bounds were obtained by inverting Binomial hypothesis tests).
 Thus, we reject hypotheses (1) and (3).
 
 We made no attempt to optimize the tests to have power 
@@ -1170,8 +1189,8 @@ and ``using a meaningful voice tone.''
 We used permutation tests to examine data collected  by
 \citet{Boring2015} and \citet{MacNell2014}, both of which find that gender biases prevent 
 SET from measuring teaching effectiveness accurately and fairly. 
-SET are more strongly related to instructor's perceived gender and to grade expectations 
-than they are to learning, 
+SET are more strongly related to instructor's perceived gender and to students' 
+grade expectations than they are to learning, 
 as measured by performance on anonymously graded, uniform final exams. 
 The extent and direction of gender biases depend on context, so it is
 impossible to adjust for such biases to level the playing field.
