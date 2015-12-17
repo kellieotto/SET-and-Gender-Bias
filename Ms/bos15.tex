@@ -626,23 +626,29 @@ In the other disciplines (Macroeconomics, Microeconomics, Political science and 
 \begin{table}[htbp]
   \centering
   \footnotesize 
-  \caption{Average correlation between SET and final exam scores, by course number}
+  \caption{Average correlation between SET and final exam score, by subject}
     \begin{tabular}{lrrr}
     \toprule 
                         & strata & $\bar{\rho}$  & $p$-value  \\
    \midrule
-    Overall &        21 &     0.89 &       0.09  \\
-    History &         5 &    0.79 &       0.01  \\
-    Macroeconomics &  5 &    0.30 &       0.19  \\
-    Microeconomics &   5 &   -0.04 &       0.55  \\
-    Political science & 3 &  -0.08 &       0.62  \\
-    Sociology &      3 &    -0.07 &       0.61  \\
+    Overall &        26 (21) &     0.042 &       0.09  \\
+    History &         5 &    0.158 &       0.01  \\
+    Political Institutions & 5 & N/A & N/A \\
+    Macroeconomics &  5 &    0.060 &       0.19  \\
+    Microeconomics &   5 &   -0.008 &       0.55  \\
+    Political science & 3 &  -0.027 &       0.62  \\
+    Sociology &      3 &    -0.023 &       0.61  \\
     \bottomrule
     \end{tabular}%
  \label{tab:finalexam}%
  
-\textit{Note: $p$-values are one-sided, since we expect higher SET to be associated
-with higher final exam scores.}
+\textit{Note: $p$-values are one-sided, since we expect higher mean SET to be associated
+with higher mean final exam scores.
+Correlations are computed for course-level averages of SET and final exam score
+within strata, then averaged across strata.
+Political Institutions is not reported, because the final exam was not graded anonymously.
+The five strata of Political Institutions are not included in the overall average,
+which is computed from the remaining 21 strata-level correlation coefficients.}
 \end{table}%
 \normalsize
 
@@ -658,23 +664,24 @@ expect the average correlation to be large in absolute value.
 We find that average SET are significantly associated with instructor gender, with male instructors
 getting higher ratings (overall $p$-value 0.00). 
 Male instructors get higher SET on average in every discipline  (Table~\ref{tab:instructorgender})
-with two-sided $p$-values ranging from $0.09$ for History and Political Institutions to $0.63$ for Political Science.
+with two-sided $p$-values ranging from $0.09$ for 
+History and Political Institutions to $0.63$ for Political Science.
 
 \begin{table}[htbp]
   \centering
   \footnotesize 
-  \caption{Association between SET and instructor gender}
+  \caption{Average correlation between SET and instructor gender}
     \begin{tabular}{lcc}
     \toprule 
                           & $\bar{\rho}$  & $p$-value     \\
    \midrule
-    Overall &                 2.47       & 0.00     \\
-    History &                 0.57       & 0.09     \\
-    Political institutions &  0.57       & 0.09     \\
-    Macroeconomics &          0.48       & 0.15     \\
-    Microeconomics &          0.47       & 0.16     \\
-    Political science &      0.12       & 0.63     \\
-    Sociology &               0.24       & 0.35     \\
+    Overall &                 0.095       & 0.00     \\
+    History &                 0.114       & 0.09     \\
+    Political institutions &  0.114       & 0.09     \\
+    Macroeconomics &          0.096       & 0.15     \\
+    Microeconomics &          0.094       & 0.16     \\
+    Political science &      0.040       & 0.63     \\
+    Sociology &               0.080       & 0.35     \\
     \bottomrule
     \end{tabular}%
  \label{tab:instructorgender}%
@@ -695,7 +702,8 @@ Table~\ref{tab:genderfinal} shows that on the whole, students of male instructor
 perform worse on the final than students of female instructors, by an amount that 
 is statistically significant ($p$-value $0.07$ overall).
 in all disciplines, students of male instructors perform worse, 
-but by amounts that are not statistically significant ($p$-values ranging from $0.22$ for History to $0.70$ for Political Science).
+but by amounts that are not statistically significant 
+($p$-values ranging from $0.22$ for History to $0.70$ for Political Science).
 This suggests that male instructors are not noticeably more effective than female instructors, 
 and perhaps are less effective:
 The statistically significant difference in SET scores for male and female instructors
@@ -705,17 +713,17 @@ does not seem to reflect a difference in their teaching effectiveness.
 \begin{table}[htbp]
   \centering
   \footnotesize 
-  \caption{Association between final exam scores and instructor gender}
+  \caption{Average correlation between final exam scores and instructor gender}
     \begin{tabular}{lcc}
     \toprule 
                      & $\bar{\rho}$  & $p$-value    \\
    \midrule
-    Overall &            -1.26       & 0.07      \\
-    History &            -0.41       & 0.22      \\
-    Macroeconomics &     -0.29       & 0.39      \\
-    Microeconomics &     -0.31       & 0.36      \\
-    Political science &  -0.10       & 0.70      \\
-    Sociology &          -0.16       & 0.55      \\
+    Overall &            -0.060       & 0.07      \\
+    History &            -0.082       & 0.22      \\
+    Macroeconomics &     -0.058       & 0.39      \\
+    Microeconomics &     -0.062       & 0.36      \\
+    Political science &  -0.033       & 0.70      \\
+    Sociology &          -0.053       & 0.55      \\
     \bottomrule
     \end{tabular}%
  \label{tab:genderfinal}%
@@ -739,7 +747,7 @@ Male students give higher SET scores to male instructors in Sociology as well, b
 effect is not statistically significant ($p$-value 0.16). 
 
 The correlation between gender concordance and overall satisfaction scores 
-for female students is also positive overall, but weakly significant ($p$-value 0.06 overall). 
+for female students is also positive overall and weakly significant ($p$-value 0.06). 
 The correlation is negative in some fields (History, Political Institutions, 
 Macroeconomics, Microeconomics and Sociology) and positive in only one field 
 (Political Science), but in no case statistically significant 
@@ -754,13 +762,13 @@ Macroeconomics, Microeconomics and Sociology) and positive in only one field
           & \multicolumn{2}{c}{Male student}  &  & \multicolumn{2}{c}{Female student} \\
       & $\bar{\rho}$  &  $p$-value &  & $\bar{\rho}$  &  $p$-value    \\
    \midrule
-      \quad  Overall                &  3.94       & 0.00 & &  0.05       & 0.06     \\
-      \quad  History                &  0.87       & 0.01 & & -0.17       & 0.61     \\
-      \quad  Political institutions &  0.59       & 0.08 & & -0.53       & 0.12     \\
-      \quad  Macroeconomics         &  0.71       & 0.03 & & -0.24       & 0.48     \\
-      \quad  Microeconomics         &  0.91       & 0.01 & &  -0.01      & 0.98     \\
-      \quad  Political science     &  0.50       & 0.05 & &  0.12       & 0.64     \\
-      \quad  Sociology              &  0.37       & 0.16 & & -0.08       & 0.76     \\
+      \quad  Overall                &  0.152       & 0.00 & &  0.05       & 0.06     \\
+      \quad  History                &  0.174       & 0.01 & & -0.17       & 0.61     \\
+      \quad  Political institutions &  0.118       & 0.08 & & -0.53       & 0.12     \\
+      \quad  Macroeconomics    &  0.142      & 0.03 & & -0.24       & 0.48     \\
+      \quad  Microeconomics     &  0.182       & 0.01 & &  -0.01      & 0.98     \\
+      \quad  Political science     &  0.167       & 0.05 & &  0.12       & 0.64     \\
+      \quad  Sociology              &  0.123       & 0.16 & & -0.08       & 0.76     \\
     \bottomrule
     \end{tabular}%
  \label{tab:genderconcordance}%
@@ -783,18 +791,18 @@ SET do not appear to measure teaching effectiveness, at least not primarily.
 \begin{table}[htbp]
   \centering
   \footnotesize 
-  \caption{Association between student performance and gender concordance}
+  \caption{Average correlation between student performance and gender concordance}
     \begin{tabular}{lccccc}
     \toprule 
           & \multicolumn{2}{c}{Male student}  &  & \multicolumn{2}{c}{Female student} \\
       & $\bar{\rho}$  &  $p$-value &  & $\bar{\rho}$  &  $p$-value    \\
                              \midrule
-      \quad  Overall &                 -0.22       & 0.75 & &  0.06       & 0.06  \\
-      \quad  History &                 -0.75       & 0.03 & &  -0.12       & 0.73   \\
-      \quad  Macroeconomics &           0.18       & 0.59 & & 0.56       & 0.10   \\
-      \quad  Microeconomics &           0.09       & 0.79 & &  0.35       & 0.30  \\
-      \quad  Political science &       0.24       & 0.35 & &  0.32       & 0.24  \\
-      \quad  Sociology &                0.02       & 0.95 & & 0.19       & 0.46  \\
+      \quad  Overall &                 -0.010       & 0.75 & &  0.003       & 0.06  \\
+      \quad  History &                 -0.150       & 0.03 & &  -0.024       & 0.73   \\
+      \quad  Macroeconomics &     0.036      & 0.59 & & 0.112       & 0.10   \\
+      \quad  Microeconomics &      0.018       & 0.79 & &  0.070       & 0.30  \\
+      \quad  Political science &      0.080       & 0.35 & &  0.107       & 0.24  \\
+      \quad  Sociology &               0.007       & 0.95 & & 0.063       & 0.46  \\
     \bottomrule
     \end{tabular}%
  \label{tab:finalconcordance}%
@@ -813,11 +821,8 @@ Indeed, the association is positive and generally highly statistically significa
 (Table~\ref{tab:instructor_gender}). 
 Political institutions is the only topic for which the correlation between interim grades and 
 SET scores is negative, but the correlation is not significant ($p$-value 0.61). 
-The $p$-values for all other courses range between 0 and 0.3. 
-The average correlation is especially high in History (1.61). 
-The average correlation coefficients are also high in Macroeconomics (0.77), Sociology (0.71), 
-Microeconomics (0.65) and Political Science (0.50).
-
+The estimated $p$-values for all other courses are between 0.0 and 0.3. 
+The average correlations are especially high in History (0.322) and Sociology (0.237).
 
 \begin{table}[htbp]
   \centering
@@ -827,13 +832,13 @@ Microeconomics (0.65) and Political Science (0.50).
     \toprule 
                           & $\bar{\rho}$  & $p$-value  \\
    \midrule
-    Overall &                 4.16       & 0.00   \\
-    History &                 1.61       & 0.00   \\
-    Political institutions &  -0.09       & 0.61     \\
-    Macroeconomics &          0.77       & 0.01    \\
-    Microeconomics &          0.65       & 0.03     \\
-    Political science &      0.50       & 0.03     \\
-    Sociology &               0.71       & 0.00     \\
+    Overall &                 0.160       & 0.00   \\
+    History &                 0.322    & 0.00   \\
+    Political institutions &  -0.018       & 0.61     \\
+    Macroeconomics &     0.154           & 0.01    \\
+    Microeconomics &      0.130          & 0.03     \\
+    Political science &       0.167      & 0.03     \\
+    Sociology &                0.237      & 0.00     \\
     \bottomrule
     \end{tabular}%
  \label{tab:instructor_gender}%
