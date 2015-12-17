@@ -242,7 +242,7 @@ which is treated as a summary of the other items.
 The SET data include students' individual evaluations of section
 instructors in microeconomics, history, political institutions, and 
 macroeconomics for the five academic years 2008--2013, and for 
-sociology and political science for the three academic years 2010--2013 
+political science and sociology for the three academic years 2010--2013 
 (these two subjects were introduced in 2010). 
 The SET are anonymous to the instructors, who have access to SET only after 
 all grades have been officially recorded.  
@@ -373,15 +373,12 @@ get higher final exam scores, indicating that they learned more.
 For this hypothesis test, we omit Political Institutions because the final exam was not
 anonymous.
 
-The test statistic is the sum over courses and years of the Pearson correlation between
+The test statistic is the average over courses and years of the Pearson correlation between
 mean SET and mean final exam score among sections of each course each year.
-(Because we are adding the correlation coefficients for 21 course offerings---five years for
-three courses and three years for two courses---and each correlation coefficient
-is between $\pm 1$, the test statistic is between $\pm 21$.)
-If SET do measure instructors' contributions to learning, we would expect this sum of
-correlations to be positive: sections with above-average mean SET in each discipline each year
+If SET do measure instructors' contributions to learning, we would expect this average
+correlation to be positive: sections with above-average mean SET in each discipline each year
 would tend to be sections with above-average mean final exam scores.
-How surprising is the observed sum of correlation coefficients, if there is no overall
+How surprising is the observed average correlation, if there is no overall
 connection between mean SET and mean final exam for sections of a course?
 
 There are 950 ``individuals,'' course sections of subjects other
@@ -413,8 +410,8 @@ each year, independently
 for different courses and different years.
 For each permutation, compute the Pearson correlation between average SET for each section
 and average final exam score for each section, for each course, for each year.
-Sum the resulting 21 Pearson correlations.
-The probability distribution of that sum is the null distribution of the test statistic.
+Average the resulting 21 Pearson correlations.
+The probability distribution of that average is the null distribution of the test statistic.
 The $p$-value is the upper tail probability beyond the observed value of the 
 test statistic, for that null distribution.
 
@@ -426,8 +423,8 @@ on the grouping of students into triads,
 the unconditional level of the resulting test across all possible groupings is no 
 greater than $\alpha$:
 \begin{eqnarray}
-   \Pr \{ \mbox{ Type I error } \} &=& \sum_{\mbox{all possible sets of triads}} \Pr \{ \mbox{ Type I error } | 
-   \mbox{ triads } \} \Pr\{\mbox{ triads } \} \nonumber \\
+   \Pr \{ \mbox{ Type I error } \} &=& \sum_{\mbox{all possible sets of triads}} 
+   \Pr \{ \mbox{ Type I error } | \mbox{ triads } \} \Pr\{\mbox{ triads } \} \nonumber \\
    &\le& 
     \sum_{\mbox{all possible sets of triads}} \alpha \Pr\{\mbox{triads } \} \nonumber \\
     &=& \alpha \sum_{\mbox{all possible sets of triads}} \Pr\{\mbox{triads } \} \nonumber \\
@@ -472,6 +469,7 @@ We observe only one potential outcome for individual $i$,
 depending on which treatment she or he receives.
 In this model, the responses $\{R_i\}_{i=1}^N$ are random, but only because 
 individuals are assigned to treatments at random.
+(They are not assumed to be a random sample from any population.)
 
 In the experiment conducted by \citet{MacNell2014},
 $N$ students were assigned at random to six sections of an online course,
@@ -546,7 +544,7 @@ of those assignments.
 Because all ${N}\choose{N_1 N_2 N_3 N_4}$ possible assignments of students
 to sections are equally likely, these 
 ${{N_1 + N_2} \choose {N_1}} \times {{N_3+N_4} \choose {N_3}}$ 
-assignments are also equally likely.
+assignments in particular are also equally likely.
 The fraction of those assignments for which the value of the test statistic
 is at least as large (in absolute value) as the observed value of the test statistic
 is the $p$-value of the null hypothesis that students give the same rating (or none) to
@@ -581,7 +579,7 @@ In this section, we test hypotheses about relationships among
 SET, teaching effectiveness, grade expectations, and student and instructor gender.
 Our tests aggregate data within course sections, to match how SET are typically
 used in personnel decisions. 
-We use the sum of Pearson correlations across strata as the test statistic,\footnote{%
+We use the average of Pearson correlations across strata as the test statistic,\footnote{%
    As discussed above, we find $p$-values from the permutation distribution, not from
    the theoretical distribution of the Pearson correlation 
    under the parametric assumption of bivariate normality.
@@ -590,12 +588,13 @@ which allows us to test both for
 differences in means (which can be written as correlations with a dummy variable) and for 
 association with ordinal or quantitative variables.
 
-In these analyses, individual $i$ is a section of a course; the ``treatment'' is the instructor's gender, 
+In these analyses, individual $i$ is a section of a course; 
+the ``treatment'' is the instructor's gender, 
 the average interim grade, or the average final exam score;
 and the ``response'' is the average SET or the average final exam score.
 Strata consist of all sections of a single course in a single year.
 
-Our tests for overall effects stratify on the discipline, to account for systematic
+Our tests for overall effects stratify on the course subject, to account for systematic
 differences across departments:
 the hypothetical randomization shuffles characteristics among courses in a given
 department, but not across departments.
@@ -609,7 +608,7 @@ The null hypothesis is that the pairing
 of average final grade and average SET for sections of a course each year is as if at random,
 independent across courses and across years.
 We test this hypothesis overall and separately by discipline 
-(Table~\ref{tab:finalexam}), using the sum of Pearson correlations across strata, as described 
+(Table~\ref{tab:finalexam}), using the average Pearson correlation across strata, as described 
 in section~\ref{sec:boringMethods}.
 If the null hypothesis were true, we would expect the test statistic to be 
 close to zero.
@@ -618,25 +617,26 @@ SET and average final exam score to be positively correlated within courses with
 making the test statistic positive. 
 
 The numbers show that SET scores do not measure teaching effectiveness well, overall:
-the one-sided $p$-value for the hypothesis that the correlation is zero is 0.09, suggesting positive but weak association. 
+the one-sided $p$-value for the hypothesis that the correlation is zero is 0.09.
 Separate tests by discipline find that for History, the 
 association is positive and statistically
-significant ($p$-value of 0.01). In the other disciplines (Macroeconomics, Microeconomics, Political science and Sociology), the association is not significant ($p$-values 0.19, 0.55, 0.62, and 0.61 respectively). 
+significant ($p$-value of 0.01). 
+In the other disciplines (Macroeconomics, Microeconomics, Political science and Sociology), the association is not significant ($p$-values 0.19, 0.55, 0.62, and 0.61 respectively). 
 
 \begin{table}[htbp]
   \centering
   \footnotesize 
-  \caption{Correlation between SET and final exam scores, by course number}
-    \begin{tabular}{lcc}
+  \caption{Average correlation between SET and final exam scores, by course number}
+    \begin{tabular}{lrrr}
     \toprule 
-                        & $\rho$  & $p$-value  \\
+                        & strata & $\bar{\rho}$  & $p$-value  \\
    \midrule
-    Overall &             0.89 &       0.09  \\
-    History &             0.79 &       0.01  \\
-    Macroeconomics &      0.30 &       0.19  \\
-    Microeconomics &     -0.04 &       0.55  \\
-    Political science &  -0.08 &       0.62  \\
-    Sociology &          -0.07 &       0.61  \\
+    Overall &        21 &     0.89 &       0.09  \\
+    History &         5 &    0.79 &       0.01  \\
+    Macroeconomics &  5 &    0.30 &       0.19  \\
+    Microeconomics &   5 &   -0.04 &       0.55  \\
+    Political science & 3 &  -0.08 &       0.62  \\
+    Sociology &      3 &    -0.07 &       0.61  \\
     \bottomrule
     \end{tabular}%
  \label{tab:finalexam}%
@@ -654,7 +654,7 @@ across years and courses.
 If gender does not affect SET, we would expect the correlation between average SET
 and instructor gender to be small in each course in each year.
 On the other hand, if students tend to rate instructors of one gender higher, we would
-expect the sum of these correlations to be large in absolute value.
+expect the average correlation to be large in absolute value.
 We find that average SET are significantly associated with instructor gender, with male instructors
 getting higher ratings (overall $p$-value 0.00). 
 Male instructors get higher SET on average in every discipline  (Table~\ref{tab:instructorgender})
@@ -666,7 +666,7 @@ with two-sided $p$-values ranging from $0.09$ for History and Political Institut
   \caption{Association between SET and instructor gender}
     \begin{tabular}{lcc}
     \toprule 
-                          & $\rho$  & $p$-value     \\
+                          & $\bar{\rho}$  & $p$-value     \\
    \midrule
     Overall &                 2.47       & 0.00     \\
     History &                 0.57       & 0.09     \\
@@ -688,9 +688,9 @@ Do men receive higher SET scores overall because they are better instructors?
 The third null hypothesis we test is that the pairing (by course) of instructor gender and
 average final exam score is as if at random within courses each year, independent
 across courses and across years.
-If this hypothesis is true, we would expect the sum of correlations to be small.
+If this hypothesis is true, we would expect the average correlations to be small.
 If the effectiveness of instructors differs systematically by gender,
-we would expect sum of correlations to be large in absolute value. 
+we would expect average correlation to be large in absolute value. 
 Table~\ref{tab:genderfinal} shows that on the whole, students of male instructors
 perform worse on the final than students of female instructors, by an amount that 
 is statistically significant ($p$-value $0.07$ overall).
@@ -708,7 +708,7 @@ does not seem to reflect a difference in their teaching effectiveness.
   \caption{Association between final exam scores and instructor gender}
     \begin{tabular}{lcc}
     \toprule 
-                     & $\rho$  & $p$-value    \\
+                     & $\bar{\rho}$  & $p$-value    \\
    \midrule
     Overall &            -1.26       & 0.07      \\
     History &            -0.41       & 0.22      \\
@@ -748,11 +748,11 @@ Macroeconomics, Microeconomics and Sociology) and positive in only one field
 \begin{table}[htbp]
   \centering
   \footnotesize 
-  \caption{Association between SET and gender concordance}
+  \caption{Average correlation between SET and gender concordance}
     \begin{tabular}{lccccc}
     \toprule 
           & \multicolumn{2}{c}{Male student}  &  & \multicolumn{2}{c}{Female student} \\
-      & $\rho$  &  $p$-value &  & $\rho$  &  $p$-value    \\
+      & $\bar{\rho}$  &  $p$-value &  & $\bar{\rho}$  &  $p$-value    \\
    \midrule
       \quad  Overall                &  3.94       & 0.00 & &  0.05       & 0.06     \\
       \quad  History                &  0.87       & 0.01 & & -0.17       & 0.61     \\
@@ -787,7 +787,7 @@ SET do not appear to measure teaching effectiveness, at least not primarily.
     \begin{tabular}{lccccc}
     \toprule 
           & \multicolumn{2}{c}{Male student}  &  & \multicolumn{2}{c}{Female student} \\
-      & $\rho$  &  $p$-value &  & $\rho$  &  $p$-value    \\
+      & $\bar{\rho}$  &  $p$-value &  & $\bar{\rho}$  &  $p$-value    \\
                              \midrule
       \quad  Overall &                 -0.22       & 0.75 & &  0.06       & 0.06  \\
       \quad  History &                 -0.75       & 0.03 & &  -0.12       & 0.73   \\
@@ -814,18 +814,18 @@ Indeed, the association is positive and generally highly statistically significa
 Political institutions is the only topic for which the correlation between interim grades and 
 SET scores is negative, but the correlation is not significant ($p$-value 0.61). 
 The $p$-values for all other courses range between 0 and 0.3. 
-The correlation coefficient is especially high in History (1.61). 
-The correlation coefficients are also high in Macroeconomics (0.77), Sociology (0.71), 
+The average correlation is especially high in History (1.61). 
+The average correlation coefficients are also high in Macroeconomics (0.77), Sociology (0.71), 
 Microeconomics (0.65) and Political Science (0.50).
 
 
 \begin{table}[htbp]
   \centering
   \footnotesize 
-  \caption{Association between SET and interim grades}
+  \caption{Average correlation between SET and interim grades}
     \begin{tabular}{lcc}
     \toprule 
-                          & $\rho$  & $p$-value  \\
+                          & $\bar{\rho}$  & $p$-value  \\
    \midrule
     Overall &                 4.16       & 0.00   \\
     History &                 1.61       & 0.00   \\
@@ -842,8 +842,12 @@ Microeconomics (0.65) and Political Science (0.50).
 \end{table}%
 \normalsize
 
-In summary, the association between SET and final exam grades is positive, but only weakly significant overall and not significant across most disciplines. However, the association between SET and grade expectations is positive and significant overall and across most disciplines.
-The association between instructor gender and SET is statistically significant---male instructors
+In summary, the average correlation between SET and final exam 
+grades (at the level of class sections) is positive, 
+but only weakly significant overall and not significant for most disciplines. 
+However, the average correlation between SET and grade expectations 
+(at the level of class sections) is positive and significant overall and across most disciplines.
+The average correlation between instructor gender and SET is statistically significant---male instructors
 get higher SET---but if anything, students of male instructors do worse on final exams
 than students of female instructors.
 Male students tend to give male instructors higher SET, even though they appear to learn less
@@ -914,7 +918,7 @@ We also perform tests involving the association of concordance of student and ap
 TA gender,
 (Table~\ref{tab:macnell2}), SET and concordance of student and actual TA gender 
 (Table~\ref{tab:macnell3}), and grades and actual TA gender (Table~\ref{tab:macnell4}).  
-These tests use the sum of Pearson correlations across strata as the test statistic, 
+These tests use the average Pearson correlation across strata as the test statistic, 
 but we find the $p$-value
 based on the stratified permutation distribution of the test statistic, avoiding
 parametric assumptions.
