@@ -418,7 +418,7 @@ test statistic, for that null distribution.
 
 The hypothetical randomization holds triads fixed, to allow for cohort effects
 and to match the natural experiment.
-Hence, the test is conditional on which students happen to sign up for which triad triads.
+Hence, the test is conditional on which students happen to sign up for which triad.
 However, if we test at level no greater than $\alpha$ conditionally 
 on the grouping of students into triads, 
 the unconditional level of the resulting test across all possible groupings is no 
@@ -450,7 +450,7 @@ Results for the French data are below in section~\ref{sec:Fr-results}.
 
 \subsection{Illustration: US Experiment}
 To test whether perceived instructor gender affects SET in the US experiment,
-we use the Neyman ``potential outcomes'' framework.
+we use the Neyman ``potential outcomes'' framework \citep{Neyman1923}.
 A fixed number $N$ of individuals---e.g., students or classes---are assigned either
 randomly or as if at random by Nature into 
 $k \ge 2$ groups of sizes $N_1, \ldots, N_k$.
@@ -564,16 +564,16 @@ In practice, there are prohibitively many assignments
 possible assignments
 of 47 students to the 4 TA-led sections that keep constant which
 students are assigned to each TA).
-Hence, we estimate $p$-values by simulation, drawing $10^5$ equally likely assignments
+Hence, we estimate $p$-values by simulation, drawing $10^4$ equally likely assignments
 at random, with one exception, noted below.
 The distribution of the number of simulated assignments for which the test statistic
 is greater than or equal to its observed value is Binomial with $n$ equal to the number of
 simulated assignments and $p$ equal to the true $p$-value.
 Hence, the standard error of the estimated $p$-values is hence no larger than 
-$(1/2)/ \sqrt{10^5}
-\approx 0.0016$.
+$(1/2)/ \sqrt{10^4}
+\approx 0.005$.
 Code for all our analyses is at \url{https://github.com/kellieotto/SET-and-Gender-Bias}.
-Results for the US data are in section~\ref{sec:US-results}
+Results for the US data are in section~\ref{sec:US-results}.
 
 \section{The French Natural Experiment} \label{sec:Fr-results}
 In this section, we test hypotheses about relationships among
@@ -893,7 +893,7 @@ of the assistant instructor.''
 design; part of our contribution is to show that their data admit a more rigorous analysis
 using permutation tests that honor the underlying randomization and that avoid parametric
 assumptions about SET. 
-The new analysis supports their overall conclusions, in some cases substantiall more strongly 
+The new analysis supports their overall conclusions, in some cases substantially more strongly 
 than the original analysis (for instance, $p$-values of 0.01 versus 0.19 for promptness and fairness).
 In other cases, the original parametric tests overstated the evidence
 (for instance, a $p$-value of 0.29 versus 0.04 for knowledgeability).
@@ -927,12 +927,12 @@ group they are assigned to.
 
 We also perform tests involving the association of concordance of student and apparent 
 TA gender,
-(Table~\ref{tab:macnell2}), SET and concordance of student and actual TA gender 
-(Table~\ref{tab:macnell3}), and grades and actual TA gender (Table~\ref{tab:macnell4}).  
-These tests use the average Pearson correlation across strata as the test statistic, 
-but we find the $p$-value
-from the stratified permutation distribution of the test statistic, avoiding
-parametric assumptions.
+(Table~\ref{tab:macnell2}) and SET and concordance of student and actual TA gender 
+(Table~\ref{tab:macnell3}) using the pooled difference in means as the test statistic.
+We test the association between grades and actual TA gender (Table~\ref{tab:macnell4}) 
+using the average Pearson correlation across strata as the test statistic.
+We find the $p$-values from the stratified permutation distribution of the test statistic,
+avoiding parametric assumptions.
 
 \subsection{SET and Perceived Instructor Gender}
 The first hypothesis we test is that students would rate a given TA the same,
@@ -1090,7 +1090,7 @@ However, students rated the actual male instructor higher on some dimensions
 and lower on others, by amounts that generally were not statistically significant
 (Table~\ref{tab:macnell3}). 
 The exceptions were praise ($p$-value 0.02) and responsiveness ($p$-value 0.05), 
-where female students tended to rate the actual female instructor significantly lower.
+where female students tended to rate the actual female instructor significantly higher.
 
 Students of the actual male instructor performed worse in the course on average,
 by an amount that was statistically significant (Table~\ref{tab:macnell4}). 
