@@ -1115,7 +1115,7 @@ perceived gender of the instructor is not statistically significant.
     \toprule 
                      & difference in means   & $p$-value    \\
    \midrule
-    Perceived &         1.75       & 0.54      \\
+    Perceived &         1.76       & 0.54      \\
     Actual  &            -6.81       & 0.02      \\
     \bottomrule
     \end{tabular}%
@@ -1127,38 +1127,42 @@ perceived gender of the instructor is not statistically significant.
 
 These results suggest that students rate instructors more on the basis of the 
 instructor's perceived gender than on the basis of the instructor's effectiveness. 
+Students of the TA who is actually female did substantially better in the course, but
+students rated apparently male TAs higher.
 
 \section{Multiplicity}
 We did not adjust the $p$-values reported above for multiplicity.
 We performed a total of approximately 50 tests on the French data, of which we
 consider four to be our primary results:
 \begin{enumerate}
-    \item lack of association between SET and final exam scores (a negative result,
+    \item[1\sc{fr}] lack of association between SET and final exam scores (a negative result,
                so multiplicity is not an issue)
-    \item lack of association between instructor gender and final exam scores (a negative result,
+    \item[2\sc{fr}] lack of association between instructor gender and final exam scores (a negative result,
                so multiplicity is not an issue)
-    \item association between SET and instructor gender
-    \item association between SET and interim grades
+    \item[3\sc{fr}] association between SET and instructor gender
+    \item[4\sc{fr}] association between SET and interim grades
 \end{enumerate}        
 Bonferroni's adjustment for these four tests would leave the last two associations
 highly significant, with adjusted $p$-values less than 0.01.
 
 We performed a total of 77 tests on the US data.
-We consider the three primary null hypotheses to be that 
-(1)~perceived instructor gender plays no role in SET,
-(2)~male students rate perceived male and female instructors the same, and
-(3)~female students rate perceived male and female instructors the same.
+We consider the three primary null hypotheses to be
+\begin{enumerate}
+   \item[1\sc{us}] perceived instructor gender plays no role in SET
+   \item[2\sc{us}] male students rate perceived male and female instructors the same
+   \item[3\sc{us}] female students rate perceived male and female instructors the same
+\end{enumerate}
 To account for multiplicity, we tested these three ``omnibus'' hypotheses 
 using the nonparametric combination of tests (NPC) method with Fisher's combining 
 function~\citep[Chapter 4]{pesarinSalmaso10} to summarize the 15 dimensions of teaching into
 a single test statistic that measures how ``surprising'' the 15 observed differences would be
 for each of the three null hypotheses.
-In $10^5$ replications, the empirical $p$-values for the omnibus hypotheses were 
+In $10^5$ replications, the empirical $p$-values for these three omnibus hypotheses were 
 $0$ (upper 99\% confidence bound $4.61 \times 10^{-5}$), 
 $0.464$ (lower 99\% confidence bound 0.460), and 
-$0$ (upper 99\% confidence bound $4.61 \times 10^{-5}$), respectively.
+$0.009$ (upper 99\% confidence bound $0.01$), respectively.
 (The confidence bounds were obtained by inverting Binomial hypothesis tests.)
-Thus, we reject hypotheses (1) and (3).
+Thus, we reject hypotheses 1{\sc{us}} and 3{\sc{us}}.
 
 We made no attempt to optimize the tests to have power 
 against the alternatives considered.
