@@ -452,7 +452,7 @@ Results for the French data are below in section~\ref{sec:Fr-results}.
 \subsection{Illustration: US Experiment}
 To test whether perceived instructor gender affects SET in the US experiment,
 we use the Neyman ``potential outcomes'' framework \citep{Neyman1923}.
-A fixed number $N$ of individuals---e.g., students or classes---are assigned either
+A fixed number $N$ of individuals---e.g., students or classes---are assigned
 randomly (or as if at random by Nature) into 
 $k \ge 2$ groups of sizes $N_1, \ldots, N_k$.
 Each group receives a different treatment.
@@ -463,6 +463,8 @@ class instructor.
 For each individual $i$, we observe a numerical response $R_i$.
 If individual $i$ is assigned to treatment $j$, then $R_i = r_{ij}$.
 The numbers $\{r_{ij}\}$ are considered to have been fixed before the experiment.
+(They are not assumed to be a random sample from any population;
+they are not assumed to be realizations of any underlying random variables.)
 Implicit in this notation is the \emph{non-interference} assumption that
 each individual's response depends only on the treatment that individual receives, 
 and not on which treatments other individuals receive.
@@ -470,17 +472,17 @@ and not on which treatments other individuals receive.
 We observe only one potential outcome for individual $i$, 
 depending on which treatment she or he receives.
 In this model, the responses $\{R_i\}_{i=1}^N$ are random, but only because 
-individuals are assigned to treatments at random.
-(They are not assumed to be a random sample from any population.)
+individuals are assigned to treatments at random, and the
+assignment determines which of the fixed values $\{r_{ij}\}$ are observed.
 
 In the experiment conducted by \citet{MacNell2014},
 $N$ students were assigned at random to six sections of an online course,
 of which four were taught by TAs.
-The analysis focuses on the four sections taught by TAs.
+Our analysis focuses on the four sections taught by TAs.
 We condition on the assignment of students to the two sections taught by the professor.
 Each remaining student $i$ could be assigned to any of $k=4$ treatment conditions:
 either of two TAs, each identified as either male or female.
-The assignment of students to sections was made at random: each of the
+The assignment of students to sections was random: each of the
 \beq
  {{N}\choose{N_1 N_2 N_3 N_4}} = \frac{N!}{N_1! N_2! N_3! N_4!}
 \eeq
@@ -565,14 +567,14 @@ In practice, there are prohibitively many assignments
 possible assignments
 of 47 students to the 4 TA-led sections that keep constant which
 students are assigned to each TA).
-Hence, we estimate $p$-values by simulation, drawing $10^4$ equally likely assignments
+Hence, we estimate $p$-values by simulation, drawing $10^5$ equally likely assignments
 at random, with one exception, noted below.
 The distribution of the number of simulated assignments for which the test statistic
 is greater than or equal to its observed value is Binomial with $n$ equal to the number of
 simulated assignments and $p$ equal to the true $p$-value.
 Hence, the standard error of the estimated $p$-values is hence no larger than 
-$(1/2)/ \sqrt{10^4}
-\approx 0.005$.
+$(1/2)/ \sqrt{10^5}
+\approx 0.0016$.
 Code for all our analyses is at \url{https://github.com/kellieotto/SET-and-Gender-Bias}.
 Results for the US data are in section~\ref{sec:US-results}.
 
@@ -582,7 +584,8 @@ SET, teaching effectiveness, grade expectations, and student and instructor gend
 Our tests aggregate data within course sections, to match how SET are typically
 used in personnel decisions. 
 We use the average of Pearson correlations across strata as the test statistic,\footnote{%
-   As discussed above, we find $p$-values from the permutation distribution, not from
+   As discussed above, we find $p$-values from the (nonparametric)
+   permutation distribution, not from
    the theoretical distribution of the Pearson correlation 
    under the parametric assumption of bivariate normality.
 } 
@@ -621,8 +624,10 @@ The numbers show that SET scores do not measure teaching effectiveness well, ove
 the one-sided $p$-value for the hypothesis that the correlation is zero is 0.09.
 Separate tests by discipline find that for History, the 
 association is positive and statistically
-significant ($p$-value of 0.01). 
-In the other disciplines (Macroeconomics, Microeconomics, Political science and Sociology), the association is not significant ($p$-values 0.19, 0.55, 0.62, and 0.61 respectively). 
+significant ($p$-value of 0.01),
+while the other disciplines (Macroeconomics, Microeconomics, Political science and Sociology), 
+the association is either negative or positive but not statistically significant 
+($p$-values 0.19, 0.55, 0.62, and 0.61 respectively). 
 
 \begin{table}[htbp]
   \centering
@@ -643,8 +648,9 @@ In the other disciplines (Macroeconomics, Microeconomics, Political science and 
     \end{tabular}%
  \label{tab:finalexam}%
  
-\textit{Note: $p$-values are one-sided, since we expect higher mean SET to be associated
-with higher mean final exam scores.
+\textit{Note: $p$-values are one-sided, since, if SET measured teaching
+effectiveness,  mean SET should be positively associated
+with mean final exam scores.
 Correlations are computed for course-level averages of SET and final exam score
 within strata, then averaged across strata.
 Political Institutions is not reported, because the final exam was not graded anonymously.
@@ -729,20 +735,23 @@ does not seem to reflect a difference in their teaching effectiveness.
     \end{tabular}%
  \label{tab:genderfinal}%
  
-  \textit{Note: $p$-values are two-sided.}
+  \textit{Note: $p$-values are two-sided. Negative values of $\bar{\rho}$ indicate
+  that students of female instructors did better on average than students of male
+  instructors.}
 \end{table}%
 \normalsize
 
 
 \subsection{Gender Interactions}
 Why do male instructors receive higher SET scores? 
-Stratifying the analysis by student gender shows that
+Separate analyses by student gender shows that
 male students tend to give higher SET scores to male instructors 
 (Table~\ref{tab:genderconcordance}). 
 These permutation tests confirm the results found by \citet{Boring2015}. 
 Gender concordance is a good predictor of SET scores for men ($p$-value 0.00 overall). 
 Male students give significantly higher SET scores to male instructors in  
-History ($p$-value 0.01), Microeconomics ($p$-value 0.01), Macroeconomics ($p$-value 0.04), Political Science ($p$-value 0.06), and 
+History ($p$-value 0.01), Microeconomics ($p$-value 0.01), 
+Macroeconomics ($p$-value 0.04), Political Science ($p$-value 0.06), and 
 Political Institutions ($p$-value 0.08). 
 Male students give higher SET scores to male instructors in Sociology as well, but the
 effect is not statistically significant ($p$-value 0.16). 
@@ -774,7 +783,7 @@ Macroeconomics, Microeconomics and Sociology) and positive in only one field
     \end{tabular}%
  \label{tab:genderconcordance}%
   
-  \textit{Note: two-sided $p$-values are reported.}
+  \textit{Note: $p$-values are two-sided.}
 \end{table}%
 \normalsize
 
@@ -971,17 +980,17 @@ even putatively objective characteristics of teaching.
                           & in means  & $p$-value  &  $p$-value\\
    \midrule
     Overall &                 0.47       & 0.12  & 0.128 \\
-    Professional &            0.61       & 0.06  & 0.124 \\
-    Respectful  &           0.61       & 0.07  & 0.124 \\
-    Caring &                  0.52       & 0.09    & 0.071\\
+    Professional &            0.61       & 0.07  & 0.124 \\
+    Respectful  &           0.61       & 0.06  & 0.124 \\
+    Caring &                  0.52       & 0.10    & 0.071\\
     Enthusiastic   &          0.57       & 0.06   & 0.112  \\
     Communicate        &      0.57       & 0.07  & NA   \\
-    Helpful   &               0.46       & 0.18   & 0.049  \\
+    Helpful   &               0.46       & 0.17   & 0.049  \\
     Feedback   &              0.47       & 0.16  & 0.054   \\
     Prompt    &               0.80       & 0.01  & 0.191   \\
     Consistent   &            0.46       & 0.21  & 0.045   \\
     Fair   &                  0.76       & 0.01   & 0.188  \\
-    Responsive   &            0.22       & 0.49  & 0.013   \\
+    Responsive   &            0.22       & 0.48  & 0.013   \\
     Praise   &                0.67       & 0.01  & 0.153   \\
     Knowledge   &             0.35       & 0.29 & 0.038    \\
     Clear   &                 0.41       & 0.29   & NA  \\
@@ -997,7 +1006,7 @@ even putatively objective characteristics of teaching.
 We also conducted separate tests by student gender.
 In contrast to our findings for the French data, where male students 
 rated male instructors higher, 
-for the \citet{MacNell2014} data perceived male instructors received 
+in the \citet{MacNell2014} experiment, perceived male instructors received 
 significantly higher evaluation scores because female students rated the perceived 
 male instructors higher (Table~\ref{tab:macnell2}). 
 Male students rated the perceived male instructor significantly (though weakly) 
@@ -1026,21 +1035,21 @@ knowledge, and clarity, although the differences are not statistically significa
                           & difference in means  &  $p$-value &  & difference in means & $p$-value    \\
                           
    \midrule
-    Overall &		0.17	& 0.83 & & 0.79    & 0.11   \\
-    Professional &	0.42	& 0.54 & & 0.82    & 0.12   \\
-    Respectful  & 	0.22	& 0.55 & & 0.82    & 0.12   \\
+    Overall &		0.17	& 0.82 & & 0.79    & 0.11   \\
+    Professional &	0.42	& 0.55 & & 0.82    & 0.12   \\
+    Respectful  & 	0.42	& 0.55 & & 0.82    & 0.12   \\
     Caring & 		0.04	& 1.00 & & 0.96    & 0.05  \\
-    Enthusiastic &	0.17	& 0.82 & & 0.96    & 0.05   \\
+    Enthusiastic &	0.17	& 0.83 & & 0.96    & 0.05   \\
     Communicate &	0.25	& 0.68 & & 0.87    & 0.10  \\
     Helpful &		0.46	& 0.43 & & 0.51    & 0.35   \\
     Feedback &		0.08	& 1.00 & & 0.88    & 0.10   \\
-    Prompt &		0.71	& 0.15 & & 0.86    & 0.12   \\
+    Prompt &		0.71	& 0.15 & & 0.86    & 0.13   \\
     Consistent &		0.17	& 0.85 & & 0.77    & 0.17   \\
-    Fair &			0.75	& 0.09 & & 0.88    & 0.05  \\
-    Responsive & 	0.38	& 0.53 & & 0.06    & 1.00  \\
-    Praise & 		0.58	& 0.30 & & 0.30    & 0.01  \\
-    Knowledge &		0.17	& 0.85 & & 0.54    & 0.21  \\
-    Clear &			0.13	& 0.84 & & 0.67    & 0.29  \\
+    Fair &			0.75	& 0.09 & & 0.88    & 0.04  \\
+    Responsive & 	0.38	& 0.54 & & 0.06    & 1.00  \\
+    Praise & 		0.58	& 0.29 & & 0.81    & 0.01  \\
+    Knowledge &		0.17	& 0.84 & & 0.54    & 0.21  \\
+    Clear &			0.13	& 0.85 & & 0.67    & 0.29  \\
     \bottomrule
     \end{tabular}%
  \label{tab:macnell2}%
@@ -1143,12 +1152,12 @@ using the nonparametric combination of tests (NPC) method with Fisher's combinin
 function~\citep[Chapter 4]{pesarinSalmaso10} to summarize the 15 dimensions of teaching into
 a single test statistic that measures how ``surprising'' the 15 observed differences would be
 for each of the three null hypotheses.
-In $10^4$ replications, the empirical $p$-values for the omnibus hypotheses were 
-$0$, $0.466$, and $0$, respectively.
+In $10^5$ replications, the empirical $p$-values for the omnibus hypotheses were 
+$0$, $0.464$, and $0$, respectively.
 The upper 99\% confidence bounds for the actual $p$-values is 
-$4.6 \times 10^{-4}$ for the two estimated $p$-values of 0, and 
-$0.478$ for the non-zero estimated $p$-value 
-(the upper bounds were obtained by inverting Binomial hypothesis tests).
+$4.61 \times 10^{-5}$ for the two estimated $p$-values of 0, and 
+the lower 99\% confidence bound for the non-zero estimated $p$-value is 0.460.
+(the confidence bounds were obtained by inverting Binomial hypothesis tests).
 Thus, we reject hypotheses (1) and (3).
 
 We made no attempt to optimize the tests to have power 
