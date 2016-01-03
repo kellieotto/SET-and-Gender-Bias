@@ -1162,9 +1162,9 @@ function~\citep[Chapter 4]{pesarinSalmaso10} to summarize the 15 dimensions of t
 a single test statistic that measures how ``surprising'' the 15 observed differences would be
 for each of the three null hypotheses.
 In $10^5$ replications, the empirical $p$-values for these three omnibus hypotheses were 
-$0$ (upper 99\% confidence bound $4.61 \times 10^{-5}$), 
-$0.464$ (lower 99\% confidence bound 0.460), and 
-$0.009$ (upper 99\% confidence bound $0.01$), respectively.
+$0$ (99\% confidence interval $[0.0, 5.3\times 10^{-5}]$)
+$0.464$ (99\% confidence interval  $[0.460, 0.468]$), and 
+$0$ (99\% confidence interval $[0.0, 5.3\times 10^{-5}]$), respectively.
 (The confidence bounds were obtained by inverting Binomial hypothesis tests.)
 Thus, we reject hypotheses 1{\sc{us}} and 3{\sc{us}}.
 
@@ -1180,8 +1180,9 @@ Given the relatively small number of students in the US experiment, it is remark
 tests are effectively zero.
 
 \section{Code and Data}
-IPython notebooks containing our analyses are at
-\url{https://github.com/kellieotto/SET-and-Gender-Bias}.
+Jupyter (\url{http://jupyter.org/}) notebooks containing our analyses are at
+\url{https://github.com/kellieotto/SET-and-Gender-Bias};
+they rely on the {\tt permute} Python library (\url{https://pypi.python.org/pypi/permute/}).
 The US data are available at \url{http://n2t.net/ark:/b6078/d1mw2k}.
 French privacy law prohibits publishing the French data. 
 
